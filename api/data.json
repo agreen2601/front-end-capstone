@@ -1,0 +1,189 @@
+{
+    "drivers": [
+      {
+        "id": 1,
+        "name": "Andy Collins",
+        "phoneNumber": "615-420-3000",
+        "fromCity": "Columbia",
+        "notes": "",
+      },
+      {
+        "id": 2,
+        "name": "Bryan Nilsen",
+        "phoneNumber": "718-420-3000",
+        "fromCity": "New York City",
+        "notes": "",
+      },
+      {
+        "id": 3,
+        "name": "Kristen Norris",
+        "phoneNumber": "615-420-8088",
+        "fromCity": "Nashville",
+        "notes": "",
+      },
+      {
+        "id": 4,
+        "name": "Kitty Baby",
+        "phoneNumber": "615-CAT-LYFE",
+        "fromCity": "Heaven",
+        "notes": "",
+      },
+      {
+        "id": 3,
+        "name": "Duffyson",
+        "phoneNumber": "615-Lafy-tafy",
+        "fromCity": "Memphis",
+        "notes": "",
+      }
+    ],
+    "vehicles": [
+      {
+        "id": 1,
+        "company": "NSS",
+        "vehNumber": "5601",
+        "type": "MC",
+        "capacity": 56,
+        "isADA": false
+      },
+      {
+        "id": 2,
+        "company": "Anchor",
+        "vehNumber": "117",
+        "type": "mini",
+        "capacity": 25,
+        "isADA": true
+      },
+      {
+        "id": 3,
+        "company": "Grayline",
+        "vehNumber": "38",
+        "type": "MC",
+        "capacity": 55,
+        "isADA": false
+      },
+      {
+        "id": 4,
+        "company": "Kitty Baby Express",
+        "vehNumber": "8504",
+        "type": "Double Decker",
+        "capacity": 85,
+        "isADA": true
+      },
+      {
+        "id": 5,
+        "company": "Kitty Baby Express",
+        "vehNumber": "L17",
+        "type": "Limo",
+        "capacity": 13,
+        "isADA": false
+      }
+    ],
+    "routes": [
+      {
+        "id": 1,
+        "date": "2020-04-07",
+        "number": 1,
+        "color": "red",
+        "name": "Omni",
+        "numOfVehNeeded": 6
+      },
+      {
+        "id": 2,
+        "date": "2020-04-07",
+        "number": 2,
+        "color": "blue",
+        "name": "Hyatt",
+        "numOfVehNeeded": 5
+      },
+      {
+        "id": 3,
+        "date": "2020-04-07",
+        "number": 3,
+        "color": "yellow",
+        "name": "Sheraton",
+        "numOfVehNeeded": 4
+      },
+      {
+        "id": 4,
+        "date": "2020-04-08",
+        "number": 1,
+        "color": "red",
+        "name": "Omni",
+        "numOfVehNeeded": 4
+      },
+      {
+        "id": 5,
+        "date": "2020-04-08",
+        "number": 2,
+        "color": "blue",
+        "name": "Hyatt",
+        "numOfVehNeeded": 3
+      },
+      {
+        "id": 5,
+        "date": "2020-04-08",
+        "number": 3,
+        "color": "yellow",
+        "name": "Sheraton",
+        "numOfVehNeeded": 3
+      }
+    ],
+    "assignments": [
+      {
+        "id": 1,
+        "startTime": "08:00",
+        "endTime": "17:00",
+        "driverId": 1,
+        "vehicleId": 1,
+        "routeId": 1
+      },
+      {
+        "id": 2,
+        "startTime": "06:00",
+        "endTime": "14:00",
+        "driverId": 2,
+        "vehicleId": 2,
+        "routeId": 3
+      },
+      {
+        "id": 3,
+        "startTime": "08:00",
+        "endTime": "17:00",
+        "driverId": 3,
+        "vehicleId": 3,
+        "routeId": 5
+      },
+      {
+        "id": 4,
+        "startTime": "08:00",
+        "endTime": "17:00",
+        "driverId": 4,
+        "vehicleId": 4,
+        "routeId": 2
+      },
+      {
+        "id": 5,
+        "startTime": "08:00",
+        "endTime": "17:00",
+        "driverId": 5,
+        "vehicleId": 5,
+        "routeId": 2
+      },
+      {
+        "id": 6,
+        "startTime": "08:00",
+        "endTime": "17:00",
+        "driverId": 1,
+        "vehicleId": 1,
+        "routeId": 4
+      },
+      {
+        "id": 7,
+        "startTime": "08:00",
+        "endTime": "17:00",
+        "driverId": 2,
+        "vehicleId": 2,
+        "routeId": 6
+      }
+    ]
+}
