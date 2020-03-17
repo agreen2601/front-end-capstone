@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import NavBar from "./nav/NavBar";
-import Home from "./home/home";
+import AppViews from "./AppViews";
 
-const eventTranspoManager = () => {
+const EventTranspoManager = () => {
   const isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
 
   const [hasUser, setHasUser] = useState(isAuthenticated());
@@ -20,9 +20,9 @@ const eventTranspoManager = () => {
   return (
     <>
       <NavBar hasUser={hasUser} clearUser={clearUser} />
-      <ApplicationViews hasUser={hasUser} setUser={setUser} />
+      <AppViews hasUser={hasUser} setUser={setUser} />
     </>
   );
 };
 
-export default Kennel;
+export default EventTranspoManager;

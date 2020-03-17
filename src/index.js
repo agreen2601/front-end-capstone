@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
-import EventTranspoManager from "./eventTranspoManager";
-
+import EventTranspoManager from "./EventTranspoManager";
 
 ReactDOM.render(
-<Router>
+  <Router>
     <EventTranspoManager />
-</Router>,
-document.getElementById("root"));
+  </Router>,
+  document.getElementById("root")
+);

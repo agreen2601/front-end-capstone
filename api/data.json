@@ -1,189 +1,474 @@
 {
-    "drivers": [
-      {
-        "id": 1,
-        "name": "Andy Collins",
-        "phoneNumber": "615-420-3000",
-        "fromCity": "Columbia",
-        "notes": "",
-      },
-      {
-        "id": 2,
-        "name": "Bryan Nilsen",
-        "phoneNumber": "718-420-3000",
-        "fromCity": "New York City",
-        "notes": "",
-      },
-      {
-        "id": 3,
-        "name": "Kristen Norris",
-        "phoneNumber": "615-420-8088",
-        "fromCity": "Nashville",
-        "notes": "",
-      },
-      {
-        "id": 4,
-        "name": "Kitty Baby",
-        "phoneNumber": "615-CAT-LYFE",
-        "fromCity": "Heaven",
-        "notes": "",
-      },
-      {
-        "id": 3,
-        "name": "Duffyson",
-        "phoneNumber": "615-Lafy-tafy",
-        "fromCity": "Memphis",
-        "notes": "",
-      }
-    ],
-    "vehicles": [
-      {
-        "id": 1,
-        "company": "NSS",
-        "vehNumber": "5601",
-        "type": "MC",
-        "capacity": 56,
-        "isADA": false
-      },
-      {
-        "id": 2,
-        "company": "Anchor",
-        "vehNumber": "117",
-        "type": "mini",
-        "capacity": 25,
-        "isADA": true
-      },
-      {
-        "id": 3,
-        "company": "Grayline",
-        "vehNumber": "38",
-        "type": "MC",
-        "capacity": 55,
-        "isADA": false
-      },
-      {
-        "id": 4,
-        "company": "Kitty Baby Express",
-        "vehNumber": "8504",
-        "type": "Double Decker",
-        "capacity": 85,
-        "isADA": true
-      },
-      {
-        "id": 5,
-        "company": "Kitty Baby Express",
-        "vehNumber": "L17",
-        "type": "Limo",
-        "capacity": 13,
-        "isADA": false
-      }
-    ],
-    "routes": [
-      {
-        "id": 1,
-        "date": "2020-04-07",
-        "number": 1,
-        "color": "red",
-        "name": "Omni",
-        "numOfVehNeeded": 6
-      },
-      {
-        "id": 2,
-        "date": "2020-04-07",
-        "number": 2,
-        "color": "blue",
-        "name": "Hyatt",
-        "numOfVehNeeded": 5
-      },
-      {
-        "id": 3,
-        "date": "2020-04-07",
-        "number": 3,
-        "color": "yellow",
-        "name": "Sheraton",
-        "numOfVehNeeded": 4
-      },
-      {
-        "id": 4,
-        "date": "2020-04-08",
-        "number": 1,
-        "color": "red",
-        "name": "Omni",
-        "numOfVehNeeded": 4
-      },
-      {
-        "id": 5,
-        "date": "2020-04-08",
-        "number": 2,
-        "color": "blue",
-        "name": "Hyatt",
-        "numOfVehNeeded": 3
-      },
-      {
-        "id": 5,
-        "date": "2020-04-08",
-        "number": 3,
-        "color": "yellow",
-        "name": "Sheraton",
-        "numOfVehNeeded": 3
-      }
-    ],
-    "assignments": [
-      {
-        "id": 1,
-        "startTime": "08:00",
-        "endTime": "17:00",
-        "driverId": 1,
-        "vehicleId": 1,
-        "routeId": 1
-      },
-      {
-        "id": 2,
-        "startTime": "06:00",
-        "endTime": "14:00",
-        "driverId": 2,
-        "vehicleId": 2,
-        "routeId": 3
-      },
-      {
-        "id": 3,
-        "startTime": "08:00",
-        "endTime": "17:00",
-        "driverId": 3,
-        "vehicleId": 3,
-        "routeId": 5
-      },
-      {
-        "id": 4,
-        "startTime": "08:00",
-        "endTime": "17:00",
-        "driverId": 4,
-        "vehicleId": 4,
-        "routeId": 2
-      },
-      {
-        "id": 5,
-        "startTime": "08:00",
-        "endTime": "17:00",
-        "driverId": 5,
-        "vehicleId": 5,
-        "routeId": 2
-      },
-      {
-        "id": 6,
-        "startTime": "08:00",
-        "endTime": "17:00",
-        "driverId": 1,
-        "vehicleId": 1,
-        "routeId": 4
-      },
-      {
-        "id": 7,
-        "startTime": "08:00",
-        "endTime": "17:00",
-        "driverId": 2,
-        "vehicleId": 2,
-        "routeId": 6
-      }
-    ]
+  "drivers": [
+    {
+      "id": 1,
+      "name": "Andy Collins",
+      "phoneNumber": "615-420-3000",
+      "fromCity": "Columbia",
+      "notes": ""
+    },
+    {
+      "id": 2,
+      "name": "Bryan Nilsen",
+      "phoneNumber": "718-420-3000",
+      "fromCity": "New York City",
+      "notes": ""
+    },
+    {
+      "id": 3,
+      "name": "Kristen Norris",
+      "phoneNumber": "615-420-8088",
+      "fromCity": "Nashville",
+      "notes": ""
+    },
+    {
+      "id": 4,
+      "name": "Kitty Baby",
+      "phoneNumber": "615-CAT-LYFE",
+      "fromCity": "Heaven",
+      "notes": ""
+    },
+    {
+      "id": 5,
+      "name": "Duffyson",
+      "phoneNumber": "615-Lafy-tafy",
+      "fromCity": "Memphis",
+      "notes": ""
+    },
+    {
+      "name": "Larry David",
+      "phoneNumber": "123-234-3456",
+      "fromCity": "LA",
+      "notes": "Asshole",
+      "id": 6
+    },
+    {
+      "name": "asldkfj",
+      "phoneNumber": "sldkfj",
+      "fromCity": "sldkfj",
+      "notes": "sldkfj",
+      "id": 7
+    },
+    {
+      "name": "erirwiu",
+      "phoneNumber": "poipoip",
+      "fromCity": "poi",
+      "notes": "poiopi",
+      "id": 8
+    },
+    {
+      "name": "tyrye",
+      "phoneNumber": "trerte",
+      "fromCity": "tretre",
+      "notes": "tretre",
+      "id": 9
+    },
+    {
+      "name": "098098",
+      "phoneNumber": "098009",
+      "fromCity": "098098",
+      "notes": "908098",
+      "id": 10
+    },
+    {
+      "name": "675567",
+      "phoneNumber": "67556",
+      "fromCity": "657567",
+      "notes": "657567",
+      "id": 11
+    },
+    {
+      "name": "mnnm",
+      "phoneNumber": "mnnmnm",
+      "fromCity": "mnmn",
+      "notes": "mnmn",
+      "id": 12
+    },
+    {
+      "name": "Al",
+      "phoneNumber": "won't answer",
+      "fromCity": "NOLA",
+      "notes": "slushies",
+      "id": 13
+    },
+    {
+      "name": "wqqwqw",
+      "phoneNumber": "qwqw",
+      "fromCity": "q",
+      "notes": "qw",
+      "id": 14
+    },
+    {
+      "name": "ppp",
+      "phoneNumber": "ppp",
+      "fromCity": "ppp",
+      "notes": "ppp",
+      "id": 15
+    },
+    {
+      "name": "oo",
+      "phoneNumber": "ooo",
+      "fromCity": "ooo",
+      "notes": "oo",
+      "id": 16
+    },
+    {
+      "name": "iii",
+      "phoneNumber": "iii",
+      "fromCity": "iii",
+      "notes": "iii",
+      "id": 17
+    },
+    {
+      "name": "uuu",
+      "phoneNumber": "uuu",
+      "fromCity": "uuu",
+      "notes": "uuu",
+      "id": 18
+    },
+    {
+      "name": "www",
+      "phoneNumber": "www",
+      "fromCity": "www",
+      "notes": "www",
+      "id": 19
+    },
+    {
+      "name": "yy",
+      "phoneNumber": "yy",
+      "fromCity": "yy",
+      "notes": "yy",
+      "id": 20
+    },
+    {
+      "name": "tt",
+      "phoneNumber": "tt",
+      "fromCity": "tt",
+      "notes": "tt",
+      "id": 21
+    },
+    {
+      "name": "00",
+      "phoneNumber": "00",
+      "fromCity": "00",
+      "notes": "00",
+      "id": 22
+    },
+    {
+      "name": "99",
+      "phoneNumber": "99",
+      "fromCity": "99",
+      "notes": "99",
+      "id": 23
+    }
+  ],
+  "vehicles": [
+    {
+      "id": 1,
+      "company": "NSS",
+      "vehNumber": "5601",
+      "type": "MC",
+      "capacity": 56,
+      "isADA": false
+    },
+    {
+      "id": 2,
+      "company": "Anchor",
+      "vehNumber": "117",
+      "type": "mini",
+      "capacity": 25,
+      "isADA": true
+    },
+    {
+      "id": 3,
+      "company": "Grayline",
+      "vehNumber": "38",
+      "type": "MC",
+      "capacity": 55,
+      "isADA": false
+    },
+    {
+      "id": 4,
+      "company": "Kitty Baby Express",
+      "vehNumber": "8504",
+      "type": "Double Decker",
+      "capacity": 85,
+      "isADA": true
+    },
+    {
+      "id": 5,
+      "company": "Kitty Baby Express",
+      "vehNumber": "L17",
+      "type": "Limo",
+      "capacity": 13,
+      "isADA": false
+    },
+    {
+      "name": "Andy",
+      "phoneNumber": "123",
+      "fromCity": "Nash",
+      "notes": "What a guy",
+      "id": 6
+    },
+    {
+      "company": "Seinfeld Tours",
+      "vehNumber": "201",
+      "type": "mini",
+      "capacity": "24",
+      "isADA": "true",
+      "id": 7
+    },
+    {
+      "company": "lkdsjf",
+      "vehNumber": "sldkfj",
+      "type": "lsdkfj",
+      "capacity": "lsdkfj",
+      "isADA": "",
+      "id": 8
+    },
+    {
+      "company": "poiopi",
+      "vehNumber": "poipoi",
+      "type": "opipoi",
+      "capacity": "poiopi",
+      "isADA": "",
+      "id": 9
+    },
+    {
+      "company": "rtetre",
+      "vehNumber": "rterte",
+      "type": "rtetre",
+      "capacity": "tretre",
+      "isADA": "",
+      "id": 10
+    },
+    {
+      "company": "098098",
+      "vehNumber": "90809890",
+      "type": "0980909",
+      "capacity": "098098",
+      "isADA": "",
+      "id": 11
+    },
+    {
+      "company": "65567",
+      "vehNumber": "65657",
+      "type": "756576",
+      "capacity": "657576",
+      "isADA": "",
+      "id": 12
+    },
+    {
+      "company": "mnmn",
+      "vehNumber": "mnmnnm",
+      "type": "mnmn",
+      "capacity": "mnmn",
+      "isADA": "yes",
+      "id": 13
+    },
+    {
+      "company": "STS",
+      "vehNumber": "100",
+      "type": "Miatta",
+      "capacity": "1",
+      "isADA": "false",
+      "id": 14
+    },
+    {
+      "company": "qw",
+      "vehNumber": "wqqwqw",
+      "type": "w",
+      "capacity": "qw",
+      "isADA": "",
+      "id": 15
+    },
+    {
+      "company": "ppp",
+      "vehNumber": "ppp",
+      "type": "ppp",
+      "capacity": "ppp",
+      "isADA": "false",
+      "id": 16
+    },
+    {
+      "company": "oo",
+      "vehNumber": "oo",
+      "type": "oo",
+      "capacity": "oo",
+      "isADA": "false",
+      "id": 17
+    },
+    {
+      "company": "iii",
+      "vehNumber": "iii",
+      "type": "iii",
+      "capacity": "iii",
+      "isADA": "true",
+      "id": 18
+    },
+    {
+      "company": "uuu",
+      "vehNumber": "uuu",
+      "type": "uuu",
+      "capacity": "uuu",
+      "isADA": "true",
+      "id": 19
+    },
+    {
+      "company": "www",
+      "vehNumber": "www",
+      "type": "www",
+      "capacity": "www",
+      "isADA": "true",
+      "id": 20
+    },
+    {
+      "company": "yy",
+      "vehNumber": "yy",
+      "type": "yy",
+      "capacity": "yy",
+      "isADA": "true",
+      "id": 21
+    },
+    {
+      "company": "tt",
+      "vehNumber": "tt",
+      "type": "tt",
+      "capacity": "tt",
+      "isADA": "true",
+      "id": 22
+    },
+    {
+      "company": "00",
+      "vehNumber": "00",
+      "type": "00",
+      "capacity": "00",
+      "isADA": "true",
+      "id": 23
+    },
+    {
+      "company": "99",
+      "vehNumber": "99",
+      "type": "99",
+      "capacity": "99",
+      "isADA": "true",
+      "id": 24
+    }
+  ],
+  "routes": [
+    {
+      "id": 1,
+      "number": 1,
+      "color": "red",
+      "name": "Omni",
+      "numOfVehNeeded": 6
+    },
+    {
+      "id": 2,
+      "number": 2,
+      "color": "blue",
+      "name": "Hyatt",
+      "numOfVehNeeded": 5
+    },
+    {
+      "id": 3,
+      "number": 3,
+      "color": "yellow",
+      "name": "Sheraton",
+      "numOfVehNeeded": 4
+    },
+    {
+      "id": 4,
+      "number": 1,
+      "color": "red",
+      "name": "Omni",
+      "numOfVehNeeded": 4
+    },
+    {
+      "id": 5,
+      "number": 2,
+      "color": "blue",
+      "name": "Hyatt",
+      "numOfVehNeeded": 3
+    },
+    {
+      "id": 6,
+      "number": 3,
+      "color": "yellow",
+      "name": "Sheraton",
+      "numOfVehNeeded": 3
+    }
+  ],
+  "assignments": [
+    {
+      "id": 1,
+      "date": "2020-04-09",
+      "startTime": "08:00",
+      "endTime": "17:00",
+      "driverId": 1,
+      "vehicleId": 1,
+      "routeId": 1
+    },
+    {
+      "id": 2,
+      "date": "2020-04-07",
+      "startTime": "06:00",
+      "endTime": "14:00",
+      "driverId": 2,
+      "vehicleId": 2,
+      "routeId": 3
+    },
+    {
+      "id": 3,
+      "date": "2020-04-07",
+      "startTime": "08:00",
+      "endTime": "17:00",
+      "driverId": 3,
+      "vehicleId": 3,
+      "routeId": 5
+    },
+    {
+      "id": 4,
+      "date": "2020-04-07",
+      "startTime": "08:00",
+      "endTime": "17:00",
+      "driverId": 4,
+      "vehicleId": 4,
+      "routeId": 2
+    },
+    {
+      "id": 5,
+      "date": "2020-04-08",
+      "startTime": "08:00",
+      "endTime": "17:00",
+      "driverId": 5,
+      "vehicleId": 5,
+      "routeId": 2
+    },
+    {
+      "id": 6,
+      "date": "2020-04-08",
+      "startTime": "08:00",
+      "endTime": "17:00",
+      "driverId": 1,
+      "vehicleId": 1,
+      "routeId": 4
+    },
+    {
+      "id": 7,
+      "date": "2020-04-08",
+      "startTime": "08:00",
+      "endTime": "17:00",
+      "driverId": 2,
+      "vehicleId": 2,
+      "routeId": 6
+    },
+    {
+      "date": "2020-03-17T15:23:25.247Z",
+      "startTime": "08:00",
+      "endTime": "20:00",
+      "routeId": "2",
+      "id": 8
+    }
+  ]
 }
