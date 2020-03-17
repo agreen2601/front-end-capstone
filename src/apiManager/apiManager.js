@@ -6,10 +6,20 @@ export default {
       result.json()
     );
   },
-  getDriver(id) {
-    return fetch(`${remoteURL}/drivers/${id}`).then(result =>
+  getType(type) {
+    return fetch(`${remoteURL}/${type}`).then(result =>
       result.json()
     );
+  },
+  getSingleItem(type, id) {
+    return fetch(`${remoteURL}/${type}/${id}`).then(result =>
+      result.json()
+    );
+  },
+  getRoutesWithAssignments(id) {
+    return fetch(`${remoteURL}/routes/${id}?_embed=assignments`).then(result =>
+        result.json()
+      );
   },
   addDriver(newDriver) {
     return fetch(`${remoteURL}/drivers`, {

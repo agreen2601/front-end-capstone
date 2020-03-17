@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
-import { Redirect } from "react-router-dom";
+import AssignmentCard from "./AssignmentCard"
+// import { Redirect } from "react-router-dom";
 // import { Link } from "react-router-dom";
 // import apiManager from "./apiManager/apiManager";
 
@@ -24,25 +25,28 @@ const RouteCard = routeCardProps => {
   //     );
   // }, []);
 
-  let isVehADA = "ADA Error";
+//   let isVehADA = "ADA Error";
 
-  const isADA = () => {
-    if (routeCardProps.assignment.vehicle.isADA == true) {
-      isVehADA = "ADA accesible";
-    } else {
-      isVehADA = "";
-    }
-  };
-  isADA();
+//   const isADA = () => {
+//     if (routeCardProps.assignment.vehicle.isADA === true) {
+//       isVehADA = "ADA accesible";
+//     } else {
+//       isVehADA = "";
+//     }
+//   };
+//   isADA();
 
-  let routeStyle = {
-      color: routeCardProps.assignment.route.color,
-      fontSize: "larger"
-  }
+//   let routeStyle = {
+//       color: routeCardProps.assignment.route.color,
+//       fontSize: "larger"
+//   }
+
+//   console.log(routeCardProps.assignment)
 
   return (
     <>
-      <span style={routeStyle}>{routeCardProps.assignment.route.number} </span>
+    <div>Route Card</div>
+      {/* <span style={routeStyle}>{routeCardProps.assignment.route.number} </span>
       <span>{routeCardProps.assignment.date} </span>
       <br></br>
       <span>{routeCardProps.assignment.driver.name} </span>
@@ -55,7 +59,7 @@ const RouteCard = routeCardProps => {
       <span>{isVehADA}</span>
       <br></br>
       <span>{routeCardProps.assignment.startTime} - </span>
-      <span>{routeCardProps.assignment.endTime}</span>
+      <span>{routeCardProps.assignment.endTime}</span> */}
 
       <hr></hr>
     </>

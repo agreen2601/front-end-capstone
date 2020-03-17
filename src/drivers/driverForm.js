@@ -15,16 +15,7 @@ const DriverForm = driverFormProps => {
     vehNumber: "",
     type: "",
     capacity: "",
-    isADA: ""
-  });
-
-  const [assignment, setAssignment] = useState({
-    date: new Date,
-    startTime: "",
-    endTime: "",
-    driverId: driver.id,
-    vehicleId: vehicle.id,
-    routeId: ""
+    isADA: false
   });
 
   const handleDriverChange = event => {
@@ -39,34 +30,17 @@ const DriverForm = driverFormProps => {
     setVehicle(stateToChange);
   };
 
-  const handleAssignmentChange = event => {
-    const stateToChange = { ...assignment };
-    stateToChange[event.target.id] = event.target.value;
-    setAssignment(stateToChange);
-  };
-
-  const getThisDriver = () => {
-    return apiManager.getDriver(driver.id).then(thisDriver => {
-        console.log(thisDriver);
-    });
-};
-
   const submit = () => {
     apiManager.addDriver(driver);
-    apiManager.addVehicle(vehicle);
-    apiManager
-      .addAssignment(assignment)
-      .then(() => driverFormProps.history.push("/home"))
-      .then(console.log("driver", driver))
-      .then(console.log("assignment", assignment))
-      getThisDriver();
+    apiManager.addVehicle(vehicle)
+      .then(() => driverFormProps.history.push("/assignment/form"));
   };
 
   return (
     <>
       <form>
         <fieldset>
-
+            
           <label>Driver Name: </label>
           <input
             type="text"
@@ -159,28 +133,6 @@ const DriverForm = driverFormProps => {
             value="false"
             defaultChecked
           />
-          <br></br>
-
-          <label>Route</label>
-          <select id="routeId" onChange={handleAssignmentChange}>
-            <option value="1">Route 1</option>
-            <option value="2">Route 2</option>
-            <option value="3">Route 3</option>
-          </select>
-          <br></br>
-
-          <label>Start Time</label>
-          <input 
-            type="time"
-            onChange={handleAssignmentChange}
-            id="startTime" />
-          <br></br>
-
-          <label>End Time</label>
-          <input 
-            type="time"
-            onChange={handleAssignmentChange}
-            id="endTime" />
           <br></br>
 
           <button type="button" onClick={submit}>

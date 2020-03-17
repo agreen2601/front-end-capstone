@@ -43,123 +43,11 @@
       "id": 6
     },
     {
-      "name": "asldkfj",
-      "phoneNumber": "sldkfj",
-      "fromCity": "sldkfj",
-      "notes": "sldkfj",
+      "name": "George Constanza",
+      "phoneNumber": "718-234-5678`",
+      "fromCity": "NYC",
+      "notes": "chronic liar",
       "id": 7
-    },
-    {
-      "name": "erirwiu",
-      "phoneNumber": "poipoip",
-      "fromCity": "poi",
-      "notes": "poiopi",
-      "id": 8
-    },
-    {
-      "name": "tyrye",
-      "phoneNumber": "trerte",
-      "fromCity": "tretre",
-      "notes": "tretre",
-      "id": 9
-    },
-    {
-      "name": "098098",
-      "phoneNumber": "098009",
-      "fromCity": "098098",
-      "notes": "908098",
-      "id": 10
-    },
-    {
-      "name": "675567",
-      "phoneNumber": "67556",
-      "fromCity": "657567",
-      "notes": "657567",
-      "id": 11
-    },
-    {
-      "name": "mnnm",
-      "phoneNumber": "mnnmnm",
-      "fromCity": "mnmn",
-      "notes": "mnmn",
-      "id": 12
-    },
-    {
-      "name": "Al",
-      "phoneNumber": "won't answer",
-      "fromCity": "NOLA",
-      "notes": "slushies",
-      "id": 13
-    },
-    {
-      "name": "wqqwqw",
-      "phoneNumber": "qwqw",
-      "fromCity": "q",
-      "notes": "qw",
-      "id": 14
-    },
-    {
-      "name": "ppp",
-      "phoneNumber": "ppp",
-      "fromCity": "ppp",
-      "notes": "ppp",
-      "id": 15
-    },
-    {
-      "name": "oo",
-      "phoneNumber": "ooo",
-      "fromCity": "ooo",
-      "notes": "oo",
-      "id": 16
-    },
-    {
-      "name": "iii",
-      "phoneNumber": "iii",
-      "fromCity": "iii",
-      "notes": "iii",
-      "id": 17
-    },
-    {
-      "name": "uuu",
-      "phoneNumber": "uuu",
-      "fromCity": "uuu",
-      "notes": "uuu",
-      "id": 18
-    },
-    {
-      "name": "www",
-      "phoneNumber": "www",
-      "fromCity": "www",
-      "notes": "www",
-      "id": 19
-    },
-    {
-      "name": "yy",
-      "phoneNumber": "yy",
-      "fromCity": "yy",
-      "notes": "yy",
-      "id": 20
-    },
-    {
-      "name": "tt",
-      "phoneNumber": "tt",
-      "fromCity": "tt",
-      "notes": "tt",
-      "id": 21
-    },
-    {
-      "name": "00",
-      "phoneNumber": "00",
-      "fromCity": "00",
-      "notes": "00",
-      "id": 22
-    },
-    {
-      "name": "99",
-      "phoneNumber": "99",
-      "fromCity": "99",
-      "notes": "99",
-      "id": 23
     }
   ],
   "vehicles": [
@@ -204,13 +92,6 @@
       "isADA": false
     },
     {
-      "name": "Andy",
-      "phoneNumber": "123",
-      "fromCity": "Nash",
-      "notes": "What a guy",
-      "id": 6
-    },
-    {
       "company": "Seinfeld Tours",
       "vehNumber": "201",
       "type": "mini",
@@ -219,140 +100,12 @@
       "id": 7
     },
     {
-      "company": "lkdsjf",
-      "vehNumber": "sldkfj",
-      "type": "lsdkfj",
-      "capacity": "lsdkfj",
-      "isADA": "",
+      "company": "Seinfeld Tours",
+      "vehNumber": "21",
+      "type": "SUV",
+      "capacity": "5",
+      "isADA": false,
       "id": 8
-    },
-    {
-      "company": "poiopi",
-      "vehNumber": "poipoi",
-      "type": "opipoi",
-      "capacity": "poiopi",
-      "isADA": "",
-      "id": 9
-    },
-    {
-      "company": "rtetre",
-      "vehNumber": "rterte",
-      "type": "rtetre",
-      "capacity": "tretre",
-      "isADA": "",
-      "id": 10
-    },
-    {
-      "company": "098098",
-      "vehNumber": "90809890",
-      "type": "0980909",
-      "capacity": "098098",
-      "isADA": "",
-      "id": 11
-    },
-    {
-      "company": "65567",
-      "vehNumber": "65657",
-      "type": "756576",
-      "capacity": "657576",
-      "isADA": "",
-      "id": 12
-    },
-    {
-      "company": "mnmn",
-      "vehNumber": "mnmnnm",
-      "type": "mnmn",
-      "capacity": "mnmn",
-      "isADA": "yes",
-      "id": 13
-    },
-    {
-      "company": "STS",
-      "vehNumber": "100",
-      "type": "Miatta",
-      "capacity": "1",
-      "isADA": "false",
-      "id": 14
-    },
-    {
-      "company": "qw",
-      "vehNumber": "wqqwqw",
-      "type": "w",
-      "capacity": "qw",
-      "isADA": "",
-      "id": 15
-    },
-    {
-      "company": "ppp",
-      "vehNumber": "ppp",
-      "type": "ppp",
-      "capacity": "ppp",
-      "isADA": "false",
-      "id": 16
-    },
-    {
-      "company": "oo",
-      "vehNumber": "oo",
-      "type": "oo",
-      "capacity": "oo",
-      "isADA": "false",
-      "id": 17
-    },
-    {
-      "company": "iii",
-      "vehNumber": "iii",
-      "type": "iii",
-      "capacity": "iii",
-      "isADA": "true",
-      "id": 18
-    },
-    {
-      "company": "uuu",
-      "vehNumber": "uuu",
-      "type": "uuu",
-      "capacity": "uuu",
-      "isADA": "true",
-      "id": 19
-    },
-    {
-      "company": "www",
-      "vehNumber": "www",
-      "type": "www",
-      "capacity": "www",
-      "isADA": "true",
-      "id": 20
-    },
-    {
-      "company": "yy",
-      "vehNumber": "yy",
-      "type": "yy",
-      "capacity": "yy",
-      "isADA": "true",
-      "id": 21
-    },
-    {
-      "company": "tt",
-      "vehNumber": "tt",
-      "type": "tt",
-      "capacity": "tt",
-      "isADA": "true",
-      "id": 22
-    },
-    {
-      "company": "00",
-      "vehNumber": "00",
-      "type": "00",
-      "capacity": "00",
-      "isADA": "true",
-      "id": 23
-    },
-    {
-      "company": "99",
-      "vehNumber": "99",
-      "type": "99",
-      "capacity": "99",
-      "isADA": "true",
-      "id": 24
     }
   ],
   "routes": [
@@ -379,23 +132,23 @@
     },
     {
       "id": 4,
-      "number": 1,
-      "color": "red",
-      "name": "Omni",
+      "number": 4,
+      "color": "green",
+      "name": "Marriott",
       "numOfVehNeeded": 4
     },
     {
       "id": 5,
-      "number": 2,
-      "color": "blue",
-      "name": "Hyatt",
+      "number": 5,
+      "color": "orange",
+      "name": "Hilton",
       "numOfVehNeeded": 3
     },
     {
       "id": 6,
-      "number": 3,
-      "color": "yellow",
-      "name": "Sheraton",
+      "number": 6,
+      "color": "purple",
+      "name": "Double Tree",
       "numOfVehNeeded": 3
     }
   ],
@@ -406,7 +159,7 @@
       "startTime": "08:00",
       "endTime": "17:00",
       "driverId": 1,
-      "vehicleId": 1,
+      "vehicleId": 2,
       "routeId": 1
     },
     {
@@ -415,7 +168,7 @@
       "startTime": "06:00",
       "endTime": "14:00",
       "driverId": 2,
-      "vehicleId": 2,
+      "vehicleId": 3,
       "routeId": 3
     },
     {
@@ -424,7 +177,7 @@
       "startTime": "08:00",
       "endTime": "17:00",
       "driverId": 3,
-      "vehicleId": 3,
+      "vehicleId": 4,
       "routeId": 5
     },
     {
@@ -433,7 +186,7 @@
       "startTime": "08:00",
       "endTime": "17:00",
       "driverId": 4,
-      "vehicleId": 4,
+      "vehicleId": 5,
       "routeId": 2
     },
     {
@@ -442,7 +195,7 @@
       "startTime": "08:00",
       "endTime": "17:00",
       "driverId": 5,
-      "vehicleId": 5,
+      "vehicleId": 4,
       "routeId": 2
     },
     {
@@ -460,15 +213,26 @@
       "startTime": "08:00",
       "endTime": "17:00",
       "driverId": 2,
-      "vehicleId": 2,
+      "vehicleId": 7,
       "routeId": 6
     },
     {
-      "date": "2020-03-17T15:23:25.247Z",
+      "date": "2020-03-17T20:12:31.126Z",
       "startTime": "08:00",
       "endTime": "20:00",
-      "routeId": "2",
+      "driverId": 1,
+      "vehicleId": 1,
+      "routeId": 1,
       "id": 8
+    },
+    {
+      "date": "2020-03-17T20:13:42.749Z",
+      "startTime": "09:00",
+      "endTime": "19:00",
+      "driverId": 4,
+      "vehicleId": 4,
+      "routeId": 4,
+      "id": 9
     }
   ]
 }

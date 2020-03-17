@@ -5,7 +5,7 @@ import apiManager from "./apiManager/apiManager";
 const RouteList = routeListProps => {
     const [assignments, setAssignments] = useState([]);
 
-    const getAndSortAssigmnets = () => {
+    const getAndSortAssignmets = () => {
         return apiManager.getAssignments().then(assignmentsFromAPI => {
             assignmentsFromAPI.sort((a,b) => new Date(a.date) -new Date(b.date));
             setAssignments(assignmentsFromAPI);
@@ -13,8 +13,10 @@ const RouteList = routeListProps => {
     };
 
 useEffect(() => {
-    getAndSortAssigmnets();
+    getAndSortAssignmets();
 }, []);
+
+console.log(assignments[0])
 
     return (
         <>

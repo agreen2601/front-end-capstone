@@ -1,23 +1,23 @@
 import { Route, Redirect } from "react-router-dom";
 import React from "react";
-import Home from "./home/home";
+// import Home from "./home/home";
 import DriverForm from "./drivers/driverForm";
-import VehicleForm from "./vehicleForm"
+import AssignmentForm from "./assignmentForm"
 import RouteList from "./RouteList";
 
 const AppViews = appViewsProps => {
-  const hasUser = appViewsProps.hasUser;
-  const setUser = appViewsProps.setUser;
+//   const hasUser = appViewsProps.hasUser;
+//   const setUser = appViewsProps.setUser;
 
   return (
     <>
-      {/* <Route
+    <Route
         exact
         path="/home"
         render={appViewsProps => {
-          return <Home />;
+          return <RouteList {...appViewsProps} />;
         }}
-      /> */}
+      />
       <Route
         exact
         path="/driver/form"
@@ -27,9 +27,9 @@ const AppViews = appViewsProps => {
       />
       <Route
         exact
-        path="/home"
+        path="/assignment/form"
         render={appViewsProps => {
-          return <RouteList {...appViewsProps} />;
+          return <AssignmentForm {...appViewsProps} />;
         }}
       />
     </>

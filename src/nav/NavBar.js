@@ -18,7 +18,7 @@ const NavBar = navBarProps => {
                   <Link to="/driver/form"> Add New Driver </Link>
               </li>
               <li>
-                  <Link to="/vehicleForm"> Add New Vehicle </Link>
+                  <Link to="/assignment/form"> Create New Assignment </Link>
               </li>
               <li>
                 <span onClick={handleLogout}> Logout </span>
