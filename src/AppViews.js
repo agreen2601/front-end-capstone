@@ -4,6 +4,8 @@ import React from "react";
 import DriverForm from "./drivers/driverForm";
 import AssignmentForm from "./assignmentForm"
 import RouteList from "./RouteList";
+import DriverList from "./drivers/driversList"
+import DateList from "./RoutesByDate";
 
 const AppViews = appViewsProps => {
 //   const hasUser = appViewsProps.hasUser;
@@ -20,6 +22,13 @@ const AppViews = appViewsProps => {
       />
       <Route
         exact
+        path="/driver/list"
+        render={appViewsProps => {
+          return <DriverList {...appViewsProps} />;
+        }}
+      />
+      <Route
+        exact
         path="/driver/form"
         render={appViewsProps => {
           return <DriverForm {...appViewsProps} />;
@@ -30,6 +39,13 @@ const AppViews = appViewsProps => {
         path="/assignment/form"
         render={appViewsProps => {
           return <AssignmentForm {...appViewsProps} />;
+        }}
+      />
+      <Route
+        exact
+        path="/dates"
+        render={appViewsProps => {
+          return <DateList {...appViewsProps} />;
         }}
       />
     </>

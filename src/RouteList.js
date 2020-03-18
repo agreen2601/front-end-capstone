@@ -5,8 +5,8 @@ import apiManager from "./apiManager/apiManager";
 const RouteList = routeListProps => {
   const [routes, setRoutes] = useState([]);
 
-  const getRoutes = () => {
-    apiManager.getRoutesWithAssignments().then(APIResult => {
+  const getRoutes = (type) => {
+    apiManager.getTypeWithAssignments(type).then(APIResult => {
       setRoutes(APIResult);
     });
   };
@@ -16,13 +16,11 @@ const RouteList = routeListProps => {
   }, []);
 
   return (
-    <>
-      <div>
-        {routes.map(route => (
-          <RouteCard key={route.id} route={route} {...routeListProps} />
-        ))}
-      </div>
-    </>
+    <div className="route_card">
+      {routes.map(route => (
+        <RouteCard key={route.id} route={route} {...routeListProps} />
+      ))}
+    </div>
   );
 };
 

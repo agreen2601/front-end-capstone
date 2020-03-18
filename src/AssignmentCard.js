@@ -26,7 +26,7 @@ const AssignmentCard = assignmentCardProps => {
 
   const isADA = () => {
     if (vehicle.isADA === true) {
-      isVehADA = "ADA accesible";
+      isVehADA = "ADA";
     } else {
       isVehADA = "";
     }
@@ -35,17 +35,26 @@ const AssignmentCard = assignmentCardProps => {
 
   return (
     <>
-      <span>{driver.name} </span>
-      <span>{driver.phoneNumber} </span>
-      <span>{vehicle.company} </span>
-      <span>{vehicle.vehNumber}</span>
-      <br></br>
-      <span>{vehicle.capacity} pax </span>
-      <span>{isVehADA} </span>
-      <span>{(assignmentCardProps.assignment.date).split("T", 1)} </span>
-      <span>{assignmentCardProps.assignment.startTime} - </span>
-      <span>{assignmentCardProps.assignment.endTime}</span>
-      <hr></hr>
+      <section className="driver_info">
+        <div>
+        <span>
+              {assignmentCardProps.assignment.date.split("-").splice(1).join("-").split("T")[0]}{" "}
+            </span>
+          <div>
+            <span>{driver.name} {'\u00A0'} </span>
+            <span className="driver_phone_number">{driver.phoneNumber} {'\u00A0'}{'\u00A0'}</span>
+            <span>{assignmentCardProps.assignment.endTime} </span>
+          </div>
+          <div>
+            <span>{vehicle.vehNumber} </span>
+            <span className="bold_driver_info">{vehicle.company} {'\u00A0'} </span>
+            <span>{vehicle.capacity} pax </span>
+            <span className="bold_driver_info">{vehicle.type} {'\u00A0'} </span>
+            <span>{assignmentCardProps.assignment.startTime} - </span>
+            <span className="is_ada">{isVehADA} </span>
+          </div>
+        </div>
+      </section>
     </>
   );
 };

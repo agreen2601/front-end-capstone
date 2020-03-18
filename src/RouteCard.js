@@ -5,31 +5,40 @@ import AssignmentCard from "./AssignmentCard";
 const RouteCard = routeCardProps => {
   const [assignments, setAssignments] = useState([]);
 
-  const getRoutesInfo = id => {
-    apiManager.getRoutesWithId(id).then(APIResult => {
+  const getRoutesInfo = (type, id) => {
+    apiManager.getTypeWithId(type, id).then(APIResult => {
       setAssignments(APIResult.assignments);
     });
   };
 
   useEffect(() => {
-    getRoutesInfo(routeCardProps.route.id);
+    getRoutesInfo("routes", routeCardProps.route.id);
   }, []);
 
-  let routeStyle = {
+  const routeStyle = {
     color: routeCardProps.route.color,
-    fontSize: "larger"
+    fontSize: "larger",
+    fontWeight: 600,
+    marginRight: "30px"
+  };
+
+  const routeBorder = {
+    borderColor: routeCardProps.route.color
   };
 
   return (
-    <>
-      <div style={routeStyle}>{routeCardProps.route.number} </div>
+    <div style={routeBorder} className="route_border">
+      <span style={routeStyle}>Route {routeCardProps.route.number} </span>
+      <span>
+        {assignments.length} assigned -{" "}
+        {routeCardProps.route.numOfVehNeeded - assignments.length} needed
+      </span>
       <div>
         {assignments.map(assignment => (
           <AssignmentCard key={assignment.id} assignment={assignment} />
         ))}
       </div>
-      <hr></hr>
-    </>
+    </div>
   );
 };
 

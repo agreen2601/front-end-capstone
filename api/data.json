@@ -44,10 +44,24 @@
     },
     {
       "name": "George Constanza",
-      "phoneNumber": "718-234-5678`",
+      "phoneNumber": "718-234-5678",
       "fromCity": "NYC",
       "notes": "chronic liar",
       "id": 7
+    },
+    {
+      "name": "Coco",
+      "phoneNumber": "lil-pup-4lyf",
+      "fromCity": "Nashville",
+      "notes": "cutie",
+      "id": 8
+    },
+    {
+      "name": "Charlie",
+      "phoneNumber": "615-212-2394",
+      "fromCity": "Nashville",
+      "notes": "",
+      "id": 9
     }
   ],
   "vehicles": [
@@ -79,8 +93,8 @@
       "id": 4,
       "company": "Kitty Baby Express",
       "vehNumber": "8504",
-      "type": "Double Decker",
-      "capacity": 85,
+      "type": "MC",
+      "capacity": 55,
       "isADA": true
     },
     {
@@ -106,50 +120,94 @@
       "capacity": "5",
       "isADA": false,
       "id": 8
+    },
+    {
+      "company": "Dog Squad",
+      "vehNumber": "K-9",
+      "type": "MC",
+      "capacity": "46",
+      "isADA": "true",
+      "id": 9
+    },
+    {
+      "company": "Dog Squad",
+      "vehNumber": "300",
+      "type": "mini",
+      "capacity": "24",
+      "isADA": false,
+      "id": 10
     }
   ],
   "routes": [
     {
       "id": 1,
       "number": 1,
-      "color": "red",
+      "color": "rgba(200, 0, 0)",
       "name": "Omni",
       "numOfVehNeeded": 6
     },
     {
       "id": 2,
       "number": 2,
-      "color": "blue",
+      "color": "rgba(0, 0, 220)",
       "name": "Hyatt",
       "numOfVehNeeded": 5
     },
     {
       "id": 3,
       "number": 3,
-      "color": "yellow",
+      "color": "rgba(225, 225, 0)",
       "name": "Sheraton",
       "numOfVehNeeded": 4
     },
     {
       "id": 4,
       "number": 4,
-      "color": "green",
+      "color": "rgba(0, 140, 0)",
       "name": "Marriott",
       "numOfVehNeeded": 4
     },
     {
       "id": 5,
       "number": 5,
-      "color": "orange",
+      "color": "rgba(240, 120, 0)",
       "name": "Hilton",
       "numOfVehNeeded": 3
     },
     {
       "id": 6,
       "number": 6,
-      "color": "purple",
+      "color": "rgba(105, 0, 210)",
       "name": "Double Tree",
       "numOfVehNeeded": 3
+    },
+    {
+      "id": 7,
+      "number": 7,
+      "color": "rgba(220, 64, 216)",
+      "name": "JW",
+      "numOfVehNeeded": 2
+    },
+    {
+      "id": 8,
+      "number": 8,
+      "color": "rgba(65, 198, 224)",
+      "name": "Courtyard",
+      "numOfVehNeeded": 7
+    },
+    {
+      "id": 9,
+      "number": 9,
+      "color": "rgba(166, 232, 35)",
+      "name": "Springhill",
+      "numOfVehNeeded": 4
+    },
+    {
+      "id": 10,
+      "number": 10,
+      "color": "rgba(145, 145, 145)",
+      "name": "HGI",
+      "numOfVehNeeded": 5
     }
   ],
   "assignments": [
@@ -251,6 +309,69 @@
       "vehicleId": 7,
       "routeId": 5,
       "id": 11
+    },
+    {
+      "date": "2020-03-18T05:03:04.761Z",
+      "startTime": "05:00",
+      "endTime": "20:00",
+      "driverId": 8,
+      "vehicleId": 9,
+      "routeId": 3,
+      "id": 12
+    },
+    {
+      "date": "2020-03-18T07:28:29.601Z",
+      "startTime": "",
+      "endTime": "",
+      "driverId": 9,
+      "vehicleId": 10,
+      "routeId": 3,
+      "id": 13
+    },
+    {
+      "date": "2020-03-18T07:30:33.161Z",
+      "startTime": "",
+      "endTime": "",
+      "driverId": 1,
+      "vehicleId": 1,
+      "routeId": 7,
+      "id": 14
+    },
+    {
+      "date": "2020-03-18T07:32:36.386Z",
+      "startTime": "",
+      "endTime": "",
+      "driverId": 3,
+      "vehicleId": 3,
+      "routeId": 6,
+      "id": 15
+    },
+    {
+      "date": "2020-03-18T07:32:47.301Z",
+      "startTime": "",
+      "endTime": "",
+      "driverId": 7,
+      "vehicleId": 8,
+      "routeId": 7,
+      "id": 16
+    },
+    {
+      "date": "2020-03-18T07:32:56.153Z",
+      "startTime": "",
+      "endTime": "",
+      "driverId": 5,
+      "vehicleId": 7,
+      "routeId": 9,
+      "id": 17
+    },
+    {
+      "date": "2020-03-18T18:53:28.964Z",
+      "startTime": "",
+      "endTime": "",
+      "driverId": 4,
+      "vehicleId": 5,
+      "routeId": 8,
+      "id": 18
     }
   ]
 }

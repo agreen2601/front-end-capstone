@@ -16,13 +16,13 @@ export default {
       result.json()
     );
   },
-  getRoutesWithAssignments() {
-    return fetch(`${remoteURL}/routes/?_embed=assignments`).then(result =>
+  getTypeWithAssignments(type) {
+    return fetch(`${remoteURL}/${type}/?_embed=assignments`).then(result =>
         result.json()
       );
   },
-  getRoutesWithId(id) {
-    return fetch(`${remoteURL}/routes/${id}?_embed=assignments`).then(result =>
+  getTypeWithId(type, id) {
+    return fetch(`${remoteURL}/${type}/${id}?_embed=assignments`).then(result =>
         result.json()
       );
   },

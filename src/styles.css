@@ -1,0 +1,56 @@
+.driver_form {
+  font-size: large;
+  display: flex;
+  line-height: 1.5em;
+  justify-content: space-evenly;
+}
+
+.bold_driver_info {
+  font-weight: 600;
+}
+
+.route_card {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.route_border {
+  border: solid;
+  flex: 1 0 0;
+  min-width: 305px;
+  margin-top: 10px;
+  margin-right: 10px;
+  padding-left: 4px;
+  padding-bottom: 5px;
+}
+
+.driver_info {
+  margin-top: 10px;
+  line-height: 1.4em;
+}
+
+.driver_phone_number {
+  color: blue;
+  font-weight: 600;
+}
+
+.is_ada {
+  color: red;
+}
+
+.nav_links_container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav_links {
+  margin-right: 10px;
+}
+
+header {
+  text-align: center;
+}
+
+nav {
+  margin-bottom: 10px;
+}

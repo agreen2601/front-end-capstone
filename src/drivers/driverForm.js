@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import apiManager from "../apiManager/apiManager";
+import "../styles.css"
 
 const DriverForm = driverFormProps => {
-
+  
   const [driver, setDriver] = useState({
     name: "",
     phoneNumber: "",
@@ -39,84 +40,83 @@ const DriverForm = driverFormProps => {
   return (
     <>
       <form>
-        <fieldset>
-            
+        <fieldset className="driver_form">
+
+          <div>
           <label>Driver Name: </label>
           <input
             type="text"
             required
             onChange={handleDriverChange}
             id="name"
-            placeholder="Driver Name"
           />
-          <br></br>
+          </div>
 
-          <label>Phone Number: </label>
+          <div>
+            <label>Phone Number: </label>
           <input
             type="text"
             required
             onChange={handleDriverChange}
             id="phoneNumber"
-            placeholder="Phone Number"
           />
-          <br></br>
+          </div>
 
-          <label>From City: </label>
+          <div>
+            <label>From City: </label>
           <input
             type="text"
             required
             onChange={handleDriverChange}
             id="fromCity"
-            placeholder="From City"
           />
-          <br></br>
+          </div>
 
-          <label>Notes: </label>
+          
+          <div><label>Notes: </label>
           <input
             type="text"
             onChange={handleDriverChange}
             id="notes"
-            placeholder="Notes"
           />
-          <br></br>
 
-          <label>Company: </label>
+          <div>
+            <label>Company: </label>
           <input
             type="text"
             onChange={handleVehicleChange}
             id="company"
-            placeholder="Company"
           />
-          <br></br>
+          </div>
 
-          <label>Vehicle Number: </label>
+          <div>
+            <label>Vehicle Number: </label>
           <input
             type="text"
             onChange={handleVehicleChange}
             id="vehNumber"
-            placeholder="Vehicle Number"
           />
-          <br></br>
+          </div>
 
           <label>Vehicle Type: </label>
           <input
             type="text"
             onChange={handleVehicleChange}
             id="type"
-            placeholder="Vehicle Type"
           />
-          <br></br>
+          </div>
 
-          <label>Capacity: </label>
+          <div>
+            <label>Capacity: </label>
           <input
             type="text"
             onChange={handleVehicleChange}
             id="capacity"
-            placeholder="Capacity"
           />
-          <br></br>
+          </div>
 
-          <label>ADA accesible? Yes</label>
+          <div>
+            <label>ADA accesible? Yes</label>
           <input
             type="radio"
             name="ADA"
@@ -133,7 +133,7 @@ const DriverForm = driverFormProps => {
             value="false"
             defaultChecked
           />
-          <br></br>
+          </div>
 
           <button type="button" onClick={submit}>
             Submit
