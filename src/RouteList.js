@@ -3,34 +3,27 @@ import RouteCard from "./RouteCard";
 import apiManager from "./apiManager/apiManager";
 
 const RouteList = routeListProps => {
-    const [assignments, setAssignments] = useState([]);
+  const [routes, setRoutes] = useState([]);
 
-    const getAndSortAssignmets = () => {
-        return apiManager.getAssignments().then(assignmentsFromAPI => {
-            assignmentsFromAPI.sort((a,b) => new Date(a.date) -new Date(b.date));
-            setAssignments(assignmentsFromAPI);
-        });
-    };
+  const getRoutes = () => {
+    apiManager.getRoutesWithAssignments().then(APIResult => {
+      setRoutes(APIResult);
+    });
+  };
 
-useEffect(() => {
-    getAndSortAssignmets();
-}, []);
+  useEffect(() => {
+    getRoutes("routes");
+  }, []);
 
-console.log(assignments[0])
-
-    return (
-        <>
-          <div>
-              {assignments.map(assignment => (
-                  <RouteCard
-                  key={assignment.id}
-                  assignment={assignment}
-                  {...routeListProps}
-                  />
-              ))}
-          </div>
-        </>
-    )
+  return (
+    <>
+      <div>
+        {routes.map(route => (
+          <RouteCard key={route.id} route={route} {...routeListProps} />
+        ))}
+      </div>
+    </>
+  );
 };
 
-export default RouteList
+export default RouteList;

@@ -16,7 +16,12 @@ export default {
       result.json()
     );
   },
-  getRoutesWithAssignments(id) {
+  getRoutesWithAssignments() {
+    return fetch(`${remoteURL}/routes/?_embed=assignments`).then(result =>
+        result.json()
+      );
+  },
+  getRoutesWithId(id) {
     return fetch(`${remoteURL}/routes/${id}?_embed=assignments`).then(result =>
         result.json()
       );

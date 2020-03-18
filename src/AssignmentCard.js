@@ -1,33 +1,31 @@
-import React, { useEffect } from "react";
-// import { Redirect } from "react-router-dom";
-// import { Link } from "react-router-dom";
-// import apiManager from "./apiManager/apiManager";
+import React, { useEffect, useState } from "react";
+import apiManager from "./apiManager/apiManager";
 
 const AssignmentCard = assignmentCardProps => {
-  // const [driver, setDriver] = useState({});
-  // const [routes, setRoutes] = useState([]);
+  const [driver, setDriver] = useState([]);
+  const [vehicle, setVehicle] = useState([]);
 
-  // const getAssign = id => {
-  //     apiManager.getDriverRoute(assignmentCardProps.match.params.driverId).then(
-  //         APIResult => {
-  //             setDriver(APIResult);
-  //         }
-  //     );
-  // };
+  const getDriver = (type, id) => {
+    apiManager.getSingleItem(type, id).then(APIResult => {
+      setDriver(APIResult);
+    });
+  };
 
-  // useEffect(() => {
-  //     apiManager.getDriverRoute(assignmentCardProps.match.params.driverId).then(
-  //         APIResult => {
-  //             setDriver(APIResult);
-  //             setRoutes(APIResult.routes);
-  //         }
-  //     );
-  // }, []);
+  const getVehicle = (type, id) => {
+    apiManager.getSingleItem(type, id).then(APIResult => {
+      setVehicle(APIResult);
+    });
+  };
+
+  useEffect(() => {
+    getDriver("drivers", assignmentCardProps.assignment.driverId);
+    getVehicle("vehicles", assignmentCardProps.assignment.vehicleId);
+  }, []);
 
   let isVehADA = "ADA Error";
 
   const isADA = () => {
-    if (assignmentCardProps.assignment.vehicle.isADA === true) {
+    if (vehicle.isADA === true) {
       isVehADA = "ADA accesible";
     } else {
       isVehADA = "";
@@ -35,30 +33,18 @@ const AssignmentCard = assignmentCardProps => {
   };
   isADA();
 
-  let routeStyle = {
-      color: assignmentCardProps.assignment.route.color,
-      fontSize: "larger"
-  }
-
-  console.log(assignmentCardProps.assignment)
-
   return (
     <>
-      <span style={routeStyle}>{assignmentCardProps.assignment.route.number} </span>
-      <span>{assignmentCardProps.assignment.date} </span>
+      <span>{driver.name} </span>
+      <span>{driver.phoneNumber} </span>
+      <span>{vehicle.company} </span>
+      <span>{vehicle.vehNumber}</span>
       <br></br>
-      <span>{assignmentCardProps.assignment.driver.name} </span>
-      <span>{assignmentCardProps.assignment.driver.phoneNumber} </span>
-      <br></br>
-      <span>{assignmentCardProps.assignment.vehicle.company} </span>
-      <span>{assignmentCardProps.assignment.vehicle.vehNumber} </span>
-      <br></br>
-      <span>{assignmentCardProps.assignment.vehicle.capacity} pax </span>
-      <span>{isVehADA}</span>
-      <br></br>
+      <span>{vehicle.capacity} pax </span>
+      <span>{isVehADA} </span>
+      <span>{(assignmentCardProps.assignment.date).split("T", 1)} </span>
       <span>{assignmentCardProps.assignment.startTime} - </span>
       <span>{assignmentCardProps.assignment.endTime}</span>
-
       <hr></hr>
     </>
   );

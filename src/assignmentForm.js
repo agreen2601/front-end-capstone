@@ -99,6 +99,10 @@ const AssignmentForm = assignmentFormProps => {
           <input type="time" onChange={handleAssignmentChange} id="endTime" />
           <br></br>
 
+          <label>Date </label>
+          <input type="date" onChange={handleAssignmentChange} id="date" />
+          <br></br>
+
           <button type="button" onClick={submit}>
             Submit
           </button>

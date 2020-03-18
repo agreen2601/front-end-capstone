@@ -1,66 +1,33 @@
-import React, { useEffect } from "react";
-import AssignmentCard from "./AssignmentCard"
-// import { Redirect } from "react-router-dom";
-// import { Link } from "react-router-dom";
-// import apiManager from "./apiManager/apiManager";
+import React, { useEffect, useState } from "react";
+import apiManager from "./apiManager/apiManager";
+import AssignmentCard from "./AssignmentCard";
 
 const RouteCard = routeCardProps => {
-  // const [driver, setDriver] = useState({});
-  // const [routes, setRoutes] = useState([]);
+  const [assignments, setAssignments] = useState([]);
 
-  // const getAssign = id => {
-  //     apiManager.getDriverRoute(routeCardProps.match.params.driverId).then(
-  //         APIResult => {
-  //             setDriver(APIResult);
-  //         }
-  //     );
-  // };
+  const getRoutesInfo = id => {
+    apiManager.getRoutesWithId(id).then(APIResult => {
+      setAssignments(APIResult.assignments);
+    });
+  };
 
-  // useEffect(() => {
-  //     apiManager.getDriverRoute(routeCardProps.match.params.driverId).then(
-  //         APIResult => {
-  //             setDriver(APIResult);
-  //             setRoutes(APIResult.routes);
-  //         }
-  //     );
-  // }, []);
+  useEffect(() => {
+    getRoutesInfo(routeCardProps.route.id);
+  }, []);
 
-//   let isVehADA = "ADA Error";
-
-//   const isADA = () => {
-//     if (routeCardProps.assignment.vehicle.isADA === true) {
-//       isVehADA = "ADA accesible";
-//     } else {
-//       isVehADA = "";
-//     }
-//   };
-//   isADA();
-
-//   let routeStyle = {
-//       color: routeCardProps.assignment.route.color,
-//       fontSize: "larger"
-//   }
-
-//   console.log(routeCardProps.assignment)
+  let routeStyle = {
+    color: routeCardProps.route.color,
+    fontSize: "larger"
+  };
 
   return (
     <>
-    <div>Route Card</div>
-      {/* <span style={routeStyle}>{routeCardProps.assignment.route.number} </span>
-      <span>{routeCardProps.assignment.date} </span>
-      <br></br>
-      <span>{routeCardProps.assignment.driver.name} </span>
-      <span>{routeCardProps.assignment.driver.phoneNumber} </span>
-      <br></br>
-      <span>{routeCardProps.assignment.vehicle.company} </span>
-      <span>{routeCardProps.assignment.vehicle.vehNumber} </span>
-      <br></br>
-      <span>{routeCardProps.assignment.vehicle.capacity} pax </span>
-      <span>{isVehADA}</span>
-      <br></br>
-      <span>{routeCardProps.assignment.startTime} - </span>
-      <span>{routeCardProps.assignment.endTime}</span> */}
-
+      <div style={routeStyle}>{routeCardProps.route.number} </div>
+      <div>
+        {assignments.map(assignment => (
+          <AssignmentCard key={assignment.id} assignment={assignment} />
+        ))}
+      </div>
       <hr></hr>
     </>
   );
