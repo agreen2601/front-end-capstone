@@ -2,25 +2,25 @@ import React, { useState, useEffect } from "react";
 import RouteList from "./RouteList";
 import apiManager from "./apiManager/apiManager";
 
-const DateList = dateListProps => {
+const DateList = props => {
   const [dates, setDates] = useState([]);
 
-  const getDates = () => {
-    apiManager.getAssignments().then(APIResult => {
+  const getDates = type => {
+    apiManager.getType(type).then(APIResult => {
       setDates(APIResult);
     });
   };
 
   useEffect(() => {
-    getDates();
+    getDates("dates");
   }, []);
 
   return (
     <>
       <div>Routes By Date</div>
-      <div className="route_card">
+      <div className="date_card">
         {dates.map(date => (
-          <RouteList key={date.id} date={date} {...dateListProps} />
+          <RouteList key={date.id} date={date} {...props} />
         ))}
       </div>
     </>

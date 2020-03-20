@@ -2,40 +2,45 @@ import React, { useEffect, useState } from "react";
 import apiManager from "./apiManager/apiManager";
 import AssignmentCard from "./AssignmentCard";
 
-const RouteCard = routeCardProps => {
+const RouteCard = props => {
   const [assignments, setAssignments] = useState([]);
 
-  const getRoutesInfo = (type, id) => {
-    apiManager.getTypeWithId(type, id).then(APIResult => {
-      setAssignments(APIResult.assignments);
+  const getAssignments = (id) => {
+    apiManager.getAssignmentsByDateExpanded(id).then(APIResult => {
+      setAssignments(APIResult);
     });
   };
 
   useEffect(() => {
-    getRoutesInfo("routes", routeCardProps.route.id);
+    getAssignments(props.date.id);
   }, []);
 
   const routeStyle = {
-    color: routeCardProps.route.color,
+    color: props.route.color,
     fontSize: "larger",
     fontWeight: 600,
     marginRight: "30px"
   };
 
   const routeBorder = {
-    borderColor: routeCardProps.route.color
+    borderColor: props.route.color
   };
 
   return (
     <div style={routeBorder} className="route_border">
-      <span style={routeStyle}>Route {routeCardProps.route.number} </span>
+      <span style={routeStyle}>Route {props.route.number} </span>
       <span>
         {assignments.length} assigned -{" "}
-        {routeCardProps.route.numOfVehNeeded - assignments.length} needed
+        {props.route.numOfVehNeeded - assignments.length} needed
       </span>
+      <div></div>
       <div>
         {assignments.map(assignment => (
-          <AssignmentCard key={assignment.id} assignment={assignment} />
+          <AssignmentCard
+            key={assignment.id}
+            assignment={assignment}
+            {...props}
+          />
         ))}
       </div>
     </div>
@@ -43,3 +48,13 @@ const RouteCard = routeCardProps => {
 };
 
 export default RouteCard;
+
+{/* ]<div>
+        {assignments.map(assignment => (
+          props.route.assignments.map(assignment3 => {
+            if (assignment3.dateId === assignment.dateId) {
+            return <AssignmentCard key={assignment.id} assignment={assignment} {...props} />
+            }
+          })
+        ))}
+      </div> */}

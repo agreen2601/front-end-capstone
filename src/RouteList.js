@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import RouteCard from "./RouteCard";
 import apiManager from "./apiManager/apiManager";
 
-const RouteList = routeListProps => {
+const RouteList = props => {
   const [routes, setRoutes] = useState([]);
 
-  const getRoutes = (type) => {
-    apiManager.getTypeWithAssignments(type).then(APIResult => {
+  const getRoutes = type => {
+    apiManager.getType(type).then(APIResult => {
       setRoutes(APIResult);
     });
   };
@@ -16,11 +16,14 @@ const RouteList = routeListProps => {
   }, []);
 
   return (
-    <div className="route_card">
-      {routes.map(route => (
-        <RouteCard key={route.id} route={route} {...routeListProps} />
-      ))}
-    </div>
+    <>
+      <div>{props.date.date}</div>
+      <div className="route_card">
+        {routes.map(route => (
+          <RouteCard key={route.id} route={route} {...props} />
+        ))}
+      </div>
+    </>
   );
 };
 

@@ -3,7 +3,7 @@ import apiManager from "../apiManager/apiManager";
 import "../styles.css"
 
 const DriverForm = driverFormProps => {
-  
+
   const [driver, setDriver] = useState({
     name: "",
     phoneNumber: "",
@@ -32,15 +32,15 @@ const DriverForm = driverFormProps => {
   };
 
   const submit = () => {
-    apiManager.addDriver(driver);
-    apiManager.addVehicle(vehicle)
+    apiManager.addType("drivers", driver);
+    apiManager.addType("vehicles", vehicle)
       .then(() => driverFormProps.history.push("/assignment/form"));
   };
 
   return (
     <>
       <form>
-        <fieldset className="driver_form">
+        <fieldset className="form">
 
           <div>
           <label>Driver Name: </label>

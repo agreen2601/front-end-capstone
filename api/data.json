@@ -62,6 +62,20 @@
       "fromCity": "Nashville",
       "notes": "",
       "id": 9
+    },
+    {
+      "name": "ppp",
+      "phoneNumber": "ppp",
+      "fromCity": "ppp",
+      "notes": "ppp",
+      "id": 10
+    },
+    {
+      "name": "zxseurgdryjrhh",
+      "phoneNumber": "6565877458456",
+      "fromCity": "harre",
+      "notes": "35555555yst",
+      "id": 11
     }
   ],
   "vehicles": [
@@ -71,7 +85,7 @@
       "vehNumber": "5601",
       "type": "MC",
       "capacity": 56,
-      "isADA": false
+      "isADA": ""
     },
     {
       "id": 2,
@@ -79,7 +93,7 @@
       "vehNumber": "117",
       "type": "mini",
       "capacity": 25,
-      "isADA": true
+      "isADA": "ADA"
     },
     {
       "id": 3,
@@ -87,7 +101,7 @@
       "vehNumber": "38",
       "type": "MC",
       "capacity": 55,
-      "isADA": false
+      "isADA": ""
     },
     {
       "id": 4,
@@ -95,7 +109,7 @@
       "vehNumber": "8504",
       "type": "MC",
       "capacity": 55,
-      "isADA": true
+      "isADA": "ADA"
     },
     {
       "id": 5,
@@ -103,14 +117,14 @@
       "vehNumber": "L17",
       "type": "Limo",
       "capacity": 13,
-      "isADA": false
+      "isADA": ""
     },
     {
       "company": "Seinfeld Tours",
       "vehNumber": "201",
       "type": "mini",
       "capacity": "24",
-      "isADA": "true",
+      "isADA": "ADA",
       "id": 7
     },
     {
@@ -118,7 +132,7 @@
       "vehNumber": "21",
       "type": "SUV",
       "capacity": "5",
-      "isADA": false,
+      "isADA": "",
       "id": 8
     },
     {
@@ -126,7 +140,7 @@
       "vehNumber": "K-9",
       "type": "MC",
       "capacity": "46",
-      "isADA": "true",
+      "isADA": "ADA",
       "id": 9
     },
     {
@@ -134,8 +148,24 @@
       "vehNumber": "300",
       "type": "mini",
       "capacity": "24",
-      "isADA": false,
+      "isADA": "",
       "id": 10
+    },
+    {
+      "company": "ppp",
+      "vehNumber": "ppp",
+      "type": "ppp",
+      "capacity": "ppp",
+      "isADA": "",
+      "id": 11
+    },
+    {
+      "company": "ytggttfffdffffff",
+      "vehNumber": "3333344444442221111",
+      "type": "truck",
+      "capacity": "99",
+      "isADA": "",
+      "id": 12
     }
   ],
   "routes": [
@@ -208,170 +238,96 @@
       "color": "rgba(145, 145, 145)",
       "name": "HGI",
       "numOfVehNeeded": 5
+    },
+    {
+      "number": 11,
+      "color": "brown",
+      "name": "Hutton",
+      "numOfVehNeeded": "4",
+      "id": 11
+    },
+    {
+      "number": 12,
+      "color": "black",
+      "name": "Springhill",
+      "numOfVehNeeded": "3",
+      "id": 12
+    },
+    {
+      "number": 13,
+      "color": "lightskyblue",
+      "name": "Lowes",
+      "numOfVehNeeded": "6",
+      "id": 13
+    }
+  ],
+  "dates": [
+    {
+      "id": 1,
+      "date": "2020-03-18"
+    },
+    {
+      "id": 2,
+      "date": "2020-03-19"
+    },
+    {
+      "id": 3,
+      "date": "2020-03-20"
+    },
+    {
+      "id": 4,
+      "date": "2020-03-21"
+    },
+    {
+      "id": 5,
+      "date": "2020-03-22"
     }
   ],
   "assignments": [
     {
       "id": 1,
-      "date": "2020-04-09",
       "startTime": "08:00",
       "endTime": "17:00",
       "driverId": 1,
       "vehicleId": 2,
-      "routeId": 1
+      "routeId": 3,
+      "dateId": 1
     },
     {
       "id": 2,
-      "date": "2020-04-07",
       "startTime": "06:00",
       "endTime": "14:00",
       "driverId": 2,
       "vehicleId": 3,
-      "routeId": 3
+      "routeId": 4,
+      "dateId": 2
     },
     {
       "id": 3,
-      "date": "2020-04-07",
       "startTime": "08:00",
       "endTime": "17:00",
       "driverId": 3,
       "vehicleId": 4,
-      "routeId": 5
+      "routeId": 5,
+      "dateId": 3
     },
     {
       "id": 4,
-      "date": "2020-04-07",
       "startTime": "08:00",
       "endTime": "17:00",
       "driverId": 4,
       "vehicleId": 5,
-      "routeId": 2
+      "routeId": 6,
+      "dateId": 4
     },
     {
       "id": 5,
-      "date": "2020-04-08",
       "startTime": "08:00",
       "endTime": "17:00",
       "driverId": 5,
-      "vehicleId": 4,
-      "routeId": 2
-    },
-    {
-      "id": 6,
-      "date": "2020-04-08",
-      "startTime": "08:00",
-      "endTime": "17:00",
-      "driverId": 1,
-      "vehicleId": 1,
-      "routeId": 4
-    },
-    {
-      "id": 7,
-      "date": "2020-04-08",
-      "startTime": "08:00",
-      "endTime": "17:00",
-      "driverId": 2,
       "vehicleId": 7,
-      "routeId": 6
-    },
-    {
-      "date": "2020-03-17T20:12:31.126Z",
-      "startTime": "08:00",
-      "endTime": "20:00",
-      "driverId": 1,
-      "vehicleId": 1,
-      "routeId": 1,
-      "id": 8
-    },
-    {
-      "date": "2020-03-17T20:13:42.749Z",
-      "startTime": "09:00",
-      "endTime": "19:00",
-      "driverId": 4,
-      "vehicleId": 4,
-      "routeId": 4,
-      "id": 9
-    },
-    {
-      "date": "2020-03-17T22:19:04.321Z",
-      "startTime": "05:00",
-      "endTime": "19:00",
-      "driverId": 3,
-      "vehicleId": 4,
-      "routeId": 3,
-      "id": 10
-    },
-    {
-      "date": "2020-03-17T22:19:30.165Z",
-      "startTime": "09:00",
-      "endTime": "19:00",
-      "driverId": 6,
-      "vehicleId": 7,
-      "routeId": 5,
-      "id": 11
-    },
-    {
-      "date": "2020-03-18T05:03:04.761Z",
-      "startTime": "05:00",
-      "endTime": "20:00",
-      "driverId": 8,
-      "vehicleId": 9,
-      "routeId": 3,
-      "id": 12
-    },
-    {
-      "date": "2020-03-18T07:28:29.601Z",
-      "startTime": "",
-      "endTime": "",
-      "driverId": 9,
-      "vehicleId": 10,
-      "routeId": 3,
-      "id": 13
-    },
-    {
-      "date": "2020-03-18T07:30:33.161Z",
-      "startTime": "",
-      "endTime": "",
-      "driverId": 1,
-      "vehicleId": 1,
       "routeId": 7,
-      "id": 14
-    },
-    {
-      "date": "2020-03-18T07:32:36.386Z",
-      "startTime": "",
-      "endTime": "",
-      "driverId": 3,
-      "vehicleId": 3,
-      "routeId": 6,
-      "id": 15
-    },
-    {
-      "date": "2020-03-18T07:32:47.301Z",
-      "startTime": "",
-      "endTime": "",
-      "driverId": 7,
-      "vehicleId": 8,
-      "routeId": 7,
-      "id": 16
-    },
-    {
-      "date": "2020-03-18T07:32:56.153Z",
-      "startTime": "",
-      "endTime": "",
-      "driverId": 5,
-      "vehicleId": 7,
-      "routeId": 9,
-      "id": 17
-    },
-    {
-      "date": "2020-03-18T18:53:28.964Z",
-      "startTime": "",
-      "endTime": "",
-      "driverId": 4,
-      "vehicleId": 5,
-      "routeId": 8,
-      "id": 18
+      "dateId": 5
     }
   ]
 }

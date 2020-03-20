@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import apiManager from "./apiManager/apiManager";
+import "./styles.css";
 
 const AssignmentForm = assignmentFormProps => {
   const [assignment, setAssignment] = useState({
-    date: new Date(),
     startTime: "",
     endTime: "",
     driverId: 1,
@@ -60,48 +60,53 @@ const AssignmentForm = assignmentFormProps => {
   return (
     <>
       <form>
-        <fieldset>
-          <label>Driver </label>
-          <select id="driverId" onChange={handleAssignmentChange}>
-            {drivers.map(driver => (
-              <option key={driver.id} value={driver.id}>
-                {driver.name}
-              </option>
-            ))}
-          </select>
-          <br></br>
+        <fieldset className="form">
+          <div>
+            <label>Driver: </label>
+            <select id="driverId" onChange={handleAssignmentChange}>
+              {drivers.map(driver => (
+                <option key={driver.id} value={driver.id}>
+                  {driver.name}
+                </option>
+              ))}
+            </select>
+          </div>
 
-          <label>Vehicle </label>
-          <select id="vehicleId" onChange={handleAssignmentChange}>
-            {vehicles.map(vehicle => (
-              <option key={vehicle.id} value={vehicle.id}>
-                {vehicle.company} {vehicle.vehNumber}
-              </option>
-            ))}
-          </select>
-          <br></br>
+          <div>
+            <label>Vehicle: </label>
+            <select id="vehicleId" onChange={handleAssignmentChange}>
+              {vehicles.map(vehicle => (
+                <option key={vehicle.id} value={vehicle.id}>
+                  {vehicle.company} {vehicle.vehNumber}
+                </option>
+              ))}
+            </select>
+          </div>
 
-          <label>Route </label>
-          <select id="routeId" onChange={handleAssignmentChange}>
-            {routes.map(route => (
-              <option key={route.id} value={route.id}>
-                {route.number}
-              </option>
-            ))}
-          </select>
-          <br></br>
+          <div>
+            <label>Route: </label>
+            <select id="routeId" onChange={handleAssignmentChange}>
+              {routes.map(route => (
+                <option key={route.id} value={route.id}>
+                  {route.number}
+                </option>
+              ))}
+            </select>
+          </div>
 
-          <label>Start Time </label>
-          <input type="time" onChange={handleAssignmentChange} id="startTime" />
-          <br></br>
+          <div>
+            <label>Start Time: </label>
+            <input
+              type="time"
+              onChange={handleAssignmentChange}
+              id="startTime"
+            />
+          </div>
 
-          <label>End Time </label>
-          <input type="time" onChange={handleAssignmentChange} id="endTime" />
-          <br></br>
-
-          <label>Date </label>
-          <input type="date" onChange={handleAssignmentChange} id="date" />
-          <br></br>
+          <div>
+            <label>End Time: </label>
+            <input type="time" onChange={handleAssignmentChange} id="endTime" />
+          </div>
 
           <button type="button" onClick={submit}>
             Submit
