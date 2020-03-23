@@ -1,14 +1,12 @@
-import React, { useState } from "react";
-import apiManager from "./apiManager/apiManager";
-import "./styles.css";
+import React, { useState } from "../../node_modules/react";
+import apiManager from "../apiManager/apiManager";
 
 const RouteForm = routeFormProps => {
   const [route, setRoute] = useState({
     number: "",
     color: "",
     name: "",
-    numOfVehNeeded: "",
-    date: ""
+    numOfVehNeeded: ""
   });
 
   const handleRouteChange = event => {
@@ -22,14 +20,14 @@ const RouteForm = routeFormProps => {
   };
 
   const submit = () => {
-    apiManager
-      .addType("routes", route)
+    apiManager.addType("routes", route)
       .then(() => routeFormProps.history.push("/assignment/form"));
   };
 
   return (
     <>
       <form>
+        <h3>Create New Route</h3>
         <fieldset className="form">
           <div className="form_child">
             <label>Route Number: </label>
@@ -63,11 +61,6 @@ const RouteForm = routeFormProps => {
               onChange={handleRouteChange}
               id="numOfVehNeeded"
             />
-          </div>
-
-          <div className="form_child">
-            <label>Date: </label>
-            <input type="date" onChange={handleRouteChange} id="date" />
           </div>
 
           <button type="button" onClick={submit}>

@@ -15,7 +15,7 @@ const EventTranspoManager = () => {
   const clearUser = () => {
     sessionStorage.clear();
     setHasUser(isAuthenticated());
-  }
+  };
 
   return (
     <>

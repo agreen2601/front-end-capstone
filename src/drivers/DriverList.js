@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
-import DriverCard from "./driverCard";
+import DriverCard from "./DriverCard";
 import apiManager from "../apiManager/apiManager";
 
-const DriverList = driverListProps => {
+const DriverList = props => {
   const [drivers, setDrivers] = useState([]);
 
   const getDrivers = (type) => {
-    apiManager.getTypeWithAssignments(type).then(APIResult => {
+    apiManager.getType(type).then(APIResult => {
+      APIResult.sort((a, b) => a.name.localeCompare(b.name));
       setDrivers(APIResult);
     });
   };
@@ -18,7 +19,7 @@ const DriverList = driverListProps => {
   return (
     <div className="driver_card">
       {drivers.map(driver => (
-        <DriverCard key={driver.id} driver={driver} {...driverListProps} />
+        <DriverCard key={driver.id} driver={driver} {...props} />
       ))}
     </div>
   );

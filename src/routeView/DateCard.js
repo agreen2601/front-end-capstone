@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "../../node_modules/react";
 import RouteCard from "./RouteCard";
-import apiManager from "./apiManager/apiManager";
+import apiManager from "../apiManager/apiManager";
 
-const RouteList = props => {
+const DateCard = props => {
   const [routes, setRoutes] = useState([]);
 
   const getRoutes = type => {
     apiManager.getType(type).then(APIResult => {
+      APIResult.sort((a, b) => (a.number > b.number ? 1 : -1));
       setRoutes(APIResult);
     });
   };
@@ -17,7 +18,6 @@ const RouteList = props => {
 
   return (
     <>
-      <div>{props.date.date}</div>
       <div className="route_card">
         {routes.map(route => (
           <RouteCard key={route.id} route={route} {...props} />
@@ -27,4 +27,4 @@ const RouteList = props => {
   );
 };
 
-export default RouteList;
+export default DateCard;

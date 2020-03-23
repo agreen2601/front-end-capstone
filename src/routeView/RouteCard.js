@@ -1,18 +1,35 @@
-import React, { useEffect, useState } from "react";
-import apiManager from "./apiManager/apiManager";
+import React, { useEffect, useState } from "../../node_modules/react";
+import apiManager from "../apiManager/apiManager";
 import AssignmentCard from "./AssignmentCard";
 
 const RouteCard = props => {
   const [assignments, setAssignments] = useState([]);
+  const [date, setDate] = useState([]);
 
-  const getAssignments = (id) => {
-    apiManager.getAssignmentsByDateExpanded(id).then(APIResult => {
+
+  const getAssignments = (dateId, routeId) => {
+    apiManager.getAssignmentsByDateRoute(dateId, routeId).then(APIResult => {
       setAssignments(APIResult);
     });
   };
 
+  const getDate = (type, id) => {
+    apiManager.getTypeWithId(type, id).then(APIResult => {
+      setDate(APIResult);
+    });
+  };
+  
+  const removeAssignment = (type, id, dateId, routeId) => {
+    apiManager.deleteTypeWithId(type, id).then(() =>
+      apiManager.getAssignmentsByDateRoute(dateId, routeId).then(APIResult => {
+        setAssignments(APIResult);
+      })
+    );
+  };
+
   useEffect(() => {
-    getAssignments(props.date.id);
+    getAssignments(props.date.id, props.route.id);
+    getDate("dates", props.date.id)
   }, []);
 
   const routeStyle = {
@@ -33,12 +50,12 @@ const RouteCard = props => {
         {assignments.length} assigned -{" "}
         {props.route.numOfVehNeeded - assignments.length} needed
       </span>
-      <div></div>
       <div>
         {assignments.map(assignment => (
           <AssignmentCard
             key={assignment.id}
             assignment={assignment}
+            removeAssignment={removeAssignment}
             {...props}
           />
         ))}
@@ -48,13 +65,3 @@ const RouteCard = props => {
 };
 
 export default RouteCard;
-
-{/* ]<div>
-        {assignments.map(assignment => (
-          props.route.assignments.map(assignment3 => {
-            if (assignment3.dateId === assignment.dateId) {
-            return <AssignmentCard key={assignment.id} assignment={assignment} {...props} />
-            }
-          })
-        ))}
-      </div> */}

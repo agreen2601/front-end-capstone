@@ -57,11 +57,11 @@
       "id": 8
     },
     {
+      "id": 9,
       "name": "Charlie",
       "phoneNumber": "615-212-2394",
       "fromCity": "Nashville",
-      "notes": "",
-      "id": 9
+      "notes": ""
     },
     {
       "name": "ppp",
@@ -76,6 +76,97 @@
       "fromCity": "harre",
       "notes": "35555555yst",
       "id": 11
+    },
+    {
+      "id": 12,
+      "name": "Chet Hansfield",
+      "phoneNumber": "324-216-3456",
+      "fromCity": "",
+      "notes": ""
+    },
+    {
+      "id": 13,
+      "name": "Ted Danson",
+      "phoneNumber": "452-943-1264",
+      "fromCity": "LA",
+      "notes": ""
+    },
+    {
+      "name": "harre and arden",
+      "phoneNumber": "874576545474332565666666",
+      "fromCity": "harrearde",
+      "notes": "ghgdfghfghfgdhfhdgfggfgfggfggfry",
+      "id": 15
+    },
+    {
+      "name": "diarrhea planet",
+      "phoneNumber": "1234567890123467902445555556",
+      "fromCity": "nashville",
+      "notes": "757565786yittgry57y686uiigh",
+      "id": 16
+    },
+    {
+      "id": 17,
+      "name": "Jonathan Kennedy",
+      "phoneNumber": "504-952-6231",
+      "fromCity": "New Orleans",
+      "notes": ""
+    },
+    {
+      "id": 18,
+      "name": "Andrew Green",
+      "phoneNumber": "615-555-5555",
+      "fromCity": "Nashville",
+      "notes": ""
+    },
+    {
+      "name": "Cosmo Kramer",
+      "phoneNumber": "718-213-4532",
+      "fromCity": "",
+      "notes": "",
+      "id": 19
+    },
+    {
+      "name": "Jerry Seinfeld",
+      "phoneNumber": "718-2345-8347",
+      "fromCity": "NYC",
+      "notes": "",
+      "id": 20
+    },
+    {
+      "name": "Sterling Kennedy",
+      "phoneNumber": "504-542-3454",
+      "fromCity": "",
+      "notes": "",
+      "id": 21
+    },
+    {
+      "name": "Abe",
+      "phoneNumber": "615-235-9843",
+      "fromCity": "Nashville",
+      "notes": "Lil pup",
+      "id": 22
+    },
+    {
+      "name": "Elaine Benes",
+      "phoneNumber": "718-242-2385",
+      "fromCity": "NYC",
+      "notes": "Great Dancer",
+      "id": 23
+    },
+    {
+      "name": "Guy",
+      "phoneNumber": "234-234-2352",
+      "fromCity": "Place",
+      "notes": "",
+      "id": 24
+    },
+    {
+      "name": "Dude",
+      "phoneNumber": "saldkjla ",
+      "fromCity": "",
+      "notes": "",
+      "id": 25
     }
   ],
   "vehicles": [
@@ -105,16 +196,16 @@
     },
     {
       "id": 4,
-      "company": "Kitty Baby Express",
-      "vehNumber": "8504",
+      "company": "Dog Squad",
+      "vehNumber": "12",
       "type": "MC",
-      "capacity": 55,
+      "capacity": "99",
       "isADA": "ADA"
     },
     {
       "id": 5,
       "company": "Kitty Baby Express",
-      "vehNumber": "L17",
+      "vehNumber": "L13",
       "type": "Limo",
       "capacity": 13,
       "isADA": ""
@@ -144,12 +235,12 @@
       "id": 9
     },
     {
+      "id": 10,
       "company": "Dog Squad",
       "vehNumber": "300",
       "type": "mini",
       "capacity": "24",
-      "isADA": "",
-      "id": 10
+      "isADA": ""
     },
     {
       "company": "ppp",
@@ -166,6 +257,118 @@
       "capacity": "99",
       "isADA": "",
       "id": 12
+    },
+    {
+      "id": 13,
+      "company": "",
+      "vehNumber": "",
+      "type": "",
+      "capacity": "",
+      "isADA": ""
+    },
+    {
+      "id": 14,
+      "company": "Seinfeld Express",
+      "vehNumber": "132",
+      "type": "mini",
+      "capacity": "21",
+      "isADA": "ADA"
+    },
+    {
+      "company": "",
+      "vehNumber": "",
+      "type": "",
+      "capacity": "",
+      "isADA": "",
+      "id": 15
+    },
+    {
+      "company": "sarah",
+      "vehNumber": "7524950371",
+      "type": "truck",
+      "capacity": "1000000",
+      "isADA": "",
+      "id": 16
+    },
+    {
+      "company": "sarah66486857976483",
+      "vehNumber": "77767666636636636",
+      "type": "truck",
+      "capacity": "4444444444444444444",
+      "isADA": "",
+      "id": 17
+    },
+    {
+      "id": 18,
+      "company": "Kennedy Express",
+      "vehNumber": "5401",
+      "type": "MC",
+      "capacity": "46",
+      "isADA": "ADA"
+    },
+    {
+      "id": 19,
+      "company": "Green Enterprises",
+      "vehNumber": "5603",
+      "type": "MC",
+      "capacity": "",
+      "isADA": ""
+    },
+    {
+      "company": "Seinfeld Express",
+      "vehNumber": "4352",
+      "type": "",
+      "capacity": "",
+      "isADA": "",
+      "id": 20
+    },
+    {
+      "company": "Seinfeld Express",
+      "vehNumber": "5607",
+      "type": "MC",
+      "capacity": "56",
+      "isADA": "",
+      "id": 21
+    },
+    {
+      "company": "Kennedy Express",
+      "vehNumber": "5502",
+      "type": "MC",
+      "capacity": "55",
+      "isADA": "",
+      "id": 22
+    },
+    {
+      "id": 23,
+      "company": "Dog Squad",
+      "vehNumber": "2405",
+      "type": "mini",
+      "capacity": "24",
+      "isADA": ""
+    },
+    {
+      "company": "Seinfeld Express",
+      "vehNumber": "5502",
+      "type": "MC",
+      "capacity": "55",
+      "isADA": "",
+      "id": 24
+    },
+    {
+      "company": "Some People",
+      "vehNumber": "Number",
+      "type": "Bus",
+      "capacity": "1000",
+      "isADA": "ADA",
+      "id": 25
+    },
+    {
+      "company": "asldkfj",
+      "vehNumber": "39",
+      "type": "",
+      "capacity": "",
+      "isADA": "",
+      "id": 26
     }
   ],
   "routes": [
@@ -259,40 +462,64 @@
       "name": "Lowes",
       "numOfVehNeeded": "6",
       "id": 13
+    },
+    {
+      "number": 14,
+      "color": "salmon",
+      "name": "place",
+      "numOfVehNeeded": "4",
+      "id": 14
+    },
+    {
+      "number": 15,
+      "color": "orange",
+      "name": "hotel bravo",
+      "numOfVehNeeded": "3",
+      "id": 15
+    },
+    {
+      "number": 16,
+      "color": "blue",
+      "name": "",
+      "numOfVehNeeded": "4",
+      "id": 16
+    },
+    {
+      "number": 17,
+      "color": "green",
+      "name": "",
+      "numOfVehNeeded": "6",
+      "id": 17
     }
   ],
   "dates": [
     {
       "id": 1,
-      "date": "2020-03-18"
+      "date": "2020-03-18",
+      "R1Needs": 4
     },
     {
       "id": 2,
-      "date": "2020-03-19"
+      "date": "2020-03-19",
+      "R1Needs": 5
     },
     {
       "id": 3,
-      "date": "2020-03-20"
+      "date": "2020-03-20",
+      "R1Needs": 6
     },
     {
       "id": 4,
-      "date": "2020-03-21"
+      "date": "2020-03-21",
+      "R1Needs": 7
     },
     {
       "id": 5,
-      "date": "2020-03-22"
+      "date": "2020-03-22",
+      "R1Needs": 4
     }
   ],
   "assignments": [
-    {
-      "id": 1,
-      "startTime": "08:00",
-      "endTime": "17:00",
-      "driverId": 1,
-      "vehicleId": 2,
-      "routeId": 3,
-      "dateId": 1
-    },
     {
       "id": 2,
       "startTime": "06:00",
@@ -301,15 +528,6 @@
       "vehicleId": 3,
       "routeId": 4,
       "dateId": 2
-    },
-    {
-      "id": 3,
-      "startTime": "08:00",
-      "endTime": "17:00",
-      "driverId": 3,
-      "vehicleId": 4,
-      "routeId": 5,
-      "dateId": 3
     },
     {
       "id": 4,
@@ -328,6 +546,195 @@
       "vehicleId": 7,
       "routeId": 7,
       "dateId": 5
+    },
+    {
+      "startTime": "",
+      "endTime": "",
+      "driverId": 12,
+      "vehicleId": 13,
+      "routeId": 8,
+      "id": 6,
+      "dateId": 1
+    },
+    {
+      "id": 7,
+      "startTime": "",
+      "endTime": "",
+      "driverId": 3,
+      "vehicleId": 10,
+      "routeId": 8,
+      "dateId": 3
+    },
+    {
+      "id": 8,
+      "startTime": "",
+      "endTime": "",
+      "driverId": 2,
+      "vehicleId": 4,
+      "routeId": 4,
+      "dateId": 3
+    },
+    {
+      "startTime": "",
+      "endTime": "",
+      "driverId": 3,
+      "vehicleId": 4,
+      "routeId": 3,
+      "dateId": 1,
+      "id": 11
+    },
+    {
+      "startTime": "00:00",
+      "endTime": "21:00",
+      "driverId": 15,
+      "vehicleId": 16,
+      "routeId": 13,
+      "dateId": 3,
+      "id": 12
+    },
+    {
+      "startTime": "03:33",
+      "endTime": "16:04",
+      "driverId": 16,
+      "vehicleId": 17,
+      "routeId": 13,
+      "dateId": 5,
+      "id": 13
+    },
+    {
+      "startTime": "",
+      "endTime": "",
+      "driverId": 9,
+      "vehicleId": 5,
+      "routeId": 9,
+      "dateId": 3,
+      "id": 14
+    },
+    {
+      "startTime": "05:00",
+      "endTime": "18:00",
+      "driverId": 17,
+      "vehicleId": 18,
+      "routeId": 6,
+      "dateId": 3,
+      "id": 15
+    },
+    {
+      "startTime": "06:00",
+      "endTime": "20:00",
+      "driverId": 17,
+      "vehicleId": 18,
+      "routeId": 6,
+      "dateId": 4,
+      "id": 16
+    },
+    {
+      "startTime": "07:00",
+      "endTime": "17:00",
+      "driverId": 18,
+      "vehicleId": 19,
+      "routeId": 6,
+      "dateId": 4,
+      "id": 17
+    },
+    {
+      "startTime": "",
+      "endTime": "",
+      "driverId": 7,
+      "vehicleId": 8,
+      "routeId": 17,
+      "dateId": 5,
+      "id": 19
+    },
+    {
+      "startTime": "",
+      "endTime": "",
+      "driverId": 19,
+      "vehicleId": 20,
+      "routeId": 1,
+      "dateId": 1,
+      "id": 20
+    },
+    {
+      "startTime": "",
+      "endTime": "12:00",
+      "driverId": 20,
+      "vehicleId": 20,
+      "routeId": 4,
+      "dateId": 1,
+      "id": 21
+    },
+    {
+      "startTime": "",
+      "endTime": "",
+      "driverId": 21,
+      "vehicleId": 22,
+      "routeId": 2,
+      "dateId": 4,
+      "id": 22
+    },
+    {
+      "startTime": "",
+      "endTime": "",
+      "driverId": 21,
+      "vehicleId": 22,
+      "routeId": 1,
+      "dateId": 5,
+      "id": 23
+    },
+    {
+      "id": 24,
+      "startTime": "",
+      "endTime": "20:00",
+      "driverId": 1,
+      "vehicleId": 1,
+      "routeId": 3,
+      "dateId": 1
+    },
+    {
+      "id": 25,
+      "startTime": "",
+      "endTime": "",
+      "driverId": 22,
+      "vehicleId": 23,
+      "routeId": 3,
+      "dateId": 1
+    },
+    {
+      "startTime": "05:00",
+      "endTime": "18:00",
+      "driverId": 23,
+      "vehicleId": 24,
+      "routeId": 7,
+      "dateId": 1,
+      "id": 26
+    },
+    {
+      "startTime": "08:00",
+      "endTime": "17:00",
+      "driverId": 24,
+      "vehicleId": 25,
+      "routeId": 5,
+      "dateId": 3,
+      "id": 27
+    },
+    {
+      "startTime": "",
+      "endTime": "",
+      "driverId": 2,
+      "vehicleId": 23,
+      "routeId": 6,
+      "dateId": 2,
+      "id": 28
+    },
+    {
+      "startTime": "",
+      "endTime": "",
+      "driverId": 7,
+      "vehicleId": 14,
+      "routeId": 2,
+      "dateId": 1,
+      "id": 29
     }
   ]
 }

@@ -1,59 +1,78 @@
 import { Route, Redirect } from "react-router-dom";
 import React from "react";
-// import Home from "./home/home";
-import DriverForm from "./drivers/driverForm";
-import AssignmentForm from "./assignmentForm";
-import RouteForm from "./RouteForm";
-import RouteList from "./RouteList";
-import DriverList from "./drivers/driversList";
-import RoutesByDate from "./RoutesByDate";
+import Login from "./Login";
+import RouteView from "./routeView/RouteView";
+import DriverList from "./drivers/DriverList";
+import DriverForm from "./forms/DriverForm";
+import AssignmentForm from "./forms/AssignmentForm";
+import RouteForm from "./forms/RouteForm";
+import DriverEditForm from "./forms/DriverEditForm";
+import AssignmentEditForm from "./forms/AssignmentEditForm"
 
-const AppViews = appViewsProps => {
-//   const hasUser = appViewsProps.hasUser;
-//   const setUser = appViewsProps.setUser;
+const AppViews = props => {
+  const hasUser = props.hasUser;
+  const setUser = props.setUser;
 
   return (
     <>
-    <Route
+      <Route
+        exact
+        path="/login"
+        render={props => {
+          if (hasUser) {
+            return <Redirect to="/home" />;
+          } else {
+            return <Login setUser={setUser} {...props} />;
+          }
+        }}
+      />
+      <Route
         exact
         path="/home"
-        render={appViewsProps => {
-          return <RouteList {...appViewsProps} />;
+        render={props => {
+          return <RouteView {...props} />;
         }}
       />
       <Route
         exact
         path="/driver/list"
-        render={appViewsProps => {
-          return <DriverList {...appViewsProps} />;
+        render={props => {
+          return <DriverList {...props} />;
         }}
       />
       <Route
         exact
         path="/driver/form"
-        render={appViewsProps => {
-          return <DriverForm {...appViewsProps} />;
+        render={props => {
+          return <DriverForm {...props} />;
         }}
       />
       <Route
         exact
         path="/assignment/form"
-        render={appViewsProps => {
-          return <AssignmentForm {...appViewsProps} />;
+        render={props => {
+          return <AssignmentForm {...props} />;
         }}
       />
       <Route
         exact
         path="/route/form"
-        render={appViewsProps => {
-          return <RouteForm {...appViewsProps} />;
+        render={props => {
+          return <RouteForm {...props} />;
         }}
       />
       <Route
         exact
-        path="/dates"
-        render={appViewsProps => {
-          return <RoutesByDate {...appViewsProps} />;
+        path="/edit/:driverId(\d+)/:vehicleId(\d+)"
+        render={props => {
+          return <DriverEditForm {...props} />;
+        }}
+      />
+      <Route
+        exact
+        path="/edit/:assignmentId(\d+)/:dateId(\d+)/:routeId(\d+)/:driverId(\d+)/:vehicleId(\d+)"
+        render={props => {
+          return <AssignmentEditForm {...props} />;
         }}
       />
     </>
