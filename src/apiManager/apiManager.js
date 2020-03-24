@@ -31,6 +31,16 @@ export default {
       result.json()
     );
   },
+  getUsers() {
+    return fetch(`${remoteURL}/users`).then(result =>
+      result.json()
+    );
+  },
+  getFavorites(userId) {
+    return fetch(
+      `${remoteURL}/favoriteRoutes?userId=${userId}&_expand=route`
+    ).then(result => result.json());
+  },
   addType(type, newType) {
     return fetch(`${remoteURL}/${type}`, {
       method: "POST",

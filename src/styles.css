@@ -62,3 +62,17 @@
     text-decoration: underline;
     color: rgba(87, 31, 133);
   }
+
+  .create_account_button, .register_button {
+    margin-top: 5px;
+  }
+  
+  .create_account_link, .register_link {
+    text-decoration: none;
+    color: black;
+  }
+
+  .mine_button {
+    float: right;
+    margin: 2px 2px 0 0
+  }

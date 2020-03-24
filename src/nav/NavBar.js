@@ -37,9 +37,15 @@ const NavBar = props => {
           ) : null}
           {props.hasUser ? (
             <div className="nav_links">
+              <Link to="/myroutes">My Routes</Link>
+            </div>
+          ) : null}
+          {props.hasUser ? (
+            <div className="nav_links">
               <Link to="/driver/list">Driver List</Link>
             </div>
           ) : null}
+          
           <div className="nav_links">
             {props.hasUser ? (
               <div>

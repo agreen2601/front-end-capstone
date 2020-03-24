@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import NavBar from "./nav/NavBar";
 import AppViews from "./AppViews";
 
-const EventTranspoManager = () => {
+const EventTranspoManager = props => {
   const isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
-
   const [hasUser, setHasUser] = useState(isAuthenticated());
 
   const setUser = user => {
@@ -19,8 +18,8 @@ const EventTranspoManager = () => {
 
   return (
     <>
-      <NavBar hasUser={hasUser} clearUser={clearUser} />
-      <AppViews hasUser={hasUser} setUser={setUser} />
+      <NavBar hasUser={hasUser} clearUser={clearUser} {...props} />
+      <AppViews hasUser={hasUser} setUser={setUser} {...props} />
     </>
   );
 };

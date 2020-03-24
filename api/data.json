@@ -1,4 +1,58 @@
 {
+  "users": [
+    {
+      "id": 1,
+      "email": "a@a.a",
+      "password": "a"
+    },
+    {
+      "email": "b@b.b",
+      "password": "b",
+      "id": 2
+    },
+    {
+      "email": "c@c.c",
+      "password": "c",
+      "id": 3
+    }
+  ],
+  "favoriteRoutes": [
+    {
+      "id": 1,
+      "userId": 1,
+      "routeId": 3
+    },
+    {
+      "id": 1,
+      "userId": 1,
+      "routeId": 2
+    },
+    {
+      "userId": 2,
+      "routeId": 4,
+      "id": 8
+    },
+    {
+      "userId": 3,
+      "routeId": 2,
+      "id": 11
+    },
+    {
+      "userId": 3,
+      "routeId": 5,
+      "id": 12
+    },
+    {
+      "userId": 3,
+      "routeId": 4,
+      "id": 13
+    },
+    {
+      "userId": 3,
+      "routeId": 1,
+      "id": 15
+    }
+  ],
   "drivers": [
     {
       "id": 1,
@@ -127,11 +181,11 @@
       "id": 19
     },
     {
+      "id": 20,
       "name": "Jerry Seinfeld",
-      "phoneNumber": "718-2345-8347",
+      "phoneNumber": "718-234-8347",
       "fromCity": "NYC",
-      "notes": "",
-      "id": 20
+      "notes": ""
     },
     {
       "name": "Sterling Kennedy",
@@ -169,10 +223,32 @@
       "id": 25
     }
   ],
-  "vehicles": [
+  "vehVendors": [
     {
       "id": 1,
-      "company": "NSS",
+      "vendor": "NSS"
+    },
+    {
+      "id": 2,
+      "vendor": "Dog Squad"
+    },
+    {
+      "id": 3,
+      "vendor": "Kitty Baby Express"
+    },
+    {
+      "vendor": "Seinfeld Tours",
+      "id": 4
+    },
+    {
+      "vendor": "Harry's Coaches",
+      "id": 5
+    }
+  ],
+  "vehNumbers": [
+    {
+      "id": 1,
+      "vendorId": 1,
       "vehNumber": "5601",
       "type": "MC",
       "capacity": 56,
@@ -180,7 +256,7 @@
     },
     {
       "id": 2,
-      "company": "Anchor",
+      "vendorId": 1,
       "vehNumber": "117",
       "type": "mini",
       "capacity": 25,
@@ -188,7 +264,7 @@
     },
     {
       "id": 3,
-      "company": "Grayline",
+      "vendorId": 1,
       "vehNumber": "38",
       "type": "MC",
       "capacity": 55,
@@ -196,7 +272,7 @@
     },
     {
       "id": 4,
-      "company": "Dog Squad",
+      "vendorId": 2,
       "vehNumber": "12",
       "type": "MC",
       "capacity": "99",
@@ -259,28 +335,12 @@
       "id": 12
     },
     {
-      "id": 13,
-      "company": "",
-      "vehNumber": "",
-      "type": "",
-      "capacity": "",
-      "isADA": ""
-    },
-    {
       "id": 14,
       "company": "Seinfeld Express",
       "vehNumber": "132",
       "type": "mini",
       "capacity": "21",
       "isADA": "ADA"
-    },
-    {
-      "company": "",
-      "vehNumber": "",
-      "type": "",
-      "capacity": "",
-      "isADA": "",
-      "id": 15
     },
     {
       "company": "sarah",
@@ -315,12 +375,12 @@
       "isADA": ""
     },
     {
+      "id": 20,
       "company": "Seinfeld Express",
       "vehNumber": "4352",
       "type": "",
       "capacity": "",
-      "isADA": "",
-      "id": 20
+      "isADA": ""
     },
     {
       "company": "Seinfeld Express",
@@ -462,34 +522,6 @@
       "name": "Lowes",
       "numOfVehNeeded": "6",
       "id": 13
-    },
-    {
-      "number": 14,
-      "color": "salmon",
-      "name": "place",
-      "numOfVehNeeded": "4",
-      "id": 14
-    },
-    {
-      "number": 15,
-      "color": "orange",
-      "name": "hotel bravo",
-      "numOfVehNeeded": "3",
-      "id": 15
-    },
-    {
-      "number": 16,
-      "color": "blue",
-      "name": "",
-      "numOfVehNeeded": "4",
-      "id": 16
-    },
-    {
-      "number": 17,
-      "color": "green",
-      "name": "",
-      "numOfVehNeeded": "6",
-      "id": 17
     }
   ],
   "dates": [
@@ -575,15 +607,6 @@
       "dateId": 3
     },
     {
-      "startTime": "",
-      "endTime": "",
-      "driverId": 3,
-      "vehicleId": 4,
-      "routeId": 3,
-      "dateId": 1,
-      "id": 11
-    },
-    {
       "startTime": "00:00",
       "endTime": "21:00",
       "driverId": 15,
@@ -636,15 +659,6 @@
       "routeId": 6,
       "dateId": 4,
       "id": 17
-    },
-    {
-      "startTime": "",
-      "endTime": "",
-      "driverId": 7,
-      "vehicleId": 8,
-      "routeId": 17,
-      "dateId": 5,
-      "id": 19
     },
     {
       "startTime": "",

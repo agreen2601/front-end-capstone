@@ -16,6 +16,8 @@ const DateCard = props => {
     getRoutes("routes");
   }, []);
 
+  console.log("reg datecard", routes)
+
   return (
     <>
       <div className="route_card">

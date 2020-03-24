@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "../../node_modules/react";
 import apiManager from "../apiManager/apiManager";
 
-const AssignmentCard = props => {
+const FavoriteAssignmentCard = props => {
   const [assignment, setAssignment] = useState([]);
 
   const getAssignment = (dateId, routeId, driverId) => {
@@ -13,20 +13,20 @@ const AssignmentCard = props => {
   };
 
   useEffect(() => {
-    getAssignment(props.date.id, props.route.id, props.assignment.driverId);
+    getAssignment(props.date.id, props.favoriteRouteID.id, props.assignment.driverId);
   }, []);
 
   let realAssignment = {};
   let realDriver = {};
-  // let realVehicle = {};
-  // let pax = "";
+  let realVehicle = {};
+  let pax = "";
   if (assignment[0] !== undefined) {
     realAssignment = assignment[0];
     realDriver = assignment[0].driver;
-    // realVehicle = assignment[0].vehicle;
-    // if (assignment[0].vehicle.capacity !== "") {
-      // pax = "pax ";
-    // }
+    realVehicle = assignment[0].vehicle;
+    if (assignment[0].vehicle.capacity !== "") {
+      pax = "pax ";
+    }
   }
 
   return (
@@ -42,29 +42,32 @@ const AssignmentCard = props => {
             </span>
             <span>{realAssignment.endTime} </span>
           </div>
+
           <div>
-            {/* <span>{realVehicle.vehNumber} </span> */}
+            <span>{realVehicle.vehNumber} </span>
             <span className="bold_driver_info">
-              {/* {realVehicle.company} {"\u00A0"} */}
+              {realVehicle.company} {"\u00A0"}
             </span>
             <span>
-              {/* {realVehicle.capacity} {pax} */}
+              {realVehicle.capacity} {pax}
             </span>
             <span className="bold_driver_info">
-              {/* {realVehicle.type} {"\u00A0"} */}
+              {realVehicle.type} {"\u00A0"}
             </span>
-            {/* <span className="is_ada">{realVehicle.isADA} </span> */}
+            <span className="is_ada">{realVehicle.isADA} </span>
           </div>
+
           <div>
-            {/* <button
+            <button
               type="button"
               onClick={() =>
                 props.history.push(`/edit/${realDriver.id}/${realVehicle.id}`)
               }
             >
               Edit Info
-            </button> */}
-            {/* <button
+            </button>
+
+            <button
               type="button"
               onClick={() =>
                 props.history.push(
@@ -73,10 +76,13 @@ const AssignmentCard = props => {
               }
             >
               Edit Assignment
-            </button> */}
+            </button>
+
             <button
               type="button"
-              onClick={() => props.removeAssignment("assignments", realAssignment.id, props.date.id, props.route.id)}
+              onClick={() =>
+                props.removeAssignment("assignments", realAssignment.id, props.date.id, props.route.id)
+              }
             >
               Remove
             </button>
@@ -87,4 +93,4 @@ const AssignmentCard = props => {
   );
 };
 
-export default AssignmentCard;
+export default FavoriteAssignmentCard;

@@ -36,6 +36,27 @@ const AssignmentForm = assignmentFormProps => {
     );
   };
 
+  // const handleRegister = evt => {
+  //   evt.preventDefault();
+  //   apiManager.getUsers().then(users => {
+  //     const user = users.find(user => user.email === credentials.email);
+  //     if (user === undefined) {
+  //       setCredentials("credentials");
+  //       apiManager.addType("users", credentials);
+  //       apiManager.getUsers().then(users => {
+  //         const newUser = users.find(
+  //           newUser => newUser.email === credentials.email
+  //         );
+  //         sessionStorage.setItem("userId", newUser.id);
+  //         props.setUser(credentials);
+  //         props.history.push("/home");
+  //       });
+  //     } else {
+  //       window.alert("There is already an account associated with this email address.");
+  //     }
+  //   });
+  // };
+
   const handleAssignmentChange = event => {
     const stateToChange = { ...assignment };
     if (event.target.id === "startTime" || event.target.id === "endTime") {
@@ -81,7 +102,15 @@ const AssignmentForm = assignmentFormProps => {
             <select id="vehicleId" onChange={handleAssignmentChange}>
               {vehicles.map(vehicle => (
                 <option key={vehicle.id} value={vehicle.id}>
-                  {vehicle.company} {vehicle.vehNumber}
+                  {vehicle.company}
+                </option>
+              ))}
+            </select>
+            <label> # </label>
+            <select id="vehicleId" onChange={handleAssignmentChange}>
+              {vehicles.map(vehicle => (
+                <option key={vehicle.id} value={vehicle.id}>
+                  {vehicle.vehNumber}
                 </option>
               ))}
             </select>
