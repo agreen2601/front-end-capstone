@@ -20,7 +20,7 @@ const FavoriteRouteCard = props => {
   };
 
   useEffect(() => {
-    getAssignments(props.date.id, props.favoriteRouteID.id);
+    getAssignments(props.date.id, props.favRoute.id);
   }, []);
 
   const routeStyle = {

@@ -12,20 +12,34 @@ const FavoriteRouteIDs = props => {
     });
   };
 
+  const unFavorite = (type, id) => {
+    apiManager.deleteTypeWithId(type, id).then(() =>
+      apiManager
+        .getFavorites(parseInt(sessionStorage.getItem("userId")))
+        .then(APIResult => {
+          APIResult.sort((a, b) => (a.route.number > b.route.number ? 1 : -1));
+          setFavoriteRouteIDs(APIResult);
+        })
+    );
+  };
+
   useEffect(() => {
     getFavoriteRoutes(parseInt(sessionStorage.getItem("userId")));
   }, []);
 
-console.log("Ids", favoriteRouteIDs)
-
   return (
     <>
-    <div className="route_card">
-      {favoriteRouteIDs.map(favoriteRouteID => (
-        <FavoriteDateCard key={favoriteRouteID.routeId} favoriteRouteID={favoriteRouteID} {...props} />
-      ))}
-    </div>
-  </>
+      <div className="route_card">
+        {favoriteRouteIDs.map(favoriteRouteID => (
+          <FavoriteDateCard
+            key={favoriteRouteID.routeId}
+            favoriteRouteID={favoriteRouteID}
+            unFavorite={unFavorite}
+            {...props}
+          />
+        ))}
+      </div>
+    </>
   );
 };
 

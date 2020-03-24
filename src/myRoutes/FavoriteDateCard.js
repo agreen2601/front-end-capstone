@@ -11,14 +11,6 @@ const FavoriteDateCard = props => {
     });
   };
 
-  const unFavorite = (type, id) => {
-    apiManager.deleteTypeWithId(type, id).then(() =>
-      apiManager.getTypeWithId(type, id).then(APIResult => {
-        setFavRoute(APIResult);
-      })
-    );
-  };
-
   useEffect(() => {
     getRoute("routes", props.favoriteRouteID.routeId);
   }, []);
@@ -29,7 +21,7 @@ const FavoriteDateCard = props => {
         <FavoriteRouteCard
           key={favRoute.id}
           favRoute={favRoute}
-          unFavorite={unFavorite}
+          unFavorite={props.unFavorite}
           {...props}
         />
       </div>

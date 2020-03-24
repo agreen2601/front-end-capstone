@@ -41,6 +41,11 @@ export default {
       `${remoteURL}/favoriteRoutes?userId=${userId}&_expand=route`
     ).then(result => result.json());
   },
+  getVendor(vendorId) {
+    return fetch(
+      `${remoteURL}/vendors/${vendorId}`
+    ).then(result => result.json());
+  },
   addType(type, newType) {
     return fetch(`${remoteURL}/${type}`, {
       method: "POST",

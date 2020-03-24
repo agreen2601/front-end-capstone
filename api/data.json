@@ -35,22 +35,17 @@
     {
       "userId": 3,
       "routeId": 2,
-      "id": 11
-    },
-    {
-      "userId": 3,
-      "routeId": 5,
-      "id": 12
+      "id": 9
     },
     {
       "userId": 3,
       "routeId": 4,
-      "id": 13
+      "id": 12
     },
     {
       "userId": 3,
       "routeId": 1,
-      "id": 15
+      "id": 13
     }
   ],
   "drivers": [
@@ -223,57 +218,35 @@
       "id": 25
     }
   ],
-  "vehVendors": [
+  "vehicles": [
     {
       "id": 1,
-      "vendor": "NSS"
-    },
-    {
-      "id": 2,
-      "vendor": "Dog Squad"
-    },
-    {
-      "id": 3,
-      "vendor": "Kitty Baby Express"
-    },
-    {
-      "vendor": "Seinfeld Tours",
-      "id": 4
-    },
-    {
-      "vendor": "Harry's Coaches",
-      "id": 5
-    }
-  ],
-  "vehNumbers": [
-    {
-      "id": 1,
-      "vendorId": 1,
-      "vehNumber": "5601",
+      "company": "NSS",
+      "number": "5601",
       "type": "MC",
       "capacity": 56,
       "isADA": ""
     },
     {
       "id": 2,
-      "vendorId": 1,
-      "vehNumber": "117",
+      "company": "NSS",
+      "number": "117",
       "type": "mini",
       "capacity": 25,
       "isADA": "ADA"
     },
     {
       "id": 3,
-      "vendorId": 1,
-      "vehNumber": "38",
+      "company": "NSS",
+      "number": "38",
       "type": "MC",
       "capacity": 55,
       "isADA": ""
     },
     {
       "id": 4,
-      "vendorId": 2,
-      "vehNumber": "12",
+      "company": "Dog Squad",
+      "number": "12",
       "type": "MC",
       "capacity": "99",
       "isADA": "ADA"
@@ -281,14 +254,14 @@
     {
       "id": 5,
       "company": "Kitty Baby Express",
-      "vehNumber": "L13",
+      "number": "L13",
       "type": "Limo",
       "capacity": 13,
       "isADA": ""
     },
     {
       "company": "Seinfeld Tours",
-      "vehNumber": "201",
+      "number": "201",
       "type": "mini",
       "capacity": "24",
       "isADA": "ADA",
@@ -296,7 +269,7 @@
     },
     {
       "company": "Seinfeld Tours",
-      "vehNumber": "21",
+      "number": "21",
       "type": "SUV",
       "capacity": "5",
       "isADA": "",
@@ -304,7 +277,7 @@
     },
     {
       "company": "Dog Squad",
-      "vehNumber": "K-9",
+      "number": "K-9",
       "type": "MC",
       "capacity": "46",
       "isADA": "ADA",
@@ -313,22 +286,22 @@
     {
       "id": 10,
       "company": "Dog Squad",
-      "vehNumber": "300",
+      "number": "300",
       "type": "mini",
       "capacity": "24",
       "isADA": ""
     },
     {
-      "company": "ppp",
-      "vehNumber": "ppp",
+      "company": "Harry's Coachline",
+      "number": "ppp",
       "type": "ppp",
       "capacity": "ppp",
       "isADA": "",
       "id": 11
     },
     {
-      "company": "ytggttfffdffffff",
-      "vehNumber": "3333344444442221111",
+      "company": "Harry's Coachline",
+      "number": "3333344444442221111",
       "type": "truck",
       "capacity": "99",
       "isADA": "",
@@ -336,23 +309,23 @@
     },
     {
       "id": 14,
-      "company": "Seinfeld Express",
-      "vehNumber": "132",
+      "company": "Seinfeld Tours",
+      "number": "132",
       "type": "mini",
       "capacity": "21",
       "isADA": "ADA"
     },
     {
-      "company": "sarah",
-      "vehNumber": "7524950371",
+      "company": "Harry's Coachline",
+      "number": "7524950371",
       "type": "truck",
       "capacity": "1000000",
       "isADA": "",
       "id": 16
     },
     {
-      "company": "sarah66486857976483",
-      "vehNumber": "77767666636636636",
+      "company": "Harry's Coachline",
+      "number": "77767666636636636",
       "type": "truck",
       "capacity": "4444444444444444444",
       "isADA": "",
@@ -360,39 +333,39 @@
     },
     {
       "id": 18,
-      "company": "Kennedy Express",
-      "vehNumber": "5401",
+      "company": "Kitty Baby Express",
+      "number": "5401",
       "type": "MC",
       "capacity": "46",
       "isADA": "ADA"
     },
     {
       "id": 19,
-      "company": "Green Enterprises",
-      "vehNumber": "5603",
+      "company": "Kitty Baby Express",
+      "number": "5603",
       "type": "MC",
       "capacity": "",
       "isADA": ""
     },
     {
       "id": 20,
-      "company": "Seinfeld Express",
-      "vehNumber": "4352",
-      "type": "",
-      "capacity": "",
+      "company": "Seinfeld Tours",
+      "number": "4352",
+      "type": "MC",
+      "capacity": "43",
       "isADA": ""
     },
     {
-      "company": "Seinfeld Express",
-      "vehNumber": "5607",
+      "company": "Seinfeld Tours",
+      "number": "5607",
       "type": "MC",
       "capacity": "56",
       "isADA": "",
       "id": 21
     },
     {
-      "company": "Kennedy Express",
-      "vehNumber": "5502",
+      "company": "Kitty Baby Express",
+      "number": "5502",
       "type": "MC",
       "capacity": "55",
       "isADA": "",
@@ -401,30 +374,30 @@
     {
       "id": 23,
       "company": "Dog Squad",
-      "vehNumber": "2405",
+      "number": "2405",
       "type": "mini",
       "capacity": "24",
       "isADA": ""
     },
     {
-      "company": "Seinfeld Express",
-      "vehNumber": "5502",
+      "company": "Seinfeld Tours",
+      "number": "5502",
       "type": "MC",
       "capacity": "55",
       "isADA": "",
       "id": 24
     },
     {
-      "company": "Some People",
-      "vehNumber": "Number",
+      "company": "Harry's Coachline",
+      "number": "Number",
       "type": "Bus",
       "capacity": "1000",
       "isADA": "ADA",
       "id": 25
     },
     {
-      "company": "asldkfj",
-      "vehNumber": "39",
+      "company": "Harry's Coachline",
+      "number": "39",
       "type": "",
       "capacity": "",
       "isADA": "",
@@ -527,27 +500,27 @@
   "dates": [
     {
       "id": 1,
-      "date": "2020-03-18",
+      "date": "2020-03-23",
       "R1Needs": 4
     },
     {
       "id": 2,
-      "date": "2020-03-19",
+      "date": "2020-03-24",
       "R1Needs": 5
     },
     {
       "id": 3,
-      "date": "2020-03-20",
+      "date": "2020-03-25",
       "R1Needs": 6
     },
     {
       "id": 4,
-      "date": "2020-03-21",
+      "date": "2020-03-26",
       "R1Needs": 7
     },
     {
       "id": 5,
-      "date": "2020-03-22",
+      "date": "2020-03-27",
       "R1Needs": 4
     }
   ],
@@ -578,15 +551,6 @@
       "vehicleId": 7,
       "routeId": 7,
       "dateId": 5
-    },
-    {
-      "startTime": "",
-      "endTime": "",
-      "driverId": 12,
-      "vehicleId": 13,
-      "routeId": 8,
-      "id": 6,
-      "dateId": 1
     },
     {
       "id": 7,
@@ -662,7 +626,7 @@
     },
     {
       "startTime": "",
-      "endTime": "",
+      "endTime": "16:00",
       "driverId": 19,
       "vehicleId": 20,
       "routeId": 1,

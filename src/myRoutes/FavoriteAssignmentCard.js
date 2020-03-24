@@ -13,7 +13,7 @@ const FavoriteAssignmentCard = props => {
   };
 
   useEffect(() => {
-    getAssignment(props.date.id, props.favoriteRouteID.id, props.assignment.driverId);
+    getAssignment(props.date.id, props.favoriteRouteID.routeId, props.assignment.driverId);
   }, []);
 
   let realAssignment = {};
@@ -44,7 +44,7 @@ const FavoriteAssignmentCard = props => {
           </div>
 
           <div>
-            <span>{realVehicle.vehNumber} </span>
+            <span>{realVehicle.number} </span>
             <span className="bold_driver_info">
               {realVehicle.company} {"\u00A0"}
             </span>
@@ -81,7 +81,12 @@ const FavoriteAssignmentCard = props => {
             <button
               type="button"
               onClick={() =>
-                props.removeAssignment("assignments", realAssignment.id, props.date.id, props.route.id)
+                props.removeAssignment(
+                  "assignments",
+                  realAssignment.id,
+                  props.date.id,
+                  props.route.id
+                )
               }
             >
               Remove
