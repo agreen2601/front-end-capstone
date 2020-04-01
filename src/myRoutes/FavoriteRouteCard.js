@@ -40,16 +40,17 @@ const FavoriteRouteCard = props => {
     <div style={routeBorder} className="fav_route_border">
       <div className="route_heading">
         <span style={routeStyle}>Route {props.favRoute.number} </span>
-        <span>
-          {assignments.length} assigned
-          {/* {props.favRoute.numOfVehNeeded - assignments.length} needed */}
-        </span>
+        <span className="route_name">{props.favRoute.name} {"\u00A0"} </span>
         <TiCancelOutline
           className="route_icon"
           onClick={() =>
             props.unStar("favoriteRoutes", props.favoriteRouteID.id)
           }
         />
+        <div className="assigned">
+          ({assignments.length} assigned -{"\u00A0"}
+          {props.favRoute.numOfVehNeeded - assignments.length} needed)
+        </div>
       </div>
       <IoMdAddCircleOutline
           className="add_driver_icon"

@@ -39,7 +39,7 @@ const RouteCard = props => {
     color: props.route.color,
     fontSize: "larger",
     fontWeight: 600,
-    marginRight: "30px"
+    marginRight: "20px"
   };
 
   const routeBorder = {
@@ -50,9 +50,9 @@ const RouteCard = props => {
     <div style={routeBorder} className="route_border">
       <div className="route_heading">
         <span style={routeStyle}>Route {props.route.number} </span>
-        <span>
-          {assignments.length} assigned 
-          {/* {props.route.numOfVehNeeded - assignments.length} needed */}
+        <span className="assigned">
+          ({assignments.length} assigned -{"\u00A0"}
+          {props.route.numOfVehNeeded - assignments.length} needed)
         </span>
         <IoIosStarOutline className="route_icon" onClick={star} />
       </div>

@@ -51,9 +51,27 @@ const AssignmentAddForm = props => {
   }, []);
 
   const submit = () => {
-    apiManager
-      .addType("assignments", assignment)
-      .then(() => props.history.push(`/routeview/${assignment.dateId}`));
+    apiManager.getAssignments().then(assignments => {
+      const assign = assignments.find(
+        assign =>
+          assign.dateId === assignment.dateId &&
+          assign.driverId === assignment.driverId
+      );
+      console.log("assign", assign);
+      console.log("assignment", assignment);
+      if (assign === undefined) {
+        apiManager
+          .addType("assignments", assignment)
+          .then(() =>
+            props.history.push(`/routeview/${assignment.dateId}`)
+          );
+      } else {
+        alert(
+          `${assign.driver.name} has already been assigned on ${assign.date.date}.`
+        );
+        props.history.push(`/routeview/${assignment.dateId}`);
+      }
+    });
   };
 
   return (

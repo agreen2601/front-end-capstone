@@ -51,9 +51,27 @@ const AssignmentForm = assignmentFormProps => {
   }, []);
 
   const submit = () => {
-    apiManager
-      .addType("assignments", assignment)
-      .then(() => assignmentFormProps.history.push(`/routeview/${assignment.dateId}`));
+    apiManager.getAssignments().then(assignments => {
+      const assign = assignments.find(
+        assign =>
+          assign.dateId === assignment.dateId &&
+          assign.driverId === assignment.driverId
+      );
+      console.log("assign", assign);
+      console.log("assignment", assignment);
+      if (assign === undefined) {
+        apiManager
+          .addType("assignments", assignment)
+          .then(() =>
+            assignmentFormProps.history.push(`/routeview/${assignment.dateId}`)
+          );
+      } else {
+        alert(
+          `${assign.driver.name} has already been assigned on ${assign.date.date}.`
+        );
+        assignmentFormProps.history.push(`/routeview/${assignment.dateId}`);
+      }
+    });
   };
 
   return (
@@ -63,7 +81,11 @@ const AssignmentForm = assignmentFormProps => {
         <fieldset className="form">
           <div>
             <label>Driver: </label>
-            <select id="driverId" onChange={handleAssignmentChange} value={assignment.driverId}>
+            <select
+              id="driverId"
+              onChange={handleAssignmentChange}
+              value={assignment.driverId}
+            >
               {drivers.map(driver => (
                 <option key={driver.id} value={driver.id}>
                   {driver.name}
@@ -74,7 +96,11 @@ const AssignmentForm = assignmentFormProps => {
 
           <div>
             <label>Vehicle: </label>
-            <select id="vehicleId" onChange={handleAssignmentChange} value={assignment.vehicleId}>
+            <select
+              id="vehicleId"
+              onChange={handleAssignmentChange}
+              value={assignment.vehicleId}
+            >
               {vehicles.map(vehicle => (
                 <option key={vehicle.id} value={vehicle.id}>
                   {vehicle.company} {vehicle.number}
@@ -85,7 +111,11 @@ const AssignmentForm = assignmentFormProps => {
 
           <div>
             <label>Route: </label>
-            <select id="routeId" onChange={handleAssignmentChange} value={assignment.routeId}>
+            <select
+              id="routeId"
+              onChange={handleAssignmentChange}
+              value={assignment.routeId}
+            >
               {routes.map(route => (
                 <option key={route.id} value={route.id}>
                   {route.number}
@@ -96,7 +126,11 @@ const AssignmentForm = assignmentFormProps => {
 
           <div>
             <label>Date: </label>
-            <select id="dateId" onChange={handleAssignmentChange} value={assignment.dateId}>
+            <select
+              id="dateId"
+              onChange={handleAssignmentChange}
+              value={assignment.dateId}
+            >
               {dates.map(date => (
                 <option key={date.id} value={date.id}>
                   {date.date}

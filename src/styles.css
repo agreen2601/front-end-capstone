@@ -112,6 +112,16 @@ input, button, textarea {
   margin-bottom: 10px;
 }
 
+.route_name {
+  font-weight: 600;
+  font-size: .8em;
+}
+
+.assigned {
+  font-size: .8em;
+  margin-top: 4px;
+}
+
 .route_icon {
   float: right;
   margin: 2px 2px 0 2px;

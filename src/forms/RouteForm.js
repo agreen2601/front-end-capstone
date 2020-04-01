@@ -11,7 +11,7 @@ const RouteForm = routeFormProps => {
 
   const handleRouteChange = event => {
     const stateToChange = { ...route };
-    if (event.target.id === "number" || event.target.id === "endTime") {
+    if (event.target.id === "numOfVehNeeded") {
       stateToChange[event.target.id] = parseInt(event.target.value);
     } else {
       stateToChange[event.target.id] = event.target.value;

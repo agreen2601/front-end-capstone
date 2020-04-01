@@ -91,9 +91,9 @@ const AssignmentCard = props => {
               {realVehicle.capacity} {pax}
             </span>
             <span className="bold_driver_info">
-              {realVehicle.type} {"\u00A0"}
+              {realVehicle.type}
             </span>
-            <span className="is_ada">{ada} </span>
+            <span className="is_ada"> {"\u00A0"} {ada}</span>
           </div>
         </div>
       </section>
