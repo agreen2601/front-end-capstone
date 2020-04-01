@@ -67,7 +67,7 @@ const AssignmentCard = props => {
               className="assignment_icon"
               onClick={() =>
                 props.history.push(
-                  `/edit/${realAssignment.id}/${props.date.id}/${props.route.id}/${realDriver.id}/${realVehicle.id}`
+                  `/edit/${realAssignment.id}/${props.route.id}/${realDriver.id}/${realVehicle.id}`
                 )
               }
             />
@@ -75,7 +75,7 @@ const AssignmentCard = props => {
               className="assignment_icon"
               onClick={() =>
                 props.history.push(
-                  `/editdriver/${props.date.id}/${realDriver.id}/${realVehicle.id}`
+                  `/editdriver/${realDriver.id}/${realVehicle.id}`
                 )
               }
             />

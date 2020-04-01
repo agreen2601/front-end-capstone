@@ -55,7 +55,7 @@ const FavoriteRouteCard = props => {
       <IoMdAddCircleOutline
           className="add_driver_icon"
           onClick={() =>
-            props.history.push(`/add/${props.date.id}/${props.favRoute.id}`)
+            props.history.push(`/add/${props.favRoute.id}`)
           }
         />
       <div>

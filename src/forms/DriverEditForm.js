@@ -36,7 +36,7 @@ const DriverEditForm = props => {
       .updateType("drivers", editedDriver)
       .then(() =>
         props.history.push(
-          `/editvehicle/${props.match.params.dateId}/${props.match.params.driverId}/${props.match.params.vehicleId}`
+          `/editvehicle/${props.match.params.driverId}/${props.match.params.vehicleId}`
         )
       );
   };

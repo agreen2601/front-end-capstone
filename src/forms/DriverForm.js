@@ -22,7 +22,7 @@ const DriverForm = props => {
         if (driver.name !== "") {
           apiManager.addType("drivers", driver);
         }
-        props.history.push("/vehicle/form");
+        props.history.push(`/vehicle/form`);
       } else {
         alert("Driver already in database.");
       }

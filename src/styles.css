@@ -30,7 +30,6 @@ input, button, textarea {
 /* Navbar */
 .header {
   font-size: x-large;
-  margin: 5px 0 0 0;
 }
 
 .navbar {
@@ -45,7 +44,7 @@ input, button, textarea {
 
 .nav_icon,
 .nav_home {
-  margin: 5px 10px 0 10px;
+  margin: 0 10px 0 10px;
   font-size: 28px;
   padding: 2px;
 }
@@ -76,6 +75,11 @@ input, button, textarea {
 .nav_home:hover {
   box-shadow: 0 8px 16px 0 black;
   border-radius: 5px;
+}
+
+.date_picker {
+  margin: 5px 10px 0 0;
+
 }
 
 .date_picker:hover {

@@ -8,7 +8,7 @@ const AssignmentAddForm = props => {
     driverId: 1,
     vehicleId: 1,
     routeId: parseInt(props.match.params.routeId),
-    dateId: parseInt(props.match.params.dateId)
+    dateId: props.chosenDate
   });
   const [dates, setDates] = useState([]);
   const [routes, setRoutes] = useState([]);
@@ -63,13 +63,13 @@ const AssignmentAddForm = props => {
         apiManager
           .addType("assignments", assignment)
           .then(() =>
-            props.history.push(`/routeview/${assignment.dateId}`)
+            props.history.push(`/routeview`)
           );
       } else {
         alert(
           `${assign.driver.name} has already been assigned on ${assign.date.date}.`
         );
-        props.history.push(`/routeview/${assignment.dateId}`);
+        props.history.push(`/routeview`);
       }
     });
   };

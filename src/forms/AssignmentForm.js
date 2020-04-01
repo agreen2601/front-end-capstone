@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "../../node_modules/react";
 import apiManager from "../apiManager/apiManager";
 
-const AssignmentForm = assignmentFormProps => {
+const AssignmentForm = props => {
   const [assignment, setAssignment] = useState({
     startTime: "",
     endTime: "",
     driverId: 1,
     vehicleId: 1,
     routeId: 1,
-    dateId: 1
+    dateId: props.chosenDate
   });
+
   const [drivers, setDrivers] = useState([]);
   const [vehicles, setVehicles] = useState([]);
   const [routes, setRoutes] = useState([]);
@@ -63,13 +64,13 @@ const AssignmentForm = assignmentFormProps => {
         apiManager
           .addType("assignments", assignment)
           .then(() =>
-            assignmentFormProps.history.push(`/routeview/${assignment.dateId}`)
+            props.history.push(`/routeview`)
           );
       } else {
         alert(
           `${assign.driver.name} has already been assigned on ${assign.date.date}.`
         );
-        assignmentFormProps.history.push(`/routeview/${assignment.dateId}`);
+        props.history.push(`/routeview`);
       }
     });
   };

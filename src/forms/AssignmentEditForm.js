@@ -8,7 +8,7 @@ const AssignmentEditForm = props => {
     driverId: props.match.params.driverId,
     vehicleId: props.match.params.vehicleId,
     routeId: 3,
-    dateId: props.match.params.dateId
+    dateId: props.chosenDate
   });
   const [dates, setDates] = useState([]);
   const [routes, setRoutes] = useState([]);
@@ -71,7 +71,7 @@ const AssignmentEditForm = props => {
     };
     apiManager
       .updateType("assignments", editedAssignment)
-      .then(() => props.history.push(`/routeview/${props.match.params.dateId}`));
+      .then(() => props.history.push(`/routeview`));
   };
 
   return (

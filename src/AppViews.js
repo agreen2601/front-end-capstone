@@ -2,7 +2,7 @@ import { Route, Redirect } from "react-router-dom";
 import React from "react";
 import Login from "./auth/Login";
 import RouteView from "./routeView/RouteView";
-import FavoriteRouteView from "./myRoutes/FavoriteRouteView"
+import FavoriteRouteView from "./myRoutes/FavoriteRouteView";
 import DriverList from "./drivers/DriverList";
 import DriverForm from "./forms/DriverForm";
 import VehicleForm from "./forms/VehicleForm";
@@ -12,12 +12,14 @@ import AssignmentForm from "./forms/AssignmentForm";
 import AssignmentEditForm from "./forms/AssignmentEditForm";
 import AssignmentAddForm from "./forms/AssignmentAddForm";
 import RouteForm from "./forms/RouteForm";
-import DateForm from "./forms/DateForm"
-import RegisterForm from "./auth/RegisterForm"
+import DateForm from "./forms/DateForm";
+import RegisterForm from "./auth/RegisterForm";
 
 const AppViews = props => {
   const hasUser = props.hasUser;
   const setUser = props.setUser;
+  const dates = props.dates;
+  const chosenDate = props.chosenDate;
 
   return (
     <>
@@ -45,10 +47,25 @@ const AppViews = props => {
       />
       <Route
         exact
-        path="/routeview/:dateID(\d+)"
+        path="/routeview"
         render={props => {
           if (hasUser) {
-            return <RouteView {...props} />;
+            return (
+              <RouteView dates={dates} chosenDate={chosenDate} {...props} />
+            );
+          } else {
+            return <Login setUser={setUser} {...props} />;
+          }
+        }}
+      />
+      <Route
+        exact
+        path="/myroutes"
+        render={props => {
+          if (hasUser) {
+            return (
+              <FavoriteRouteView dates={dates} chosenDate={chosenDate} {...props} />
+            );
           } else {
             return <Login setUser={setUser} {...props} />;
           }
@@ -59,18 +76,7 @@ const AppViews = props => {
         path="/driver/list"
         render={props => {
           if (hasUser) {
-            return <DriverList {...props} />;
-          } else {
-            return <Login setUser={setUser} {...props} />;
-          }
-        }}
-      />
-      <Route
-        exact
-        path="/myroutes/:dateID(\d+)"
-        render={props => {
-          if (hasUser) {
-            return <FavoriteRouteView {...props} />;
+            return <DriverList dates={dates} chosenDate={chosenDate} {...props} />;
           } else {
             return <Login setUser={setUser} {...props} />;
           }
@@ -89,6 +95,17 @@ const AppViews = props => {
       />
       <Route
         exact
+        path="/editdriver/:driverId(\d+)/:vehicleId(\d+)"
+        render={props => {
+          if (hasUser) {
+            return <DriverEditForm {...props} />;
+          } else {
+            return <Login setUser={setUser} {...props} />;
+          }
+        }}
+      />
+      <Route
+        exact
         path="/vehicle/form"
         render={props => {
           if (hasUser) {
@@ -100,10 +117,43 @@ const AppViews = props => {
       />
       <Route
         exact
+        path="/editvehicle/:driverId(\d+)/:vehicleId(\d+)"
+        render={props => {
+          if (hasUser) {
+            return <VehicleEditForm {...props} />;
+          } else {
+            return <Login setUser={setUser} {...props} />;
+          }
+        }}
+      />
+      <Route
+        exact
         path="/assignment/form"
         render={props => {
           if (hasUser) {
-            return <AssignmentForm {...props} />;
+            return <AssignmentForm chosenDate={chosenDate} {...props} />;
+          } else {
+            return <Login setUser={setUser} {...props} />;
+          }
+        }}
+      />
+      <Route
+        exact
+        path="/edit/:assignmentId(\d+)/:routeId(\d+)/:driverId(\d+)/:vehicleId(\d+)"
+        render={props => {
+          if (hasUser) {
+            return <AssignmentEditForm chosenDate={chosenDate} {...props} />;
+          } else {
+            return <Login setUser={setUser} {...props} />;
+          }
+        }}
+      />
+      <Route
+        exact
+        path="/add/:routeId(\d+)"
+        render={props => {
+          if (hasUser) {
+            return <AssignmentAddForm chosenDate={chosenDate} {...props} />;
           } else {
             return <Login setUser={setUser} {...props} />;
           }
@@ -131,55 +181,8 @@ const AppViews = props => {
           }
         }}
       />
-      <Route
-        exact
-        path="/editdriver/:dateId(\d+)/:driverId(\d+)/:vehicleId(\d+)"
-        render={props => {
-          if (hasUser) {
-            return <DriverEditForm {...props} />;
-          } else {
-            return <Login setUser={setUser} {...props} />;
-          }
-        }}
-      />
-      <Route
-        exact
-        path="/editvehicle/:dateId(\d+)/:driverId(\d+)/:vehicleId(\d+)"
-        render={props => {
-          if (hasUser) {
-            return <VehicleEditForm {...props} />;
-          } else {
-            return <Login setUser={setUser} {...props} />;
-          }
-        }}
-      />
-      <Route
-        exact
-        path="/edit/:assignmentId(\d+)/:dateId(\d+)/:routeId(\d+)/:driverId(\d+)/:vehicleId(\d+)"
-        render={props => {
-          if (hasUser) {
-            return <AssignmentEditForm {...props} />;
-          } else {
-            return <Login setUser={setUser} {...props} />;
-          }
-        }}
-      />
-      <Route
-        exact
-        path="/add/:dateId(\d+)/:routeId(\d+)"
-        render={props => {
-          if (hasUser) {
-            return <AssignmentAddForm {...props} />;
-          } else {
-            return <Login setUser={setUser} {...props} />;
-          }
-        }}
-      />
     </>
   );
 };
-
-// props.history.push(`/add/${props.date.id}/${props.route.id}`)
-
 
 export default AppViews;

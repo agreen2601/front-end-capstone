@@ -11,18 +11,28 @@ const NavBar = props => {
     props.history.push("/");
   };
 
-  if (props.match.params.dateID !== undefined) {
-    console.log(props.match.params.dateID)
-  }
-
   return (
     <>
       <nav className="navbar">
         <span className="header">Event Transpo Manager</span>
         <div className="nav_icons">
+          <div>
+            <select
+              id="dateId"
+              onChange={props.handleDateChange}
+              value={props.chosenDate}
+              className="date_picker"
+            >
+              {props.dates.map(date => (
+                <option key={date.id} value={date.id}>
+                  {date.date}
+                </option>
+              ))}
+            </select>
+          </div>
           {props.hasUser ? (
             <IoMdHome
-              onClick={() => props.history.push("/routeview/1")}
+              onClick={() => props.history.push("/routeview")}
               className="nav_home"
             />
           ) : null}
@@ -51,7 +61,7 @@ const NavBar = props => {
               ) : null}
               {props.hasUser ? (
                 <div>
-                  <Link className="nav_links" to="/myroutes/1">
+                  <Link className="nav_links" to="/myroutes">
                     My Routes
                   </Link>
                 </div>
@@ -66,7 +76,8 @@ const NavBar = props => {
               <div>
                 {props.hasUser ? (
                   <span className="nav_links" onClick={handleLogout}>
-                    Logout {"\u00A0"} {"\u00A0"} {"\u00A0"}{"\u00A0"}
+                    Logout {"\u00A0"} {"\u00A0"} {"\u00A0"}
+                    {"\u00A0"}
                   </span>
                 ) : (
                   <Link className="nav_links" to="/login">

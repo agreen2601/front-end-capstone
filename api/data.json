@@ -111,7 +111,7 @@
       "name": "Bryan Nilsen",
       "phoneNumber": "718-420-3000",
       "local": "L",
-      "notes": "High-fives on the reg"
+      "notes": "High-fives on the reg, but he's abandoning us so I don't know how much I value them anymore."
     },
     {
       "id": 3,
@@ -125,7 +125,7 @@
       "name": "Kitty Baby",
       "phoneNumber": "615-924-2603",
       "local": "L",
-      "notes": "Sleeps all day and doesn't work at all"
+      "notes": "Sleeps all day and doesn't work at all."
     },
     {
       "id": 5,
@@ -927,7 +927,7 @@
       "startTime": "",
       "endTime": "",
       "driverId": 28,
-      "vehicleId": 28,
+      "vehicleId": 35,
       "routeId": 2,
       "dateId": 2
     },
@@ -1085,13 +1085,13 @@
       "id": 72
     },
     {
+      "id": 73,
       "startTime": "",
       "endTime": "",
       "driverId": 1,
       "vehicleId": 1,
       "routeId": 1,
-      "dateId": 2,
-      "id": 73
+      "dateId": 2
     },
     {
       "startTime": "",

@@ -37,7 +37,7 @@ const VehicleEditForm = props => {
     apiManager
       .updateType("vehicles", editedVehicle)
       .then(() =>
-        props.history.push(`/routeview/${props.match.params.dateId}`)
+        props.history.push(`/routeview`)
       );
   };
 

@@ -21,7 +21,7 @@ const RouteForm = routeFormProps => {
 
   const submit = () => {
     apiManager.addType("routes", route)
-      .then(() => routeFormProps.history.push("/routeview/1"));
+      .then(() => routeFormProps.history.push("/routeview"));
   };
 
   return (

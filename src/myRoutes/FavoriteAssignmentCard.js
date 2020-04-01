@@ -65,14 +65,14 @@ const FavoriteAssignmentCard = props => {
               className="assignment_icon"
               onClick={() =>
                 props.history.push(
-                  `/edit/${realAssignment.id}/${props.date.id}/${props.favRoute.id}/${realDriver.id}/${realVehicle.id}`
+                  `/edit/${realAssignment.id}/${props.favRoute.id}/${realDriver.id}/${realVehicle.id}`
                 )
               }
             />
             <FaRegEdit
               className="assignment_icon"
               onClick={() =>
-                props.history.push(`/editdriver/${props.date.id}/${realDriver.id}/${realVehicle.id}`)
+                props.history.push(`/editdriver/${realDriver.id}/${realVehicle.id}`)
               }
             />
           </div>

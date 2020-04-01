@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 const DriverCard = props => {
 
@@ -9,7 +9,7 @@ const DriverCard = props => {
     route = props.driver.assignments[0].routeId;
   }
   else {
-    noRoute = "NA"
+    noRoute = "Not Assigned"
   }
 
   return (

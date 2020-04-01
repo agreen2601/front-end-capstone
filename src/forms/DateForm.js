@@ -17,7 +17,7 @@ const DateForm = dateFormProps => {
   const submit = () => {
     apiManager
       .addType("dates", date)
-      .then(() => dateFormProps.history.push(`/routeview/1`));
+      .then(() => dateFormProps.history.push(`/routeview`));
   };
 
   return (
