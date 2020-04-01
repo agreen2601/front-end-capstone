@@ -27,7 +27,7 @@ const RegisterForm = props => {
           );
           sessionStorage.setItem("userId", newUser.id);
           props.setUser(credentials);
-          props.history.push("/home");
+          props.history.push("/routeview/1");
         });
       } else {
         window.alert("There is already an account associated with this email address.");
@@ -40,7 +40,7 @@ const RegisterForm = props => {
       <h3>Create New Account</h3>
       <fieldset className="form">
         <div>
-          <label htmlFor="inputEmail">Email Address: </label>
+          <label>Email Address: </label>
           <input
             onChange={handleFieldChange}
             type="email"
@@ -49,7 +49,7 @@ const RegisterForm = props => {
         </div>
 
         <div>
-          <label htmlFor="inputPassword">Password: </label>
+          <label>Password: </label>
           <input
             onChange={handleFieldChange}
             type="password"
@@ -57,7 +57,7 @@ const RegisterForm = props => {
           ></input>
         </div>
 
-        <button type="button" onClick={handleRegister}>
+        <button onClick={handleRegister}>
           Submit
         </button>
 

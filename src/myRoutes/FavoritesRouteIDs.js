@@ -12,7 +12,7 @@ const FavoriteRouteIDs = props => {
     });
   };
 
-  const unFavorite = (type, id) => {
+  const unStar = (type, id) => {
     apiManager.deleteTypeWithId(type, id).then(() =>
       apiManager
         .getFavorites(parseInt(sessionStorage.getItem("userId")))
@@ -34,7 +34,7 @@ const FavoriteRouteIDs = props => {
           <FavoriteDateCard
             key={favoriteRouteID.routeId}
             favoriteRouteID={favoriteRouteID}
-            unFavorite={unFavorite}
+            unStar={unStar}
             {...props}
           />
         ))}

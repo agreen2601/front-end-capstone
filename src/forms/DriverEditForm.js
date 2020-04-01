@@ -5,13 +5,13 @@ const DriverEditForm = props => {
   const [driver, setDriver] = useState({
     name: "",
     phoneNumber: "",
-    fromCity: "",
+    local: "",
     notes: ""
   });
 
   const [vehicle, setVehicle] = useState({
     company: "",
-    vehNumber: "",
+    number: "",
     type: "",
     capacity: "",
     isADA: ""
@@ -47,14 +47,14 @@ const DriverEditForm = props => {
       id: props.match.params.driverId,
       name: driver.name,
       phoneNumber: driver.phoneNumber,
-      fromCity: driver.fromCity,
+      local: driver.local,
       notes: driver.notes
     };
 
     const editedVehicle = {
       id: props.match.params.vehicleId,
       company: vehicle.company,
-      vehNumber: vehicle.vehNumber,
+      number: vehicle.number,
       type: vehicle.type,
       capacity: vehicle.capacity,
       isADA: vehicle.isADA
@@ -63,14 +63,14 @@ const DriverEditForm = props => {
     apiManager.updateType("drivers", editedDriver);
     apiManager
       .updateType("vehicles", editedVehicle)
-      .then(() => props.history.push(`/home`));
+      .then(() => props.history.push(`/routeview/${props.match.params.dateId}`));
   };
 
   return (
     <>
       <form>
+      <h3>Edit Details</h3>
         <fieldset className="form">
-          <h3>Edit Details</h3>
           <div>
             <label>Driver Name: </label>
             <input
@@ -94,13 +94,23 @@ const DriverEditForm = props => {
           </div>
 
           <div>
-            <label>From City: </label>
+            <label>Local? </label>
+            <label>Yes</label>
             <input
-              type="text"
-              required
+              type="radio"
+              name="local"
               onChange={handleDriverChange}
-              id="fromCity"
-              value={driver.fromCity}
+              id="local"
+              value="L"
+            />
+            <label>No</label>
+            <input
+              type="radio"
+              name="local"
+              onChange={handleDriverChange}
+              id="local"
+              value=""
+              defaultChecked
             />
           </div>
 
@@ -128,8 +138,8 @@ const DriverEditForm = props => {
               <input
                 type="text"
                 onChange={handleVehicleChange}
-                id="vehNumber"
-                value={vehicle.vehNumber}
+                id="number"
+                value={vehicle.number}
               />
             </div>
 

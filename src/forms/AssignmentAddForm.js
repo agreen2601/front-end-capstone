@@ -1,40 +1,19 @@
 import React, { useState, useEffect } from "../../node_modules/react";
 import apiManager from "../apiManager/apiManager";
 
-const AssignmentForm = assignmentFormProps => {
+const AssignmentAddForm = props => {
   const [assignment, setAssignment] = useState({
     startTime: "",
     endTime: "",
     driverId: 1,
     vehicleId: 1,
-    routeId: 1,
-    dateId: 1
+    routeId: parseInt(props.match.params.routeId),
+    dateId: parseInt(props.match.params.dateId)
   });
+  const [dates, setDates] = useState([]);
+  const [routes, setRoutes] = useState([]);
   const [drivers, setDrivers] = useState([]);
   const [vehicles, setVehicles] = useState([]);
-  const [routes, setRoutes] = useState([]);
-  const [dates, setDates] = useState([]);
-
-  const getAllDropDowns = () => {
-    return (
-      apiManager.getType("drivers").then(driversFromApi => {
-        driversFromApi.sort((a, b) => a.name.localeCompare(b.name));
-        setDrivers(driversFromApi);
-      }),
-      apiManager.getType("vehicles").then(vehiclesFromApi => {
-        vehiclesFromApi.sort((a, b) => a.company.localeCompare(b.company));
-        setVehicles(vehiclesFromApi);
-      }),
-      apiManager.getType("routes").then(routesFromApi => {
-        routesFromApi.sort((a, b) => (a.number > b.number ? 1 : -1));
-        setRoutes(routesFromApi);
-      }),
-      apiManager.getType("dates").then(datesFromApi => {
-        datesFromApi.sort((a, b) => (a.number > b.number ? -1 : 1));
-        setDates(datesFromApi);
-      })
-    );
-  };
 
   const handleAssignmentChange = event => {
     const stateToChange = { ...assignment };
@@ -46,6 +25,27 @@ const AssignmentForm = assignmentFormProps => {
     setAssignment(stateToChange);
   };
 
+  const getAllDropDowns = () => {
+    return (
+      apiManager.getType("dates").then(datesFromApi => {
+        datesFromApi.sort((a, b) => (a.number > b.number ? -1 : 1));
+        setDates(datesFromApi);
+      }),
+      apiManager.getType("routes").then(routesFromApi => {
+        routesFromApi.sort((a, b) => (a.number > b.number ? 1 : -1));
+        setRoutes(routesFromApi);
+      }),
+      apiManager.getType("drivers").then(driversFromApi => {
+        driversFromApi.sort((a, b) => a.name.localeCompare(b.name));
+        setDrivers(driversFromApi);
+      }),
+      apiManager.getType("vehicles").then(vehiclesFromApi => {
+        vehiclesFromApi.sort((a, b) => a.company.localeCompare(b.company));
+        setVehicles(vehiclesFromApi);
+      })
+    );
+  };
+
   useEffect(() => {
     getAllDropDowns();
   }, []);
@@ -53,19 +53,27 @@ const AssignmentForm = assignmentFormProps => {
   const submit = () => {
     apiManager
       .addType("assignments", assignment)
-      .then(() => assignmentFormProps.history.push(`/routeview/${assignment.dateId}`));
+      .then(() => props.history.push(`/routeview/${assignment.dateId}`));
   };
 
   return (
     <>
       <form>
-        <h3>Create New Assignment</h3>
+      <h3>Add Assignment</h3>
         <fieldset className="form">
           <div>
             <label>Driver: </label>
-            <select id="driverId" onChange={handleAssignmentChange} value={assignment.driverId}>
+            <select
+              id="driverId"
+              onChange={handleAssignmentChange}
+              value={assignment.driverId}
+            >
               {drivers.map(driver => (
-                <option key={driver.id} value={driver.id}>
+                <option
+                  className="driver_option"
+                  key={driver.id}
+                  value={driver.id}
+                >
                   {driver.name}
                 </option>
               ))}
@@ -74,7 +82,11 @@ const AssignmentForm = assignmentFormProps => {
 
           <div>
             <label>Vehicle: </label>
-            <select id="vehicleId" onChange={handleAssignmentChange} value={assignment.vehicleId}>
+            <select
+              id="vehicleId"
+              onChange={handleAssignmentChange}
+              value={assignment.vehicleId}
+            >
               {vehicles.map(vehicle => (
                 <option key={vehicle.id} value={vehicle.id}>
                   {vehicle.company} {vehicle.number}
@@ -85,7 +97,11 @@ const AssignmentForm = assignmentFormProps => {
 
           <div>
             <label>Route: </label>
-            <select id="routeId" onChange={handleAssignmentChange} value={assignment.routeId}>
+            <select
+              id="routeId"
+              onChange={handleAssignmentChange}
+              value={assignment.routeId}
+            >
               {routes.map(route => (
                 <option key={route.id} value={route.id}>
                   {route.number}
@@ -96,7 +112,11 @@ const AssignmentForm = assignmentFormProps => {
 
           <div>
             <label>Date: </label>
-            <select id="dateId" onChange={handleAssignmentChange} value={assignment.dateId}>
+            <select
+              id="dateId"
+              onChange={handleAssignmentChange}
+              value={assignment.dateId}
+            >
               {dates.map(date => (
                 <option key={date.id} value={date.id}>
                   {date.date}
@@ -108,6 +128,7 @@ const AssignmentForm = assignmentFormProps => {
           <div>
             <label>Start Time: </label>
             <input
+              defaultValue={assignment.startTime}
               type="time"
               onChange={handleAssignmentChange}
               id="startTime"
@@ -116,7 +137,12 @@ const AssignmentForm = assignmentFormProps => {
 
           <div>
             <label>End Time: </label>
-            <input type="time" onChange={handleAssignmentChange} id="endTime" />
+            <input
+              defaultValue={assignment.endTime}
+              type="time"
+              onChange={handleAssignmentChange}
+              id="endTime"
+            />
           </div>
 
           <button type="button" onClick={submit}>
@@ -128,4 +154,4 @@ const AssignmentForm = assignmentFormProps => {
   );
 };
 
-export default AssignmentForm;
+export default AssignmentAddForm;

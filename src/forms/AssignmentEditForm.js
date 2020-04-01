@@ -1,23 +1,19 @@
 import React, { useState, useEffect } from "../../node_modules/react";
 import apiManager from "../apiManager/apiManager";
 
-const AssignmentEditForm = assignmentEditFormProps => {
+const AssignmentEditForm = props => {
   const [assignment, setAssignment] = useState({
     startTime: "",
     endTime: "",
-    driverId: 1,
-    vehicleId: 1,
-    routeId: 1,
-    dateId: 1
+    driverId: props.match.params.driverId,
+    vehicleId: props.match.params.vehicleId,
+    routeId: 3,
+    dateId: props.match.params.dateId
   });
   const [dates, setDates] = useState([]);
   const [routes, setRoutes] = useState([]);
   const [drivers, setDrivers] = useState([]);
   const [vehicles, setVehicles] = useState([]);
-  const [date, setDate] = useState([]);
-  const [route, setRoute] = useState([]);
-  const [driver, setDriver] = useState([]);
-  const [vehicle, setVehicle] = useState([]);
 
   const handleAssignmentChange = event => {
     const stateToChange = { ...assignment };
@@ -30,12 +26,13 @@ const AssignmentEditForm = assignmentEditFormProps => {
   };
 
   const getAssignment = () => {
-    apiManager.getAssignmentById(assignmentEditFormProps.match.params.assignmentId)
+    apiManager
+      .getAssignmentById(props.match.params.assignmentId)
       .then(assignment => {
         setAssignment(assignment);
       });
   };
-  
+
   const getAllDropDowns = () => {
     return (
       apiManager.getType("dates").then(datesFromApi => {
@@ -57,40 +54,14 @@ const AssignmentEditForm = assignmentEditFormProps => {
     );
   };
 
-  const getAllPrefills = () => {
-    return (
-      apiManager
-        .getTypeWithId("dates", assignmentEditFormProps.match.params.dateId)
-        .then(dateFromApi => {
-          setDate(dateFromApi);
-        }),
-      apiManager
-        .getTypeWithId("routes", assignmentEditFormProps.match.params.routeId)
-        .then(routeFromApi => {
-          setRoute(routeFromApi);
-        }),
-      apiManager
-        .getTypeWithId("drivers", assignmentEditFormProps.match.params.driverId)
-        .then(driverFromApi => {
-          setDriver(driverFromApi);
-        }),
-      apiManager
-        .getTypeWithId("vehicles", assignmentEditFormProps.match.params.vehicleId)
-        .then(vehicleFromApi => {
-          setVehicle(vehicleFromApi);
-        })
-    );
-  };
-
   useEffect(() => {
     getAssignment();
-    getAllPrefills();
     getAllDropDowns();
   }, []);
 
   const submit = () => {
     const editedAssignment = {
-      id: assignmentEditFormProps.match.params.assignmentId,
+      id: props.match.params.assignmentId,
       startTime: assignment.startTime,
       endTime: assignment.endTime,
       driverId: assignment.driverId,
@@ -100,20 +71,27 @@ const AssignmentEditForm = assignmentEditFormProps => {
     };
     apiManager
       .updateType("assignments", editedAssignment)
-      .then(() => assignmentEditFormProps.history.push("/home"));
+      .then(() => props.history.push(`/routeview/${props.match.params.dateId}`));
   };
 
   return (
     <>
       <form>
+      <h3>Edit Assignment</h3>
         <fieldset className="form">
-          <h3>Edit Assignement</h3>
           <div>
             <label>Driver: </label>
-            <span>{driver.name} </span>
-            <select id="driverId" onChange={handleAssignmentChange}>
+            <select
+              id="driverId"
+              onChange={handleAssignmentChange}
+              value={assignment.driverId}
+            >
               {drivers.map(driver => (
-                <option key={driver.id} value={driver.id}>
+                <option
+                  className="driver_option"
+                  key={driver.id}
+                  value={driver.id}
+                >
                   {driver.name}
                 </option>
               ))}
@@ -122,13 +100,14 @@ const AssignmentEditForm = assignmentEditFormProps => {
 
           <div>
             <label>Vehicle: </label>
-            <span>
-              {vehicle.company} {vehicle.vehNumber}{" "}
-            </span>
-            <select id="vehicleId" onChange={handleAssignmentChange}>
+            <select
+              id="vehicleId"
+              onChange={handleAssignmentChange}
+              value={assignment.vehicleId}
+            >
               {vehicles.map(vehicle => (
                 <option key={vehicle.id} value={vehicle.id}>
-                  {vehicle.company} {vehicle.vehNumber}
+                  {vehicle.company} {vehicle.number}
                 </option>
               ))}
             </select>
@@ -136,11 +115,10 @@ const AssignmentEditForm = assignmentEditFormProps => {
 
           <div>
             <label>Route: </label>
-            <span>{route.number} </span>
             <select
               id="routeId"
-              defaultValue={route.number}
               onChange={handleAssignmentChange}
+              value={assignment.routeId}
             >
               {routes.map(route => (
                 <option key={route.id} value={route.id}>
@@ -152,11 +130,10 @@ const AssignmentEditForm = assignmentEditFormProps => {
 
           <div>
             <label>Date: </label>
-            <span>{date.date} </span>
             <select
-              defaultValue={date.date}
               id="dateId"
               onChange={handleAssignmentChange}
+              value={assignment.dateId}
             >
               {dates.map(date => (
                 <option key={date.id} value={date.id}>

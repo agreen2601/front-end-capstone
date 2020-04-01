@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "../../node_modules/react";
 import apiManager from "../apiManager/apiManager";
 import FavoriteAssignmentCard from "./FavoriteAssignmentCard";
+import { TiCancelOutline } from "react-icons/ti";
+import { IoMdAddCircleOutline } from "react-icons/io";
 
 const FavoriteRouteCard = props => {
   const [assignments, setAssignments] = useState([]);
@@ -27,7 +29,7 @@ const FavoriteRouteCard = props => {
     color: props.favRoute.color,
     fontSize: "larger",
     fontWeight: 600,
-    marginRight: "30px"
+    marginRight: "15px"
   };
 
   const routeBorder = {
@@ -36,17 +38,25 @@ const FavoriteRouteCard = props => {
 
   return (
     <div style={routeBorder} className="route_border">
-      <span style={routeStyle}>Route {props.favRoute.number} </span>
-      <span>
-        {assignments.length} assigned -{" "}
-        {props.favRoute.numOfVehNeeded - assignments.length} needed
-      </span>
-      <button
-        className="mine_button"
-        onClick={() => props.unFavorite("favoriteRoutes", props.favoriteRouteID.id)}
-      >
-        Unfavorite
-      </button>
+      <div className="route_heading">
+        <span style={routeStyle}>Route {props.favRoute.number} </span>
+        <span>
+          {assignments.length} assigned
+          {/* {props.favRoute.numOfVehNeeded - assignments.length} needed */}
+        </span>
+        <TiCancelOutline
+          className="route_icon"
+          onClick={() =>
+            props.unStar("favoriteRoutes", props.favoriteRouteID.id)
+          }
+        />
+      </div>
+      <IoMdAddCircleOutline
+          className="add_driver_icon"
+          onClick={() =>
+            props.history.push(`/add/${props.date.id}/${props.favRoute.id}`)
+          }
+        />
       <div>
         {assignments.map(assignment => (
           <FavoriteAssignmentCard

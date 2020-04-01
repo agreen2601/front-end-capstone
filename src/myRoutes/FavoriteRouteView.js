@@ -24,7 +24,6 @@ const FavoriteRouteView = props => {
   return (
     <>
       <div>
-        <label>Date: </label>
         <select id="dateId" onChange={handleDateChange}>
           {dates.map(date => (
             <option key={date.id} value={date.id}>

@@ -17,14 +17,12 @@ const FavoriteDateCard = props => {
 
   return (
     <>
-      <div className="route_card">
-        <FavoriteRouteCard
-          key={favRoute.id}
-          favRoute={favRoute}
-          unFavorite={props.unFavorite}
-          {...props}
-        />
-      </div>
+      <FavoriteRouteCard
+        key={favRoute.id}
+        favRoute={favRoute}
+        unStar={props.unStar}
+        {...props}
+      />
     </>
   );
 };

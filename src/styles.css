@@ -1,78 +1,194 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    background-color: rgb(240, 240, 240)
+}
+
+
+/* Forms */
 .form {
-    font-size: large;
-    display: flex;
-    line-height: 1.5em;
-  }
-  
-  .form_child {
-      flex: 1 0 0;
-  }
-  
-  .bold_driver_info {
-    font-weight: 600;
-  }
-  
-  .route_card {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .route_border {
-    border: solid;
-    flex: 1 0 0;
-    min-width: 290px;
-    margin-top: 10px;
-    margin-right: 10px;
-    padding-left: 4px;
-    padding-bottom: 5px;
-  }
-  
-  .driver_info {
-    margin-top: 10px;
-    line-height: 1.4em;
-  }
-  
-  .driver_phone_number {
-    color: blue;
-    font-weight: 600;
-  }
-  
-  .is_ada {
-    color: red;
-  }
-  
-  .nav_links_container {
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  .nav_links {
-    margin-right: 10px;
-  }
-  
-  header {
-    text-align: center;
-  }
-  
-  nav {
-    margin-bottom: 10px;
-  }
-  
-  .logout_button {
-    text-decoration: underline;
-    color: rgba(87, 31, 133);
-  }
+  font-size: large;
+  display: flex;
+  line-height: 1.5em;
+}
 
-  .create_account_button, .register_button {
-    margin-top: 5px;
-  }
-  
-  .create_account_link, .register_link {
-    text-decoration: none;
-    color: black;
-  }
+.form_child {
+  flex: 1 0 0;
+}
 
-  .mine_button {
-    float: right;
-    margin: 2px 2px 0 0
-  }
+select {
+  -webkit-appearance: none;
+  padding: 3px 5px;
+  font-size: .8em;
+}
+
+input, button {
+  font-size: .8em;
+}
+
+
+/* Navbar */
+.header {
+  font-size: x-large;
+  margin: 5px 0 0 0;
+}
+
+.navbar {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav_icons {
+  display: flex;
+}
+
+.nav_icon,
+.nav_home {
+  margin: 5px 10px 0 10px;
+  font-size: 28px;
+  padding: 2px;
+}
+
+.nav_list:hover .nav_dropdown {
+  display: block;
+}
+
+.nav_dropdown {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  margin-left: -55px;
+  background-color: rgba(240, 240, 240);
+  padding: 6px;
+  border-radius: 5px;
+  box-shadow: 0 8px 16px 0 black;
+}
+
+.nav_links {
+  color: black;
+  text-decoration: none;
+  line-height: 1.4em;
+  padding: 4px 4px 4px 4px;
+}
+
+.nav_links:hover,
+.nav_home:hover {
+  box-shadow: 0 8px 16px 0 black;
+  border-radius: 5px;
+}
+
+.date_picker:hover {
+  box-shadow: 0 8px 16px 0 black;
+}
+
+
+/* Route Cards */
+.route_card {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.route_border:hover {
+  box-shadow: 0 8px 16px 0 black;
+  background-color: rgba(250, 250, 250);
+}
+
+.route_border {
+  border: solid;
+  flex: 1 0 0;
+  min-width: 300px;
+  margin-top: 10px;
+  margin-right: 10px;
+  padding-left: 4px;
+  padding-bottom: 5px;
+  box-shadow: 5px 5px gray;
+}
+
+.route_heading {
+  margin-bottom: 10px;
+}
+
+.route_icon {
+  float: right;
+  margin: 2px 2px 0 2px;
+  font-size: x-large;
+  border-radius: 3px;
+  padding: 2px;
+}
+
+.add_driver_icon {
+  font-size: large;
+  border-radius: 3px;
+  padding: 2px;
+}
+
+.route_icon:hover,
+.assignment_icon:hover,
+.add_driver_icon:hover {
+  box-shadow: 0 8px 16px 0 black;
+}
+
+
+/* Assignment Cards */
+.driver_info {
+  margin-top: 10px;
+  line-height: 1.4em;
+  font-size: 0.9em;
+}
+
+.bold_driver_info {
+  font-weight: 600;
+}
+
+.driver_phone_number {
+  color: blue;
+  font-weight: 600;
+}
+
+.is_ada {
+  color: red;
+  font-weight: 600;
+}
+
+.is_local {
+  color: green;
+  font-weight: 600;
+}
+
+.assignment_icon {
+  margin-right: 2px;
+  margin-left: 5px;
+  font-size: large;
+  float: right;
+  border-radius: 3px;
+  padding: 2px;
+}
+
+/* Driver List */
+.driver_border {
+  display: flex;
+  margin-bottom: 7px;
+}
+
+.list_phone {
+  font-weight: bold;
+  color: blue;
+}
+
+.no_route {
+  color: red;
+  font-weight: 600;
+}
+
+/* Register */
+.create_account_button,
+.register_button {
+  margin-top: 5px;
+}
+
+.create_account_link,
+.register_link {
+  text-decoration: none;
+  color: black;
+}

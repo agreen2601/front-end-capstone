@@ -5,7 +5,7 @@ import "../styles.css";
 
 const RouteView = props => {
   const [dates, setDates] = useState([]);
-  const [chosenDate, setChosenDate] = useState(1);
+  const [chosenDate, setChosenDate] = useState(parseInt(props.match.params.dateID));
 
   const getDates = type => {
     apiManager.getType(type).then(APIResult => {
@@ -25,8 +25,12 @@ const RouteView = props => {
   return (
     <>
       <div>
-        <label>Date: </label>
-        <select id="dateId" onChange={handleDateChange}>
+        <select
+          id="dateId"
+          onChange={handleDateChange}
+          value={chosenDate}
+          className="date_picker"
+        >
           {dates.map(date => (
             <option key={date.id} value={date.id}>
               {date.date}

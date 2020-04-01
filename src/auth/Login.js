@@ -21,7 +21,7 @@ const Login = props => {
       if (user !== undefined) {
         sessionStorage.setItem("userId", user.id);
         props.setUser(credentials);
-        props.history.push("/home");
+        props.history.push("/routeview/1");
       } else {
         window.alert("You are not registered. Please create an account");
       }

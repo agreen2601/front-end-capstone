@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "../../node_modules/react";
 import apiManager from "../apiManager/apiManager";
+import { IoIosRemoveCircleOutline } from "react-icons/io";
+import { FaRegEdit } from "react-icons/fa";
+import { FaExchangeAlt } from "react-icons/fa";
 
 const FavoriteAssignmentCard = props => {
   const [assignment, setAssignment] = useState([]);
@@ -40,7 +43,33 @@ const FavoriteAssignmentCard = props => {
             <span className="driver_phone_number">
               {realDriver.phoneNumber} {"\u00A0"}
             </span>
-            <span>{realAssignment.endTime} </span>
+            <span>{realAssignment.endTime} {" "}</span>
+            <span className="is_local">{realDriver.local}</span>
+            <IoIosRemoveCircleOutline
+              className="assignment_icon"
+              onClick={() =>
+                props.removeAssignment(
+                  "assignments",
+                  realAssignment.id,
+                  props.date.id,
+                  props.favRoute.id
+                )
+              }
+            />
+            <FaExchangeAlt
+              className="assignment_icon"
+              onClick={() =>
+                props.history.push(
+                  `/edit/${realAssignment.id}/${props.date.id}/${props.favRoute.id}/${realDriver.id}/${realVehicle.id}`
+                )
+              }
+            />
+            <FaRegEdit
+              className="assignment_icon"
+              onClick={() =>
+                props.history.push(`/edit/${props.date.id}/${realDriver.id}/${realVehicle.id}`)
+              }
+            />
           </div>
 
           <div>
@@ -55,42 +84,6 @@ const FavoriteAssignmentCard = props => {
               {realVehicle.type} {"\u00A0"}
             </span>
             <span className="is_ada">{realVehicle.isADA} </span>
-          </div>
-
-          <div>
-            <button
-              type="button"
-              onClick={() =>
-                props.history.push(`/edit/${realDriver.id}/${realVehicle.id}`)
-              }
-            >
-              Edit Info
-            </button>
-
-            <button
-              type="button"
-              onClick={() =>
-                props.history.push(
-                  `/edit/${realAssignment.id}/${props.date.id}/${props.route.id}/${realDriver.id}/${realVehicle.id}`
-                )
-              }
-            >
-              Edit Assignment
-            </button>
-
-            <button
-              type="button"
-              onClick={() =>
-                props.removeAssignment(
-                  "assignments",
-                  realAssignment.id,
-                  props.date.id,
-                  props.route.id
-                )
-              }
-            >
-              Remove
-            </button>
           </div>
         </div>
       </section>

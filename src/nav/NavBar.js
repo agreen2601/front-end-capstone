@@ -1,6 +1,9 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { IoIosList } from "react-icons/io";
+import { IoMdHome } from "react-icons/io";
+import { IoMdPersonAdd } from "react-icons/io";
 
 const NavBar = props => {
   const handleLogout = () => {
@@ -8,54 +11,72 @@ const NavBar = props => {
     props.history.push("/");
   };
 
+  if (props.match.params.dateID !== undefined) {
+    console.log(props.match.params.dateID)
+  }
+
   return (
     <>
-      <nav>
-        <header>
-          <h2>Event Transpo Manager</h2>
-        </header>
-        <section className="nav_links_container">
+      <nav className="navbar">
+        <span className="header">Event Transpo Manager</span>
+        <div className="nav_icons">
           {props.hasUser ? (
-            <div className="nav_links">
-              <Link to="/driver/form">New Driver</Link>
-            </div>
+            <IoMdHome
+              onClick={() => props.history.push("/routeview/1")}
+              className="nav_home"
+            />
           ) : null}
           {props.hasUser ? (
-            <div className="nav_links">
-              <Link to="/assignment/form">New Assignment</Link>
-            </div>
+            <IoMdPersonAdd
+              onClick={() => props.history.push("/driver/form")}
+              className="nav_home"
+            />
           ) : null}
-          {props.hasUser ? (
-            <div className="nav_links">
-              <Link to="/route/form">New Route</Link>
-            </div>
-          ) : null}
-          {props.hasUser ? (
-            <div className="nav_links">
-              <Link to="/home">Route View</Link>
-            </div>
-          ) : null}
-          {props.hasUser ? (
-            <div className="nav_links">
-              <Link to="/myroutes">My Routes</Link>
-            </div>
-          ) : null}
-          {props.hasUser ? (
-            <div className="nav_links">
-              <Link to="/driver/list">Driver List</Link>
-            </div>
-          ) : null}
-          
-          <div className="nav_links">
-            {props.hasUser ? (
+          <div className="nav_list">
+            <IoIosList className="nav_icon" />
+            <section className="nav_dropdown">
+              {props.hasUser ? (
+                <div>
+                  <Link className="nav_links" to="/route/form">
+                    New Route
+                  </Link>
+                </div>
+              ) : null}
+              {props.hasUser ? (
+                <div>
+                  <Link className="nav_links" to="/date/form">
+                    New Date {"\u00A0"}
+                  </Link>
+                </div>
+              ) : null}
+              {props.hasUser ? (
+                <div>
+                  <Link className="nav_links" to="/myroutes/1">
+                    My Routes
+                  </Link>
+                </div>
+              ) : null}
+              {props.hasUser ? (
+                <div>
+                  <Link className="nav_links" to="/driver/list">
+                    Driver List{"\u00A0"}
+                  </Link>
+                </div>
+              ) : null}
               <div>
-                <span onClick={handleLogout} className="logout_button"> Logout </span>
+                {props.hasUser ? (
+                  <span className="nav_links" onClick={handleLogout}>
+                    Logout {"\u00A0"} {"\u00A0"} {"\u00A0"}{"\u00A0"}
+                  </span>
+                ) : (
+                  <Link className="nav_links" to="/login">
+                    Login {"\u00A0"} {"\u00A0"} {"\u00A0"} {"\u00A0"}
+                  </Link>
+                )}
               </div>
-            ) : (
-              <Link to="/login">Login</Link>
-            )}
+            </section>
           </div>
-        </section>
+        </div>
       </nav>
     </>
   );

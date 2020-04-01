@@ -1,15 +1,17 @@
 import { Route, Redirect } from "react-router-dom";
 import React from "react";
 import Login from "./auth/Login";
-import RegisterForm from "./auth/RegisterForm"
 import RouteView from "./routeView/RouteView";
-import DriverList from "./drivers/DriverList";
 import FavoriteRouteView from "./myRoutes/FavoriteRouteView"
+import DriverList from "./drivers/DriverList";
 import DriverForm from "./forms/DriverForm";
-import AssignmentForm from "./forms/AssignmentForm";
-import RouteForm from "./forms/RouteForm";
 import DriverEditForm from "./forms/DriverEditForm";
+import AssignmentForm from "./forms/AssignmentForm";
 import AssignmentEditForm from "./forms/AssignmentEditForm";
+import AssignmentAddForm from "./forms/AssignmentAddForm";
+import RouteForm from "./forms/RouteForm";
+import DateForm from "./forms/DateForm"
+import RegisterForm from "./auth/RegisterForm"
 
 const AppViews = props => {
   const hasUser = props.hasUser;
@@ -41,7 +43,7 @@ const AppViews = props => {
       />
       <Route
         exact
-        path="/home"
+        path="/routeview/:dateID(\d+)"
         render={props => {
           if (hasUser) {
             return <RouteView {...props} />;
@@ -63,7 +65,7 @@ const AppViews = props => {
       />
       <Route
         exact
-        path="/myroutes"
+        path="/myroutes/:dateID(\d+)"
         render={props => {
           if (hasUser) {
             return <FavoriteRouteView {...props} />;
@@ -107,7 +109,18 @@ const AppViews = props => {
       />
       <Route
         exact
-        path="/edit/:driverId(\d+)/:vehicleId(\d+)"
+        path="/date/form"
+        render={props => {
+          if (hasUser) {
+            return <DateForm {...props} />;
+          } else {
+            return <Login setUser={setUser} {...props} />;
+          }
+        }}
+      />
+      <Route
+        exact
+        path="/edit/:dateId(\d+)/:driverId(\d+)/:vehicleId(\d+)"
         render={props => {
           if (hasUser) {
             return <DriverEditForm {...props} />;
@@ -127,8 +140,22 @@ const AppViews = props => {
           }
         }}
       />
+      <Route
+        exact
+        path="/add/:dateId(\d+)/:routeId(\d+)"
+        render={props => {
+          if (hasUser) {
+            return <AssignmentAddForm {...props} />;
+          } else {
+            return <Login setUser={setUser} {...props} />;
+          }
+        }}
+      />
     </>
   );
 };
+
+// props.history.push(`/add/${props.date.id}/${props.route.id}`)
+
 
 export default AppViews;

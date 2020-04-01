@@ -1,17 +1,17 @@
 import React, { useState } from "../../node_modules/react";
 import apiManager from "../apiManager/apiManager";
 
-const DriverForm = driverFormProps => {
+const DriverForm = props => {
   const [driver, setDriver] = useState({
     name: "",
     phoneNumber: "",
-    fromCity: "",
+    local: "",
     notes: ""
   });
 
   const [vehicle, setVehicle] = useState({
     company: "",
-    vehNumber: "",
+    number: "",
     type: "",
     capacity: "",
     isADA: ""
@@ -30,13 +30,35 @@ const DriverForm = driverFormProps => {
   };
 
   const submit = () => {
-    if (driver.name !== "") {
-      apiManager.addType("drivers", driver);
-    }
-    if (vehicle.company !== "" && vehicle.number !== "") {
-      apiManager.addType("vehicles", vehicle)
-    }
-    driverFormProps.history.push("/assignment/form");
+    apiManager.getType("drivers").then(allDrivers => {
+      const driverA = allDrivers.find(
+        driverA =>
+          driverA.name === driver.name);
+      if (driverA === undefined) {
+        if (driver.name !== "") {
+          apiManager.addType("drivers", driver);
+        }
+        props.history.push("/assignment/form");
+      } else {
+        alert("Driver already in database.");
+      }
+    });
+    apiManager.getType("vehicles").then(allVehicles => {
+      const vehicleA = allVehicles.find(
+        vehicleA =>
+          vehicleA.company === vehicle.company &&
+          vehicleA.number === vehicle.number
+      );
+      if (vehicleA === undefined) {
+        if (vehicle.company !== "" && vehicle.number !== "") {
+          apiManager.addType("vehicles", vehicle);
+        }
+        props.history.push("/assignment/form");
+      } else {
+        alert("Vehicle already in database.");
+        props.history.push("/assignment/form");
+      }
+    });
   };
 
   return (
@@ -65,12 +87,23 @@ const DriverForm = driverFormProps => {
           </div>
 
           <div>
-            <label>From City: </label>
+            <label>Local? </label>
+            <label>Yes</label>
             <input
-              type="text"
-              required
+              type="radio"
+              name="local"
               onChange={handleDriverChange}
-              id="fromCity"
+              id="local"
+              value="L"
+            />
+            <label>No</label>
+            <input
+              type="radio"
+              name="local"
+              onChange={handleDriverChange}
+              id="local"
+              value=""
+              defaultChecked
             />
           </div>
 
@@ -85,11 +118,7 @@ const DriverForm = driverFormProps => {
 
             <div>
               <label>Vehicle Number: </label>
-              <input
-                type="text"
-                onChange={handleVehicleChange}
-                id="vehNumber"
-              />
+              <input type="text" onChange={handleVehicleChange} id="number" />
             </div>
 
             <label>Vehicle Type: </label>

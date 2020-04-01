@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "../../node_modules/react";
 import apiManager from "../apiManager/apiManager";
 import AssignmentCard from "./AssignmentCard";
+import { IoIosStarOutline } from "react-icons/io";
+import { IoMdAddCircleOutline } from "react-icons/io";
 
 const RouteCard = props => {
   const [assignments, setAssignments] = useState([]);
@@ -23,13 +25,11 @@ const RouteCard = props => {
     );
   };
 
-  const markFavorite = () => {
+  const star = () => {
     apiManager.addType("favoriteRoutes", favorite).then(APIResult => {
       setFavorite(APIResult);
     });
   };
-
-  console.log("route card", props.route)
 
   useEffect(() => {
     getAssignments(props.date.id, props.route.id);
@@ -48,14 +48,20 @@ const RouteCard = props => {
 
   return (
     <div style={routeBorder} className="route_border">
-      <span style={routeStyle}>Route {props.route.number} </span>
-      <span>
-        {assignments.length} assigned -{" "}
-        {props.route.numOfVehNeeded - assignments.length} needed
-      </span>
-      <button className="mine_button" onClick={markFavorite}>
-        Favorite
-      </button>
+      <div className="route_heading">
+        <span style={routeStyle}>Route {props.route.number} </span>
+        <span>
+          {assignments.length} assigned 
+          {/* {props.route.numOfVehNeeded - assignments.length} needed */}
+        </span>
+        <IoIosStarOutline className="route_icon" onClick={star} />
+      </div>
+      <IoMdAddCircleOutline
+        className="add_driver_icon"
+        onClick={() =>
+          props.history.push(`/add/${props.date.id}/${props.route.id}`)
+        }
+      />
       <div>
         {assignments.map(assignment => (
           <AssignmentCard
