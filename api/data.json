@@ -111,7 +111,7 @@
       "name": "Bryan Nilsen",
       "phoneNumber": "718-420-3000",
       "local": "L",
-      "notes": ""
+      "notes": "High-fives on the reg"
     },
     {
       "id": 3,
@@ -413,20 +413,6 @@
       "local": "L",
       "notes": "",
       "id": 52
-    },
-    {
-      "id": 53,
-      "name": "sarah",
-      "phoneNumber": "42424555535335467",
-      "local": "",
-      "notes": "ghnjfggkrrtjhrtjyhtfbtfjytyr"
-    },
-    {
-      "name": "ghdhjfmghgreyjnhtfhytr",
-      "phoneNumber": "3676777489",
-      "local": "",
-      "notes": "jgjtjjtrhrjuthjrrjjj7575",
-      "id": 54
     }
   ],
   "vehicles": [
@@ -444,7 +430,7 @@
       "number": "117",
       "type": "mini",
       "capacity": 25,
-      "isADA": "ADA"
+      "isADA": ""
     },
     {
       "id": 3,
@@ -717,22 +703,6 @@
       "type": "mini",
       "capacity": "19",
       "isADA": "ADA"
-    },
-    {
-      "id": 41,
-      "company": "gytrgfuiksnlo9dsrg4",
-      "number": "4752364975824368",
-      "type": "excavator",
-      "capacity": "6",
-      "isADA": ""
-    },
-    {
-      "company": "brhrhfguftgnf",
-      "number": "387467837646372898746378283764372",
-      "type": "excavator",
-      "capacity": "1000",
-      "isADA": "",
-      "id": 42
     }
   ],
   "routes": [
@@ -962,24 +932,6 @@
       "id": 39
     },
     {
-      "startTime": "",
-      "endTime": "",
-      "driverId": 2,
-      "vehicleId": 23,
-      "routeId": 4,
-      "dateId": 2,
-      "id": 41
-    },
-    {
-      "startTime": "",
-      "endTime": "",
-      "driverId": 1,
-      "vehicleId": 1,
-      "routeId": 3,
-      "dateId": 2,
-      "id": 44
-    },
-    {
       "id": 45,
       "startTime": "",
       "endTime": "",
@@ -996,15 +948,6 @@
       "routeId": 4,
       "dateId": 5,
       "id": 47
-    },
-    {
-      "startTime": "",
-      "endTime": "",
-      "driverId": 1,
-      "vehicleId": 1,
-      "routeId": 1,
-      "dateId": 2,
-      "id": 48
     },
     {
       "startTime": "",
@@ -1234,47 +1177,11 @@
     {
       "startTime": "",
       "endTime": "",
-      "driverId": 1,
-      "vehicleId": 1,
-      "routeId": 6,
+      "driverId": 4,
+      "vehicleId": 19,
+      "routeId": 1,
       "dateId": 1,
-      "id": 82
-    },
-    {
-      "startTime": "",
-      "endTime": "",
-      "driverId": 1,
-      "vehicleId": 1,
-      "routeId": 8,
-      "dateId": 1,
-      "id": 83
-    },
-    {
-      "startTime": "",
-      "endTime": "",
-      "driverId": 22,
-      "vehicleId": 4,
-      "routeId": 12,
-      "dateId": 1,
-      "id": 84
-    },
-    {
-      "startTime": "01:00",
-      "endTime": "00:00",
-      "driverId": 53,
-      "vehicleId": 41,
-      "routeId": 4,
-      "dateId": 5,
-      "id": 85
-    },
-    {
-      "id": 86,
-      "startTime": "06:45",
-      "endTime": "00:00",
-      "driverId": 54,
-      "vehicleId": 42,
-      "routeId": 12,
-      "dateId": 5
+      "id": 88
     },
     {
       "startTime": "",
@@ -1283,7 +1190,7 @@
       "vehicleId": 1,
       "routeId": 1,
       "dateId": 1,
-      "id": 87
+      "id": 89
     }
   ]
 }

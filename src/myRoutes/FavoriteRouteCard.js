@@ -37,7 +37,7 @@ const FavoriteRouteCard = props => {
   };
 
   return (
-    <div style={routeBorder} className="route_border">
+    <div style={routeBorder} className="fav_route_border">
       <div className="route_heading">
         <span style={routeStyle}>Route {props.favRoute.number} </span>
         <span>

@@ -5,7 +5,9 @@ import RouteView from "./routeView/RouteView";
 import FavoriteRouteView from "./myRoutes/FavoriteRouteView"
 import DriverList from "./drivers/DriverList";
 import DriverForm from "./forms/DriverForm";
+import VehicleForm from "./forms/VehicleForm";
 import DriverEditForm from "./forms/DriverEditForm";
+import VehicleEditForm from "./forms/VehicleEditForm";
 import AssignmentForm from "./forms/AssignmentForm";
 import AssignmentEditForm from "./forms/AssignmentEditForm";
 import AssignmentAddForm from "./forms/AssignmentAddForm";
@@ -87,6 +89,17 @@ const AppViews = props => {
       />
       <Route
         exact
+        path="/vehicle/form"
+        render={props => {
+          if (hasUser) {
+            return <VehicleForm {...props} />;
+          } else {
+            return <Login setUser={setUser} {...props} />;
+          }
+        }}
+      />
+      <Route
+        exact
         path="/assignment/form"
         render={props => {
           if (hasUser) {
@@ -120,10 +133,21 @@ const AppViews = props => {
       />
       <Route
         exact
-        path="/edit/:dateId(\d+)/:driverId(\d+)/:vehicleId(\d+)"
+        path="/editdriver/:dateId(\d+)/:driverId(\d+)/:vehicleId(\d+)"
         render={props => {
           if (hasUser) {
             return <DriverEditForm {...props} />;
+          } else {
+            return <Login setUser={setUser} {...props} />;
+          }
+        }}
+      />
+      <Route
+        exact
+        path="/editvehicle/:dateId(\d+)/:driverId(\d+)/:vehicleId(\d+)"
+        render={props => {
+          if (hasUser) {
+            return <VehicleEditForm {...props} />;
           } else {
             return <Login setUser={setUser} {...props} />;
           }

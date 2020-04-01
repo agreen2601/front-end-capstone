@@ -9,54 +9,22 @@ const DriverForm = props => {
     notes: ""
   });
 
-  const [vehicle, setVehicle] = useState({
-    company: "",
-    number: "",
-    type: "",
-    capacity: "",
-    isADA: ""
-  });
-
   const handleDriverChange = event => {
     const stateToChange = { ...driver };
     stateToChange[event.target.id] = event.target.value;
     setDriver(stateToChange);
   };
 
-  const handleVehicleChange = event => {
-    const stateToChange = { ...vehicle };
-    stateToChange[event.target.id] = event.target.value;
-    setVehicle(stateToChange);
-  };
-
   const submit = () => {
     apiManager.getType("drivers").then(allDrivers => {
-      const driverA = allDrivers.find(
-        driverA =>
-          driverA.name === driver.name);
+      const driverA = allDrivers.find(driverA => driverA.name === driver.name);
       if (driverA === undefined) {
         if (driver.name !== "") {
           apiManager.addType("drivers", driver);
         }
-        props.history.push("/assignment/form");
+        props.history.push("/vehicle/form");
       } else {
         alert("Driver already in database.");
-      }
-    });
-    apiManager.getType("vehicles").then(allVehicles => {
-      const vehicleA = allVehicles.find(
-        vehicleA =>
-          vehicleA.company === vehicle.company &&
-          vehicleA.number === vehicle.number
-      );
-      if (vehicleA === undefined) {
-        if (vehicle.company !== "" && vehicle.number !== "") {
-          apiManager.addType("vehicles", vehicle);
-        }
-        props.history.push("/assignment/form");
-      } else {
-        alert("Vehicle already in database.");
-        props.history.push("/assignment/form");
       }
     });
   };
@@ -64,7 +32,7 @@ const DriverForm = props => {
   return (
     <>
       <form>
-        <h3>Create New Driver/Vehicle</h3>
+        <h3>Create New Driver</h3>
         <fieldset className="form">
           <div>
             <label>Driver Name: </label>
@@ -109,45 +77,7 @@ const DriverForm = props => {
 
           <div>
             <label>Notes: </label>
-            <input type="text" onChange={handleDriverChange} id="notes" />
-
-            <div>
-              <label>Company: </label>
-              <input type="text" onChange={handleVehicleChange} id="company" />
-            </div>
-
-            <div>
-              <label>Vehicle Number: </label>
-              <input type="text" onChange={handleVehicleChange} id="number" />
-            </div>
-
-            <label>Vehicle Type: </label>
-            <input type="text" onChange={handleVehicleChange} id="type" />
-          </div>
-
-          <div>
-            <label>Capacity: </label>
-            <input type="text" onChange={handleVehicleChange} id="capacity" />
-          </div>
-
-          <div>
-            <label>ADA accesible? Yes</label>
-            <input
-              type="radio"
-              name="ADA"
-              onChange={handleVehicleChange}
-              id="isADA"
-              value="ADA"
-            />
-            <label>No</label>
-            <input
-              type="radio"
-              name="ADA"
-              onChange={handleVehicleChange}
-              id="isADA"
-              value=""
-              defaultChecked
-            />
+            <textarea type="text" onChange={handleDriverChange} id="notes" />
           </div>
 
           <button type="button" onClick={submit}>

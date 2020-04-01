@@ -3,6 +3,7 @@ import apiManager from "../apiManager/apiManager";
 import { IoMdRemoveCircleOutline } from "react-icons/io";
 import { FaRegEdit } from "react-icons/fa";
 import { FaExchangeAlt } from "react-icons/fa";
+import { FaWheelchair } from "react-icons/fa";
 
 const AssignmentCard = props => {
   const [assignment, setAssignment] = useState([]);
@@ -23,12 +24,16 @@ const AssignmentCard = props => {
   let realDriver = {};
   let realVehicle = {};
   let pax = "";
+  let ada = "";
   if (assignment[0] !== undefined) {
     realAssignment = assignment[0];
     realDriver = assignment[0].driver;
     realVehicle = assignment[0].vehicle;
     if (assignment[0].vehicle.capacity !== "") {
       pax = "pax ";
+    }
+    if (assignment[0].vehicle.isADA !== "") {
+      ada = <FaWheelchair/>
     }
   }
 
@@ -70,7 +75,7 @@ const AssignmentCard = props => {
               className="assignment_icon"
               onClick={() =>
                 props.history.push(
-                  `/edit/${props.date.id}/${realDriver.id}/${realVehicle.id}`
+                  `/editdriver/${props.date.id}/${realDriver.id}/${realVehicle.id}`
                 )
               }
             />
@@ -88,7 +93,7 @@ const AssignmentCard = props => {
             <span className="bold_driver_info">
               {realVehicle.type} {"\u00A0"}
             </span>
-            <span className="is_ada">{realVehicle.isADA} </span>
+            <span className="is_ada">{ada} </span>
           </div>
         </div>
       </section>

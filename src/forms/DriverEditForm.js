@@ -9,36 +9,17 @@ const DriverEditForm = props => {
     notes: ""
   });
 
-  const [vehicle, setVehicle] = useState({
-    company: "",
-    number: "",
-    type: "",
-    capacity: "",
-    isADA: ""
-  });
-
   const handleDriverChange = event => {
     const stateToChange = { ...driver };
     stateToChange[event.target.id] = event.target.value;
     setDriver(stateToChange);
   };
 
-  const handleVehicleChange = event => {
-    const stateToChange = { ...vehicle };
-    stateToChange[event.target.id] = event.target.value;
-    setVehicle(stateToChange);
-  };
-
   useEffect(() => {
     apiManager
       .getTypeWithId("drivers", props.match.params.driverId)
       .then(driver => {
-        apiManager
-          .getTypeWithId("vehicles", props.match.params.vehicleId)
-          .then(vehicle => {
-            setDriver(driver);
-            setVehicle(vehicle);
-          });
+        setDriver(driver);
       });
   }, []);
 
@@ -51,25 +32,19 @@ const DriverEditForm = props => {
       notes: driver.notes
     };
 
-    const editedVehicle = {
-      id: props.match.params.vehicleId,
-      company: vehicle.company,
-      number: vehicle.number,
-      type: vehicle.type,
-      capacity: vehicle.capacity,
-      isADA: vehicle.isADA
-    };
-
-    apiManager.updateType("drivers", editedDriver);
     apiManager
-      .updateType("vehicles", editedVehicle)
-      .then(() => props.history.push(`/routeview/${props.match.params.dateId}`));
+      .updateType("drivers", editedDriver)
+      .then(() =>
+        props.history.push(
+          `/editvehicle/${props.match.params.dateId}/${props.match.params.driverId}/${props.match.params.vehicleId}`
+        )
+      );
   };
 
   return (
     <>
       <form>
-      <h3>Edit Details</h3>
+        <h3>Edit Details</h3>
         <fieldset className="form">
           <div>
             <label>Driver Name: </label>
@@ -116,69 +91,11 @@ const DriverEditForm = props => {
 
           <div>
             <label>Notes: </label>
-            <input
+            <textarea
               type="text"
               onChange={handleDriverChange}
               id="notes"
               value={driver.notes}
-            />
-
-            <div>
-              <label>Company: </label>
-              <input
-                type="text"
-                onChange={handleVehicleChange}
-                id="company"
-                value={vehicle.company}
-              />
-            </div>
-
-            <div>
-              <label>Vehicle Number: </label>
-              <input
-                type="text"
-                onChange={handleVehicleChange}
-                id="number"
-                value={vehicle.number}
-              />
-            </div>
-
-            <label>Vehicle Type: </label>
-            <input
-              type="text"
-              onChange={handleVehicleChange}
-              id="type"
-              value={vehicle.type}
-            />
-          </div>
-
-          <div>
-            <label>Capacity: </label>
-            <input
-              type="text"
-              onChange={handleVehicleChange}
-              id="capacity"
-              value={vehicle.capacity}
-            />
-          </div>
-
-          <div>
-            <label>ADA accesible? Yes</label>
-            <input
-              type="radio"
-              name="ADA"
-              onChange={handleVehicleChange}
-              id="isADA"
-              value="ADA"
-            />
-            <label>No</label>
-            <input
-              type="radio"
-              name="ADA"
-              onChange={handleVehicleChange}
-              id="isADA"
-              value=""
-              defaultChecked
             />
           </div>
 
