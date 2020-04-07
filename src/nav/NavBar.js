@@ -45,6 +45,27 @@ const NavBar = props => {
           <div className="nav_list">
             <IoIosList className="nav_icon" />
             <section className="nav_dropdown">
+            {props.hasUser ? (
+                <div>
+                  <Link className="nav_links" to="/myroutes">
+                    My Routes
+                  </Link>
+                </div>
+              ) : null}
+              {props.hasUser ? (
+                <div>
+                  <Link className="nav_links" to="/driver/list">
+                    Driver List{"\u00A0"}
+                  </Link>
+                </div>
+              ) : null}
+              {props.hasUser ? (
+                <div>
+                  <Link className="nav_links" to="/vehicle/form">
+                    New Vehicle
+                  </Link>
+                </div>
+              ) : null}
               {props.hasUser ? (
                 <div>
                   <Link className="nav_links" to="/route/form">
@@ -56,20 +77,6 @@ const NavBar = props => {
                 <div>
                   <Link className="nav_links" to="/date/form">
                     New Date {"\u00A0"}
-                  </Link>
-                </div>
-              ) : null}
-              {props.hasUser ? (
-                <div>
-                  <Link className="nav_links" to="/myroutes">
-                    My Routes
-                  </Link>
-                </div>
-              ) : null}
-              {props.hasUser ? (
-                <div>
-                  <Link className="nav_links" to="/driver/list">
-                    Driver List{"\u00A0"}
                   </Link>
                 </div>
               ) : null}

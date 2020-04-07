@@ -13,7 +13,7 @@ const FavoriteDateCard = props => {
 
   useEffect(() => {
     getRoute("routes", props.favoriteRouteID.routeId);
-  }, []);
+  }, [props.favoriteRouteID.routeId]);
 
   return (
     <>

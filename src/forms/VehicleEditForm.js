@@ -22,7 +22,7 @@ const VehicleEditForm = props => {
       .then(vehicle => {
         setVehicle(vehicle);
       });
-  }, []);
+  }, [props.match.params.vehicleId]);
 
   const submit = () => {
     const editedVehicle = {

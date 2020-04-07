@@ -5,7 +5,7 @@ const RouteForm = routeFormProps => {
   const [route, setRoute] = useState({
     number: "",
     color: "",
-    name: "",
+    description: "",
     numOfVehNeeded: ""
   });
 
@@ -30,7 +30,7 @@ const RouteForm = routeFormProps => {
         <h3>Create New Route</h3>
         <fieldset className="form">
           <div className="form_child">
-            <label>Route Number: </label>
+            <label>Route Number/Name: </label>
             <input
               type="text"
               required
@@ -50,8 +50,8 @@ const RouteForm = routeFormProps => {
           </div>
 
           <div className="form_child">
-            <label>Name: </label>
-            <input type="text" onChange={handleRouteChange} id="name" />
+            <label>Description: </label>
+            <input type="text" onChange={handleRouteChange} id="description" />
           </div>
 
           <div className="form_child">

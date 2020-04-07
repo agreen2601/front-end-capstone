@@ -25,9 +25,9 @@ const AssignmentEditForm = props => {
     setAssignment(stateToChange);
   };
 
-  const getAssignment = () => {
+  const getAssignment = (assignId) => {
     apiManager
-      .getAssignmentById(props.match.params.assignmentId)
+      .getAssignmentById(assignId)
       .then(assignment => {
         setAssignment(assignment);
       });
@@ -55,9 +55,9 @@ const AssignmentEditForm = props => {
   };
 
   useEffect(() => {
-    getAssignment();
+    getAssignment(props.match.params.assignmentId);
     getAllDropDowns();
-  }, []);
+  }, [props.match.params.assignmentId]);
 
   const submit = () => {
     const editedAssignment = {

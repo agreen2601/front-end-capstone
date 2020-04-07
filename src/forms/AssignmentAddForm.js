@@ -57,8 +57,6 @@ const AssignmentAddForm = props => {
           assign.dateId === assignment.dateId &&
           assign.driverId === assignment.driverId
       );
-      console.log("assign", assign);
-      console.log("assignment", assignment);
       if (assign === undefined) {
         apiManager
           .addType("assignments", assignment)
@@ -69,7 +67,6 @@ const AssignmentAddForm = props => {
         alert(
           `${assign.driver.name} has already been assigned on ${assign.date.date}.`
         );
-        props.history.push(`/routeview`);
       }
     });
   };

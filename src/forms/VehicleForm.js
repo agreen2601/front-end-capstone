@@ -25,13 +25,14 @@ const VehicleForm = props => {
       );
       if (vehicleA === undefined) {
         if (vehicle.company !== "" && vehicle.number !== "") {
-          apiManager.addType("vehicles", vehicle);
+          apiManager
+            .addType("vehicles", vehicle)
+            .then(result => props.setVehicleId(result.id));
         }
-        props.history.push("/assignment/form");
       } else {
         alert("Vehicle already in database.");
-        props.history.push("/assignment/form");
       }
+      setTimeout(() => {props.history.push("/assignment/form")}, 100);
     });
   };
 

@@ -5,26 +5,26 @@ const AssignmentForm = props => {
   const [assignment, setAssignment] = useState({
     startTime: "",
     endTime: "",
-    driverId: 1,
-    vehicleId: 1,
+    vehicleId: props.vehicleId,
+    driverId: props.driverId,
     routeId: 1,
     dateId: props.chosenDate
   });
 
-  const [drivers, setDrivers] = useState([]);
   const [vehicles, setVehicles] = useState([]);
+  const [drivers, setDrivers] = useState([]);
   const [routes, setRoutes] = useState([]);
   const [dates, setDates] = useState([]);
 
   const getAllDropDowns = () => {
     return (
-      apiManager.getType("drivers").then(driversFromApi => {
-        driversFromApi.sort((a, b) => a.name.localeCompare(b.name));
-        setDrivers(driversFromApi);
-      }),
       apiManager.getType("vehicles").then(vehiclesFromApi => {
         vehiclesFromApi.sort((a, b) => a.company.localeCompare(b.company));
         setVehicles(vehiclesFromApi);
+      }),
+      apiManager.getType("drivers").then(driversFromApi => {
+        driversFromApi.sort((a, b) => a.name.localeCompare(b.name));
+        setDrivers(driversFromApi);
       }),
       apiManager.getType("routes").then(routesFromApi => {
         routesFromApi.sort((a, b) => (a.number > b.number ? 1 : -1));
@@ -58,8 +58,6 @@ const AssignmentForm = props => {
           assign.dateId === assignment.dateId &&
           assign.driverId === assignment.driverId
       );
-      console.log("assign", assign);
-      console.log("assignment", assignment);
       if (assign === undefined) {
         apiManager
           .addType("assignments", assignment)
@@ -68,9 +66,8 @@ const AssignmentForm = props => {
           );
       } else {
         alert(
-          `${assign.driver.name} has already been assigned on ${assign.date.date}.`
+          `${assign.driver.name} has already been assigned to route ${assign.route.number} on ${assign.date.date}.`
         );
-        props.history.push(`/routeview`);
       }
     });
   };
@@ -80,6 +77,21 @@ const AssignmentForm = props => {
       <form>
         <h3>Create New Assignment</h3>
         <fieldset className="form">
+        <div>
+            <label>Route: </label>
+            <select
+              id="routeId"
+              onChange={handleAssignmentChange}
+              value={assignment.routeId}
+            >
+              {routes.map(route => (
+                <option key={route.id} value={route.id}>
+                  {route.number}
+                </option>
+              ))}
+            </select>
+          </div>
+
           <div>
             <label>Driver: </label>
             <select
@@ -105,21 +117,6 @@ const AssignmentForm = props => {
               {vehicles.map(vehicle => (
                 <option key={vehicle.id} value={vehicle.id}>
                   {vehicle.company} {vehicle.number}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          <div>
-            <label>Route: </label>
-            <select
-              id="routeId"
-              onChange={handleAssignmentChange}
-              value={assignment.routeId}
-            >
-              {routes.map(route => (
-                <option key={route.id} value={route.id}>
-                  {route.number}
                 </option>
               ))}
             </select>

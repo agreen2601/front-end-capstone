@@ -21,7 +21,7 @@ const DriverEditForm = props => {
       .then(driver => {
         setDriver(driver);
       });
-  }, []);
+  }, [props.match.params.driverId]);
 
   const submit = () => {
     const editedDriver = {

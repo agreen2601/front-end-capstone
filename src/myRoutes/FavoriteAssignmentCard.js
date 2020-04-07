@@ -18,7 +18,7 @@ const FavoriteAssignmentCard = props => {
 
   useEffect(() => {
     getAssignment(props.date.id, props.favoriteRouteID.routeId, props.assignment.driverId);
-  }, []);
+  }, [props.date.id, props.favoriteRouteID.routeId, props.assignment.driverId]);
 
   let realAssignment = {};
   let realDriver = {};
@@ -42,7 +42,7 @@ const FavoriteAssignmentCard = props => {
       <section className="driver_info">
         <div>
           <div>
-            <span>
+            <span className="driver_name">
               {realDriver.name} {"\u00A0"}
             </span>
             <span className="driver_phone_number">

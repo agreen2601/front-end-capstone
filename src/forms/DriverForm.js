@@ -20,7 +20,9 @@ const DriverForm = props => {
       const driverA = allDrivers.find(driverA => driverA.name === driver.name);
       if (driverA === undefined) {
         if (driver.name !== "") {
-          apiManager.addType("drivers", driver);
+          apiManager
+            .addType("drivers", driver)
+            .then(result => props.setDriverId(result.id));
         }
         props.history.push(`/vehicle/form`);
       } else {

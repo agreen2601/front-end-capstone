@@ -1,5 +1,5 @@
 import { Route, Redirect } from "react-router-dom";
-import React from "react";
+import React, { useState } from "react";
 import Login from "./auth/Login";
 import RouteView from "./routeView/RouteView";
 import FavoriteRouteView from "./myRoutes/FavoriteRouteView";
@@ -20,6 +20,9 @@ const AppViews = props => {
   const setUser = props.setUser;
   const dates = props.dates;
   const chosenDate = props.chosenDate;
+  const [driverId, setDriverId] = useState(1)
+  const [vehicleId, setVehicleId] = useState(1)
+
 
   return (
     <>
@@ -87,7 +90,7 @@ const AppViews = props => {
         path="/driver/form"
         render={props => {
           if (hasUser) {
-            return <DriverForm {...props} />;
+            return <DriverForm setDriverId={setDriverId} {...props} />;
           } else {
             return <Login setUser={setUser} {...props} />;
           }
@@ -109,7 +112,7 @@ const AppViews = props => {
         path="/vehicle/form"
         render={props => {
           if (hasUser) {
-            return <VehicleForm {...props} />;
+            return <VehicleForm setVehicleId={setVehicleId} {...props} />;
           } else {
             return <Login setUser={setUser} {...props} />;
           }
@@ -131,7 +134,7 @@ const AppViews = props => {
         path="/assignment/form"
         render={props => {
           if (hasUser) {
-            return <AssignmentForm chosenDate={chosenDate} {...props} />;
+            return <AssignmentForm driverId={driverId} vehicleId={vehicleId} chosenDate={chosenDate} {...props} />;
           } else {
             return <Login setUser={setUser} {...props} />;
           }
